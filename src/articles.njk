@@ -1,0 +1,137 @@
+---
+layout: layouts/base.njk
+title: "Articles — Precision Surfacing"
+description: "Guides and advice on driveways and surfacing in Norfolk."
+---
+<main class="simple">
+  <header class="simple-head" data-theme="dark">
+    <span class="kicker">Articles</span>
+    <h1>Expert <em>advice.</em></h1>
+    <p>Honest guides on choosing, costing and caring for a new driveway — no jargon, no sales fluff.</p>
+  </header>
+
+  <section class="simple-body" data-theme="light">
+    <!-- FEATURED — large image cards, text as overlay, tag top-left -->
+    <div class="feat-grid">
+      <a class="feat-card" href="/articles/best-time-to-lay-a-driveway/">
+        <img class="fc-bg" src="/assets/images/resin/projects/buxton-resin-driveway/buxton-resin-driveway-finished.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+        <span class="fc-tag">Timing</span>
+        <div class="fc-foot">
+          <span class="fc-meta">5 min read</span>
+          <h2>When's the best time to have a driveway laid?</h2>
+          <span class="fc-go">Read article <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+      <a class="feat-card" href="/articles/resin-bound-vs-resin-bonded/">
+        <img class="fc-bg" src="/assets/images/resin/projects/wells-silver-grey/wells-silver-grey-resin-driveway-finished.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+        <span class="fc-tag">Resin</span>
+        <div class="fc-foot">
+          <span class="fc-meta">4 min read</span>
+          <h2>Resin bound vs resin bonded — what's the difference?</h2>
+          <span class="fc-go">Read article <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+    </div>
+
+    <!-- MORE — smaller stacked text cards, small swatch on the right -->
+    <div class="more-head">More articles</div>
+    <div class="mini-list">
+      <a class="mini-card" href="#">
+        <div class="mc-text">
+          <span class="mc-tag">Drainage</span>
+          <h3>SuDS &amp; planning: do you need permission?</h3>
+          <span class="mc-meta">5 min read</span>
+        </div>
+        <div class="mc-thumb resin forest" aria-hidden="true"></div>
+      </a>
+      <a class="mini-card" href="#">
+        <div class="mc-text">
+          <span class="mc-tag">Care</span>
+          <h3>How to keep resin looking new for years</h3>
+          <span class="mc-meta">3 min read</span>
+        </div>
+        <div class="mc-thumb resin bracken" aria-hidden="true"></div>
+      </a>
+      <a class="mini-card" href="#">
+        <div class="mc-text">
+          <span class="mc-tag">Block paving</span>
+          <h3>Block paving vs resin: which suits your home?</h3>
+          <span class="mc-meta">5 min read</span>
+        </div>
+        <div class="mc-thumb resin pewter" aria-hidden="true"></div>
+      </a>
+      <a class="mini-card" href="#">
+        <div class="mc-text">
+          <span class="mc-tag">Resin</span>
+          <h3>Is resin slippery when wet? The honest answer</h3>
+          <span class="mc-meta">4 min read</span>
+        </div>
+        <div class="mc-thumb resin gold" aria-hidden="true"></div>
+      </a>
+    </div>
+
+    <p class="areas">More guides coming soon. Have a question? <a href="/contact/">Get in touch.</a></p>
+  </section>
+</main>
+
+<style>
+  .simple{background:var(--paper,#EAEDEE);min-height:70vh}
+  .simple-head{background:var(--ink,#0E0F10);color:#fff;padding:84px 22px 64px}
+  .simple-head .kicker{color:var(--gold)}
+  .simple-head h1{font-family:var(--serif,"Instrument Serif",serif);font-size:clamp(38px,9vw,72px);line-height:1.02;margin:14px 0 16px;font-weight:400}
+  .simple-head h1 em{font-style:italic;color:var(--gold-hl)}
+  .simple-head p{color:rgba(255,255,255,.62);max-width:50ch;font-size:16px}
+  .simple-body{max-width:1040px;margin:0 auto;padding:44px 22px 90px}
+
+  /* ---- featured: large image cards with overlay text ---- */
+  .feat-grid{display:grid;gap:16px;grid-template-columns:1fr}
+  .feat-card{position:relative;overflow:hidden;isolation:isolate;border-radius:18px;min-height:260px;background:#1c1c1d;
+    display:flex;flex-direction:column;justify-content:flex-end;padding:24px;text-decoration:none;
+    transition:transform .25s ease,box-shadow .25s ease}
+  .feat-card:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(14,15,16,.22)}
+  .fc-bg{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover}
+  .feat-card:hover .fc-bg{transform:scale(1.04)}
+  .fc-bg{transition:transform .5s ease}
+  /* dark scrim so the overlay text stays legible over any photo */
+  .feat-card::after{content:"";position:absolute;inset:0;z-index:-1;
+    background:linear-gradient(to top,rgba(8,9,10,.88) 0%,rgba(8,9,10,.5) 32%,rgba(8,9,10,.14) 62%,transparent 100%)}
+  .fc-tag{position:absolute;top:18px;left:18px;z-index:1;font-family:var(--mono,"DM Mono",monospace);
+    font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-hl);
+    background:rgba(8,9,10,.6);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);padding:7px 12px;border-radius:30px}
+  .fc-foot{position:relative;z-index:1}
+  .fc-meta{font-family:var(--mono,"DM Mono",monospace);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.68)}
+  .fc-foot h2{font-family:var(--serif,"Instrument Serif",serif);font-weight:400;font-size:26px;line-height:1.12;color:#fff;margin:9px 0 14px;max-width:22ch}
+  .fc-go{font-family:var(--mono,"DM Mono",monospace);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#fff;display:inline-flex;align-items:center;gap:8px}
+  .fc-go svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.7}
+  .feat-card:hover .fc-go{color:var(--gold-hl)}
+
+  /* ---- "more articles" header + rule ---- */
+  .more-head{display:flex;align-items:center;gap:14px;margin:46px 0 6px;
+    font-family:var(--mono,"DM Mono",monospace);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep)}
+  .more-head::after{content:"";flex:1;height:1px;background:rgba(14,15,16,.14)}
+
+  /* ---- mini cards: text left, small swatch right ---- */
+  .mini-list{display:flex;flex-direction:column;border-bottom:1px solid rgba(14,15,16,.12)}
+  .mini-card{display:flex;align-items:center;gap:18px;padding:22px 2px;
+    border-top:1px solid rgba(14,15,16,.12);text-decoration:none;transition:padding .25s ease}
+  .mini-card:first-child{border-top:0}
+  .mini-card:hover{padding-left:6px}
+  .mc-text{flex:1;min-width:0}
+  .mc-tag{font-family:var(--mono,"DM Mono",monospace);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep)}
+  .mc-text h3{font-family:var(--serif,"Instrument Serif",serif);font-weight:400;font-size:22px;line-height:1.18;color:var(--ink,#0E0F10);margin:8px 0}
+  .mc-meta{font-family:var(--mono,"DM Mono",monospace);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mist,#7E817A)}
+  .mc-thumb{flex:0 0 auto;width:78px;height:78px;border-radius:13px;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(14,15,16,.08)}
+
+  .areas{margin-top:40px;font-size:14px;color:#55585a}
+  .areas a{color:var(--gold-deep)}
+
+  @media (min-width:760px){
+    .simple-head{padding:120px 50px 80px}
+    .simple-body{padding:56px 50px 110px}
+    .feat-grid{grid-template-columns:1fr 1fr;gap:20px}
+    .feat-card{min-height:300px;padding:28px}
+    .fc-foot h2{font-size:29px}
+    .mc-text h3{font-size:24px}
+    .mc-thumb{width:92px;height:92px}
+  }
+</style>

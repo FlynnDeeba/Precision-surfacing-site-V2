@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>{{ title or site.name }}</title>
+  {% if description %}<meta name="description" content="{{ description }}">{% endif %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=DM+Mono:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Raleway:wght@300;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/precision.css' | bust }}">
+  {% if extraCss %}<link rel="stylesheet" href="{{ ('/assets/css/' + extraCss) | bust }}">{% endif %}
+</head>
+<body class="{{ bodyClass }}">
+  {% if not hideChrome %}
+    {% include "partials/nav.njk" %}
+    {% include "partials/menu.njk" %}
+  {% endif %}
+
+  {{ content | safe }}
+
+  {% if not hideChrome and not hideFooter %}
+    {% include "partials/footer.njk" %}
+  {% endif %}
+
+  <script src="{{ '/assets/js/precision.js' | bust }}"></script>
+  {% if extraJs %}<script src="{{ ('/assets/js/' + extraJs) | bust }}"></script>{% endif %}
+</body>
+</html>

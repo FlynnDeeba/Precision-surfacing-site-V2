@@ -1,0 +1,723 @@
+/* ======================
+   GALLERY SECTION
+   ====================== */
+
+.gallery-section {
+  min-height: 100svh;
+  background: var(--charcoal);
+  padding: 14px var(--content-padding-mobile) 48px;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+  align-self: flex-start;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+}
+
+.section-label::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--yellow);
+}
+
+.gallery-headline {
+  display: none;
+  font-family: var(--font-serif);
+  font-size: 38px;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  line-height: 0.95;
+  color: var(--white);
+  margin-bottom: 24px;
+}
+
+.gallery-headline em {
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* ======================
+   GALLERY GRID — 3 items
+   ====================== */
+
+/* Gallery header: kicker + headline on the left, "View our gallery" on the
+   right (right-edge aligned with the headline on desktop). On mobile the
+   link drops below the headline. */
+.gallery-header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.gallery-header-text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+.gallery-view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-primary);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--yellow);
+  text-decoration: none;
+  align-self: flex-start;
+  transition: gap 0.25s ease;
+}
+.gallery-view-all svg {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.gallery-view-all:hover { gap: 12px; }
+.gallery-view-all:hover svg { transform: translateX(2px); }
+
+/* Mobile: hide the header version of the link; show the footer one below
+   the grid. Desktop: opposite — link sits inline with the headline, right
+   edge aligned. */
+.gallery-view-all--header { display: none; }
+.gallery-view-all--footer {
+  display: inline-flex;
+  margin-top: 18px;
+  padding: 14px 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(240, 204, 58, 0.35);
+  background: rgba(240, 204, 58, 0.06);
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 1024px) {
+  .gallery-header {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 32px;
+  }
+  .gallery-view-all { font-size: 13px; }
+  .gallery-view-all--header { display: inline-flex; }
+  .gallery-view-all--footer { display: none; }
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 10px;
+  flex: 1;
+  max-width: 100%;
+  width: 100%;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform var(--transition-base);
+  aspect-ratio: 1 / 1;
+  min-height: 0;
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* Hero (first item) spans both columns on the mosaic — restored for service
+   pages. Homepage CSS below overrides the layout to a single-column stack. */
+.gallery-item:first-child {
+  grid-column: 1 / -1;
+  aspect-ratio: 16 / 9;
+}
+
+/* Mobile gallery layouts split by page type:
+   - HOMEPAGE: clean single-column horizontal stack
+   - SERVICE PAGES (resin/tarmac/etc.): original 2-col mosaic with portrait
+     accents at nth-child(2) and nth-child(5), plus the -57px translate on
+     item 5. This was the design before today's changes. */
+@media (max-width: 1023px) {
+  /* Homepage: single-column horizontal stack */
+  .home .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .home .gallery-item {
+    aspect-ratio: 16 / 10;
+  }
+  .home .gallery-item:first-child {
+    aspect-ratio: 16 / 9;
+  }
+  .home .gallery-item:nth-child(2),
+  .home .gallery-item:nth-child(3),
+  .home .gallery-item:nth-child(7) {
+    display: none;
+  }
+
+  /* Service pages: ORIGINAL 2-col mosaic restored */
+  body:not(.home) .gallery-item:nth-child(2),
+  body:not(.home) .gallery-item:nth-child(5) {
+    aspect-ratio: 3 / 4;
+  }
+  body:not(.home) .gallery-item:nth-child(5) {
+    transform: translateY(-57px);
+  }
+}
+
+@media (hover: hover) {
+  .gallery-item:hover {
+    transform: scale(0.98);
+  }
+}
+
+.gallery-item-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.4s ease;
+}
+
+/* Thorpe Marriot — show more of the image's left side */
+.gallery-item-bg[style*="thorpe marriot"] {
+  background-position: 15% center;
+}
+
+@media (hover: hover) {
+  .gallery-item:hover .gallery-item-bg {
+    transform: scale(1.05);
+  }
+}
+
+.gallery-item-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(26, 26, 26, 0.8) 0%,
+    rgba(26, 26, 26, 0) 50%
+  );
+}
+
+.gallery-item-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 12px;
+}
+
+.gallery-item-location {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--yellow);
+  margin-bottom: 2px;
+}
+
+.gallery-item-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--white);
+}
+
+/* Photo count badge */
+.gallery-item-badge {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 4px 10px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--black);
+  background: var(--yellow);
+  border-radius: var(--radius-sm);
+}
+
+/* ======================
+   PHOTO LIGHTBOX MODAL
+   ====================== */
+
+.photo-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-smooth);
+}
+
+.photo-lightbox.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.photo-lightbox-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Mobile: full-screen panel */
+.photo-lightbox-panel {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(20px);
+  transition: transform var(--transition-smooth);
+}
+
+.photo-lightbox.active .photo-lightbox-panel {
+  transform: translateY(0);
+}
+
+/* Header */
+.photo-lightbox-header {
+  padding: 16px var(--content-padding-mobile) 0;
+  flex-shrink: 0;
+}
+
+.photo-lightbox-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.photo-lightbox-close {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.photo-lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.photo-lightbox-close svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--white);
+  stroke-width: 2;
+  fill: none;
+}
+
+.photo-lightbox-counter {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.5px;
+}
+
+.photo-lightbox-counter strong {
+  color: var(--white);
+  font-weight: 600;
+}
+
+/* Progress bar */
+.photo-lightbox-progress {
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.photo-lightbox-progress-fill {
+  height: 100%;
+  background: var(--yellow);
+  border-radius: 2px;
+  transition: width var(--transition-smooth);
+}
+
+/* Swipeable track */
+.photo-lightbox-track {
+  flex: 1;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.photo-lightbox-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Individual slide */
+.photo-lightbox-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.photo-lightbox-slide img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+}
+
+/* Project info at bottom */
+.photo-lightbox-info {
+  padding: 12px var(--content-padding-mobile) 20px;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.photo-lightbox-location {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--yellow);
+  margin-bottom: 4px;
+}
+
+.photo-lightbox-title {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--white);
+}
+
+/* Nav buttons — hidden on mobile */
+.photo-lightbox-nav {
+  display: none;
+}
+
+/* ======================
+   DESKTOP STYLES
+   ====================== */
+
+@media (min-width: 1024px) {
+  /* Hide kickers on desktop — headlines do the job */
+  .section-label {
+    display: none;
+  }
+
+  .gallery-section {
+    padding: 60px var(--content-padding-desktop) 80px;
+    min-height: auto;
+  }
+
+  .gallery-section .section-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .gallery-headline {
+    display: block;
+    font-size: 46px;
+    margin-bottom: 32px;
+    position: relative;
+    padding-bottom: 8px;
+  }
+
+  .gallery-headline::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    max-width: 520px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.85), transparent 65%);
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+    /* Row 3 = 2fr = rows 1+2 combined → right column splits exactly 50/50 */
+    grid-template-rows: 1fr 1fr 2fr;
+    gap: 16px;
+  }
+
+  .gallery-item {
+    aspect-ratio: unset;
+  }
+
+  /* Hero spans top-left 2×2 area */
+  .gallery-item:first-child {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+    aspect-ratio: 16 / 7;
+  }
+
+  /* Homepage: let the hero fill the full 2x2 cell so its bottom edge
+     aligns with the column to its right (no aspect-ratio constraint) */
+  .home .gallery-item:first-child {
+    aspect-ratio: auto;
+  }
+
+  /* Right-top: spans rows 1-2 (top 50% of full gallery height) */
+  .gallery-item:nth-child(2) {
+    grid-column: 3;
+    grid-row: 1 / 3;
+  }
+
+  /* Bottom-left — height controlled by grid row 3 */
+  .gallery-item:nth-child(3) {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  /* Bottom-centre — height controlled by grid row 3 */
+  .gallery-item:nth-child(4) {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  /* Right-bottom: row 3 (bottom 50% of full gallery height) */
+  .gallery-item:nth-child(5) {
+    grid-column: 3;
+    grid-row: 3;
+  }
+
+  .gallery-item-title {
+    font-size: 16px;
+  }
+
+  .gallery-item-location {
+    font-size: 10px;
+  }
+
+  /* Lightbox desktop */
+  .photo-lightbox-panel {
+    padding: 0;
+  }
+
+  .photo-lightbox-header {
+    padding: 20px 32px 0;
+  }
+
+  .photo-lightbox-slide {
+    padding: 24px 80px;
+  }
+
+  .photo-lightbox-info {
+    padding: 12px 32px 24px;
+  }
+
+  .photo-lightbox-nav {
+    display: contents;
+  }
+
+  .photo-lightbox-prev,
+  .photo-lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+
+  .photo-lightbox-prev {
+    left: 24px;
+  }
+
+  .photo-lightbox-next {
+    right: 24px;
+  }
+
+  .photo-lightbox-nav-btn {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all var(--transition-base);
+  }
+
+  .photo-lightbox-nav-btn:hover {
+    background: var(--yellow);
+    border-color: var(--yellow);
+  }
+
+  .photo-lightbox-nav-btn:hover svg {
+    stroke: var(--black);
+  }
+
+  .photo-lightbox-nav-btn svg {
+    width: 18px;
+    height: 18px;
+    stroke: rgba(255, 255, 255, 0.65);
+    stroke-width: 2;
+    fill: none;
+  }
+}
+
+@media (min-width: 1440px) {
+  .gallery-section {
+    padding: 80px var(--content-padding-wide) 100px;
+  }
+}
+
+/* ======================
+   HOMEPAGE — 6 items, last one a full-width hero
+   ====================== */
+
+.home .gallery-section {
+  padding-top: 8px;
+}
+
+.home .gallery-section .section-label {
+  display: none;
+}
+
+.home .gallery-headline {
+  display: block;
+  position: relative;
+  width: 100%;
+  align-self: stretch;
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--white);
+  margin: 0 0 16px;
+  padding-bottom: 10px;
+}
+
+.home .gallery-headline::after {
+  display: block;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--yellow) 0%, rgba(240, 204, 58, 0.6) 55%, transparent 100%);
+}
+
+.home .gallery-headline em {
+  font-style: italic;
+  color: var(--yellow);
+}
+
+/* Desktop-only homepage gallery tweaks — kept inside the desktop block so
+   they don't break mobile (mobile is a single-column horizontal stack and
+   doesn't want any aspect-ratio overrides per item). */
+@media (min-width: 1024px) {
+  .home .gallery-item:nth-child(2),
+  .home .gallery-item:nth-child(5) {
+    aspect-ratio: 1 / 1;
+  }
+  .home .gallery-item:nth-child(5) {
+    transform: none;
+  }
+  .home .gallery-item:last-child {
+    grid-column: 1 / -1;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* Hide the 6th project (Sheringham Golden Harvest Path) on mobile only —
+   it still appears in the resin service gallery */
+@media (max-width: 1023px) {
+  .home .gallery-item:nth-child(6) {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .home .gallery-headline {
+    font-size: 42px;
+    margin: 0 0 24px;
+    padding-bottom: 14px;
+  }
+
+  .home .gallery-grid {
+    grid-template-rows: 1fr 1fr 2fr;
+  }
+
+  .home .gallery-item:last-child {
+    display: none;
+  }
+}
+
+/* ======================
+   TAR & CHIP PAGE — gallery has only 3 items, so the section ends up
+   short and the content sits flush with the previous section's CTA.
+   Centre the content vertically so it doesn't huddle at the top.
+   ====================== */
+
+/* ======================
+   TARMAC + TAR & CHIP PAGES — 3 equal-sized tiles, no mosaic
+   ====================== */
+
+.tarmac-page .gallery-grid,
+.tar-and-chip-page .gallery-grid {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+}
+
+.tarmac-page .gallery-item,
+.tarmac-page .gallery-item:first-child,
+.tarmac-page .gallery-item:nth-child(2),
+.tarmac-page .gallery-item:nth-child(3),
+.tarmac-page .gallery-item:nth-child(5),
+.tar-and-chip-page .gallery-item,
+.tar-and-chip-page .gallery-item:first-child,
+.tar-and-chip-page .gallery-item:nth-child(2),
+.tar-and-chip-page .gallery-item:nth-child(3) {
+  grid-column: auto;
+  grid-row: auto;
+  aspect-ratio: 16 / 9;
+  transform: none;
+}
+
+@media (min-width: 1024px) {
+  .tarmac-page .gallery-grid,
+  .tar-and-chip-page .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+  }
+
+  .tarmac-page .gallery-item,
+  .tarmac-page .gallery-item:first-child,
+  .tarmac-page .gallery-item:nth-child(2),
+  .tarmac-page .gallery-item:nth-child(3),
+  .tar-and-chip-page .gallery-item,
+  .tar-and-chip-page .gallery-item:first-child,
+  .tar-and-chip-page .gallery-item:nth-child(2),
+  .tar-and-chip-page .gallery-item:nth-child(3) {
+    grid-column: auto;
+    grid-row: auto;
+    aspect-ratio: 4 / 3;
+  }
+}

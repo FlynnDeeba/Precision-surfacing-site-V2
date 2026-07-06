@@ -1,0 +1,647 @@
+/* ======================
+   HERO SECTION
+   ====================== */
+
+.hero-section {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  background: var(--charcoal);
+}
+
+.hero-image {
+  position: relative;
+  flex: 0 0 52svh;
+  max-height: 440px;
+  overflow: hidden;
+  background: var(--charcoal);
+}
+
+/* Pages without hero stats (e.g. resin) need a taller image on mobile so the
+   dark content area below doesn't feel empty. Adds back the visual weight
+   that the stats row would have taken. */
+@media (max-width: 1023px) {
+  .resin-page .hero-image {
+    flex: 0 0 62svh;
+    max-height: 520px;
+  }
+
+  /* Homepage CTA was sitting too close to the bottom of the viewport —
+     trim the image a touch so the dark content area has more room. */
+  .home .hero-image {
+    flex: 0 0 49svh;
+    max-height: 418px;
+  }
+}
+
+.hero-image-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #c4a35a 0%, #8a7030 100%);
+  background-size: cover;
+  background-position: center;
+}
+
+img.hero-image-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.hero-image-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(14, 14, 14, 0.55) 0%,
+      rgba(14, 14, 14, 0) 30%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(14, 14, 14, 0) 45%,
+      rgba(14, 14, 14, 1) 100%
+    );
+}
+
+.hero-logo {
+  position: absolute;
+  top: 18px;
+  left: var(--content-padding-mobile);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  text-decoration: none;
+  background: rgba(26, 26, 26, 0.75);
+  padding: 6px 11px 6px 14px;
+  border-radius: 2px;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 18%, black 82%, transparent),
+                      linear-gradient(to bottom, transparent, black 18%, black 82%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to right, transparent, black 18%, black 82%, transparent),
+              linear-gradient(to bottom, transparent, black 18%, black 82%, transparent);
+  mask-composite: intersect;
+}
+
+.logo-text {
+  font-family: var(--font-logo);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #fafafa;
+  display: block;
+  line-height: 1.4;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+}
+
+.logo-sub {
+  font-family: var(--font-logo);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: #F0CC3A;
+  display: block;
+  line-height: 1.4;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px var(--content-padding-mobile) 24px;
+  background: var(--charcoal);
+}
+
+.hero-kicker-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  margin-bottom: 18px;
+}
+
+.hero-kicker {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--white);
+  padding-bottom: 4px;
+  border-bottom: 2px solid var(--yellow);
+}
+
+.hero-headline {
+  font-family: var(--font-serif);
+  font-size: 38px;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  line-height: 0.95;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+.hero-headline em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--yellow);
+  white-space: nowrap;
+}
+
+.hero-subhead {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 24px;
+}
+
+.hero-subhead-desktop {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .hero-subhead-desktop {
+    display: inline;
+  }
+}
+
+.hero-cta {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.hero-free-strip {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: baseline;
+  gap: 6px 8px;
+  margin-bottom: 22px;
+  width: auto;
+}
+
+.hero-free-label {
+  font-family: var(--font-primary);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--yellow);
+}
+
+.hero-free-item {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.1px;
+}
+
+.hero-free-sep {
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.hero-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--yellow);
+  color: var(--black);
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  padding: 14px 28px;
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  transition: filter var(--transition-base);
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.hero-cta-btn:active {
+  filter: brightness(0.9);
+}
+
+.hero-trust {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+}
+
+.hero-trust-item {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.hero-trust-sep {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.2);
+  line-height: 1;
+}
+
+.cta-primary {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 24px;
+  background: var(--yellow);
+  color: var(--black);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-primary);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-smooth);
+}
+
+.cta-primary:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+.cta-primary:active {
+  transform: scale(0.97);
+  filter: brightness(0.9);
+}
+
+.cta-primary svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--black);
+  stroke-width: 2;
+  fill: none;
+}
+
+.cta-secondary {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--yellow);
+  border: none;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: all var(--transition-smooth);
+  flex-shrink: 0;
+}
+
+.cta-secondary:hover {
+  filter: brightness(1.1);
+}
+
+.cta-secondary:active {
+  transform: scale(0.95);
+  filter: brightness(0.9);
+}
+
+.cta-secondary svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--black);
+  stroke-width: 1.5;
+  fill: none;
+}
+
+.hero-stats {
+  display: none;
+  gap: 24px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stat-value {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--white);
+}
+
+.stat-label {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* ======================
+   GUARANTEE BADGE
+   ====================== */
+
+.hero-guarantee {
+  position: absolute;
+  top: 63%;
+  right: 4px;
+  z-index: 4;
+  width: 95px;
+  height: 95px;
+  transform: translateY(-50%);
+  object-fit: contain;
+}
+
+/* ======================
+   DESKTOP STYLES
+   ====================== */
+
+@media (min-width: 1024px) {
+  .hero-logo {
+    display: none;
+  }
+
+  .hero-section {
+    flex-direction: row;
+    height: 60vh;
+    min-height: 640px;
+  }
+
+  .hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 48%;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to bottom, transparent, #111111);
+    z-index: 4;
+    pointer-events: none;
+  }
+
+  .hero-image {
+    position: relative;
+    inset: auto;
+    flex: 0 0 52%;
+    max-height: none;
+    order: 2;
+  }
+
+  img.hero-image-bg {
+    object-position: 70% 30%;
+  }
+
+  .hero-image-overlay {
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(17, 17, 17, 0.5) 0%,
+        rgba(17, 17, 17, 0) 25%
+      ),
+      linear-gradient(
+        to bottom,
+        rgba(17, 17, 17, 0) 60%,
+        rgba(17, 17, 17, 0.7) 100%
+      );
+  }
+
+  .hero-content::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -100px;
+    bottom: 0;
+    width: 100px;
+    background: linear-gradient(to right, #111111, transparent);
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  .hero-kicker-wrap {
+    display: none;
+  }
+
+  .hero-guarantee {
+    width: 100px;
+    height: 100px;
+    top: auto;
+    bottom: 40px;
+    right: auto;
+    left: 48%;
+    transform: translateX(-50%);
+  }
+
+  .hero-content {
+    position: relative;
+    bottom: auto;
+    flex: 0 0 48%;
+    padding: 80px 60px 60px;
+    padding-top: 140px;
+    padding-left: max(80px, calc((100vw - 1400px) / 2));
+    justify-content: center;
+    order: 1;
+  }
+
+  .hero-headline {
+    font-size: 46px;
+    margin-bottom: 16px;
+    max-width: 440px;
+  }
+
+  .hero-subhead {
+    font-size: 16px;
+    max-width: 420px;
+    margin-bottom: 28px;
+  }
+
+  .hero-kicker {
+    font-size: 11px;
+  }
+
+  .hero-cta {
+    max-width: 320px;
+  }
+
+  .cta-primary {
+    flex: none;
+    padding: 16px 32px;
+    font-size: 14px;
+  }
+
+  .cta-secondary {
+    width: 52px;
+    height: 52px;
+  }
+
+  .hero-free-strip {
+    justify-content: flex-start;
+    gap: 0 14px;
+    margin-bottom: 32px;
+  }
+
+  .hero-free-label {
+    font-size: 16px;
+    letter-spacing: 3px;
+  }
+
+  .hero-free-item {
+    font-size: 19px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .hero-free-sep {
+    display: inline-block;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .hero-cta-btn {
+    background: var(--yellow);
+    color: var(--charcoal);
+    border: 2px solid var(--yellow);
+    font-size: 17px;
+    padding: 18px 36px;
+    letter-spacing: 0.3px;
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+                box-shadow 0.25s ease,
+                filter 0.2s ease;
+    will-change: transform;
+  }
+
+  .hero-cta-btn:hover {
+    background: var(--yellow);
+    color: var(--charcoal);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(240, 204, 58, 0.32);
+  }
+
+  .hero-cta-btn:active {
+    transform: translateY(-1px);
+    filter: brightness(0.92);
+  }
+
+
+  .hero-stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 8px;
+  }
+
+  .stat-value {
+    font-size: 32px;
+  }
+
+  .stat-label {
+    font-size: 10px;
+  }
+}
+
+/* Small laptops only (13" MacBooks are ~1440-1512px) */
+@media (min-width: 1024px) and (max-width: 1599px) {
+  .hero-headline {
+    font-size: 56px;
+    max-width: 520px;
+  }
+
+  .hero-subhead {
+    font-size: 16px;
+    max-width: 440px;
+  }
+
+  .hero-content {
+    padding-left: max(var(--content-padding-desktop), calc((100vw - var(--max-width)) / 2 + var(--content-padding-desktop)));
+    padding-top: 160px;
+  }
+
+  .hero-cta {
+    max-width: 300px;
+  }
+
+  .cta-primary {
+    padding: 16px 32px;
+    font-size: 14px;
+  }
+
+  .hero-free-item {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .hero-section {
+    height: 56vh;
+    min-height: 560px;
+  }
+
+  .hero-image {
+    flex: 0 0 55%;
+  }
+
+  /* Constrain content to a tighter column at 1080p 27"+ — content was feeling
+     oversized on lower-DPI big monitors. max-width keeps everything readable
+     without forcing the user's eye across a huge area. */
+  .hero-content {
+    flex: 0 0 45%;
+    padding: 160px 80px 60px;
+    padding-left: calc((100vw - 1400px) / 2);
+  }
+
+  .hero-content-inner,
+  .hero-headline,
+  .hero-subhead,
+  .hero-free-strip,
+  .hero-cta-btn,
+  .hero-stats {
+    max-width: 420px;
+  }
+
+  .hero-section::after {
+    left: 45%;
+  }
+
+  .hero-guarantee {
+    left: 45%;
+  }
+
+  .hero-headline {
+    font-size: 44px;
+    letter-spacing: -0.4px;
+  }
+
+  .hero-subhead {
+    font-size: 15px;
+  }
+
+  .hero-cta-btn {
+    font-size: 15px;
+    padding: 16px 30px;
+  }
+
+  .hero-free-label,
+  .hero-free-item {
+    font-size: 14px;
+  }
+
+  .hero-stats {
+    gap: 32px;
+  }
+
+  .stat-value {
+    font-size: 26px;
+  }
+}

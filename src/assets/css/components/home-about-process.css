@@ -1,0 +1,258 @@
+/* ======================
+   ABOUT-PROCESS SECTION
+   ====================== */
+
+.about-process {
+  background: var(--charcoal);
+  display: flex;
+  flex-direction: column;
+  padding: 12px var(--content-padding-mobile) 40px;
+}
+
+/* --- Headline --- */
+.ap-headline {
+  font-family: var(--font-serif);
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.ap-headline em {
+  font-style: italic;
+  color: var(--yellow);
+}
+
+.ap-intro {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 0;
+  max-width: 480px;
+}
+
+/* --- Process Steps --- */
+.ap-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 0;
+}
+
+.ap-steps-headline {
+  display: none;
+}
+
+.ap-step {
+  display: flex;
+  gap: 16px;
+  padding: 50px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.ap-step:last-child {
+  border-bottom: none;
+}
+
+.ap-step-number {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--yellow);
+  flex-shrink: 0;
+  min-width: 22px;
+  padding-top: 2px;
+}
+
+.ap-step-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ap-step-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.ap-step-text {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* --- Trust Row --- */
+.ap-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  padding-top: 0;
+  border-top: none;
+  margin-top: 24px;
+}
+
+.ap-trust--desktop {
+  display: none;
+}
+
+.ap-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ap-trust-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(240, 204, 58, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ap-trust-icon svg {
+  width: 14px;
+  height: 14px;
+  stroke: var(--yellow);
+  stroke-width: 1.8;
+  fill: none;
+}
+
+.ap-trust-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 0.02em;
+}
+
+.ap-trust-label strong {
+  color: var(--white);
+  font-weight: 700;
+}
+
+/* ======================
+   DESKTOP
+   ====================== */
+
+@media (min-width: 1024px) {
+  .about-process {
+    min-height: auto;
+    padding: 100px max(var(--content-padding-desktop), calc((100% - var(--max-width)) / 2));
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 80px;
+  }
+
+  .ap-left {
+    flex: 0 1 auto;
+    min-width: 0;
+    max-width: 620px;
+    position: sticky;
+    top: 100px;
+  }
+
+  .ap-headline {
+    font-size: 44px;
+    margin-bottom: 18px;
+  }
+
+  .ap-intro {
+    font-size: 16px;
+    line-height: 1.75;
+    max-width: none;
+    margin-bottom: 32px;
+  }
+
+  .ap-right {
+    flex: 0 1 auto;
+    min-width: 0;
+  }
+
+  .ap-trust--mobile {
+    display: none;
+  }
+
+  .ap-trust--desktop {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 28px 24px;
+    margin-top: 90px;
+  }
+
+  .ap-trust--desktop .ap-trust-item {
+    gap: 14px;
+  }
+
+  .ap-trust--desktop .ap-trust-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .ap-trust--desktop .ap-trust-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .ap-trust--desktop .ap-trust-label {
+    font-size: 15px;
+  }
+
+  .ap-steps-headline {
+    display: block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.35);
+    margin-bottom: 16px;
+  }
+
+  .ap-steps {
+    margin-bottom: 0;
+  }
+
+  .ap-step {
+    padding: 22px 0;
+  }
+
+  .ap-step-title {
+    font-size: 16px;
+  }
+
+  .ap-step-text {
+    font-size: 13px;
+  }
+
+  .ap-trust {
+    gap: 28px;
+    padding-top: 28px;
+  }
+
+  .ap-trust-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .ap-trust-icon svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .ap-trust-label {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .about-process {
+    padding: 120px max(var(--content-padding-wide), calc((100% - var(--max-width)) / 2));
+    gap: 100px;
+  }
+}

@@ -1,0 +1,141 @@
+/* ======================
+   HOME RECENT WORK GRID
+   ====================== */
+
+.home-work-section {
+  background: var(--white);
+  padding: 48px var(--content-padding-mobile);
+}
+
+.home-work-headline {
+  font-family: var(--font-serif);
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--charcoal);
+  margin: 16px 0 32px;
+}
+
+.home-work-headline em {
+  font-style: italic;
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.work-card {
+  position: relative;
+  border-radius: 8px;
+  min-height: 200px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.work-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 100%);
+  pointer-events: none;
+}
+
+.work-card-content {
+  position: relative;
+  padding: 24px;
+  color: var(--white);
+  z-index: 1;
+}
+
+.work-card-service {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.9;
+  margin-bottom: 8px;
+}
+
+.work-card-title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 4px;
+}
+
+.work-card-location {
+  font-size: 16px;
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+  .work-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .home-work-section {
+    padding: 80px var(--content-padding-desktop);
+  }
+
+  .home-work-headline {
+    font-size: 48px;
+    margin: 20px 0 48px;
+  }
+
+  .work-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .work-card {
+    min-height: 280px;
+  }
+
+  .work-card-content {
+    padding: 32px;
+  }
+
+  .work-card-service {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .work-card-title {
+    font-size: 26px;
+  }
+
+  .work-card-location {
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .home-work-section {
+    padding: 96px var(--content-padding-wide);
+  }
+
+  .home-work-headline {
+    font-size: 56px;
+    margin: 24px 0 56px;
+  }
+
+  .work-grid {
+    gap: 32px;
+  }
+
+  .work-card {
+    min-height: 320px;
+  }
+}

@@ -1,0 +1,315 @@
+/* ======================
+   CASE STUDY MODAL
+   ====================== */
+
+.case-study-modal {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-smooth);
+}
+
+.case-study-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.case-study-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* --- Mobile: 85% bottom sheet with blurred bg peek --- */
+
+.case-study-panel {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 85%;
+  background: var(--charcoal);
+  border-radius: 16px 16px 0 0;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(100%);
+  transition: transform var(--transition-spring);
+  overflow: hidden;
+}
+
+.case-study-modal.active .case-study-panel {
+  transform: translateY(0);
+}
+
+/* --- Header --- */
+
+.case-study-header {
+  padding: 16px var(--content-padding-mobile) 0;
+  flex-shrink: 0;
+}
+
+.case-study-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.case-study-close {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.case-study-close:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.case-study-close svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--white);
+  stroke-width: 2;
+  fill: none;
+}
+
+.case-study-counter {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.5px;
+}
+
+.case-study-counter strong {
+  color: var(--white);
+  font-weight: 600;
+}
+
+/* --- Progress bar --- */
+
+.case-study-progress {
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.case-study-progress-fill {
+  height: 100%;
+  background: var(--yellow);
+  border-radius: 2px;
+  transition: width var(--transition-smooth);
+}
+
+/* --- Carousel track --- */
+
+.case-study-track {
+  flex: 1;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.case-study-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* --- Individual slide --- */
+
+.case-study-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  padding: 24px var(--content-padding-mobile) 32px;
+  overflow-y: auto;
+}
+
+.case-study-slide-image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.case-study-slide-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.case-study-slide-image .placeholder-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.case-study-slide-image .placeholder-bg svg {
+  width: 48px;
+  height: 48px;
+  stroke: rgba(255, 255, 255, 0.15);
+  stroke-width: 1.5;
+  fill: none;
+}
+
+.case-study-step-number {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-style: italic;
+  color: var(--yellow);
+  margin-bottom: 6px;
+}
+
+.case-study-step-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 10px;
+  letter-spacing: -0.3px;
+}
+
+.case-study-step-description {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.7;
+}
+
+/* --- Swipe hint --- */
+
+.case-study-hint {
+  padding: 12px var(--content-padding-mobile) 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.case-study-hint span {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.5px;
+}
+
+/* --- Nav buttons (hidden on mobile) --- */
+
+.case-study-nav {
+  display: none;
+}
+
+/* ======================
+   DESKTOP STYLES
+   ====================== */
+
+@media (min-width: 1024px) {
+  .case-study-panel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    bottom: auto;
+    right: auto;
+    width: 90%;
+    max-width: 900px;
+    height: auto;
+    max-height: 85vh;
+    border-radius: var(--radius-xl);
+    transform: translate(-50%, -50%) scale(0.9);
+    transition: transform var(--transition-smooth);
+  }
+
+  .case-study-modal.active .case-study-panel {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .case-study-header {
+    padding: 20px 32px 0;
+  }
+
+  .case-study-slide {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 32px;
+    padding: 24px 32px 32px;
+  }
+
+  .case-study-slide-image {
+    flex: 0 0 50%;
+    aspect-ratio: 4 / 3;
+    margin-bottom: 0;
+  }
+
+  .case-study-slide-text {
+    flex: 1;
+    padding-top: 8px;
+  }
+
+  .case-study-step-title {
+    font-size: 28px;
+  }
+
+  .case-study-step-description {
+    font-size: 15px;
+  }
+
+  .case-study-nav {
+    display: flex;
+    gap: 8px;
+    padding: 0 32px 24px;
+    justify-content: flex-end;
+  }
+
+  .case-study-nav-btn {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all var(--transition-base);
+  }
+
+  .case-study-nav-btn:hover {
+    background: var(--yellow);
+    border-color: var(--yellow);
+  }
+
+  .case-study-nav-btn:hover svg {
+    stroke: var(--black);
+  }
+
+  .case-study-nav-btn svg {
+    width: 18px;
+    height: 18px;
+    stroke: rgba(255, 255, 255, 0.65);
+    stroke-width: 2;
+    fill: none;
+  }
+
+  .case-study-hint {
+    display: none;
+  }
+}

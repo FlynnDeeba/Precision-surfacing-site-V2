@@ -1,0 +1,170 @@
+---
+layout: layouts/base.njk
+title: "Get a free quote — Precision Surfacing"
+hideChrome: true
+extraCss: get-started.css
+extraJs: get-started.js
+---
+<nav class="topnav" aria-label="Primary">
+    <a class="topnav-logo" href="/" aria-label="Precision Surfacing — home"><span class="logo-main">Precision</span><span class="logo-sub">Surfacing</span></a>
+    <div class="topnav-links">
+      <div class="navdrop">
+        <button class="navlink navdrop-btn" type="button" aria-haspopup="true" aria-expanded="false">Surfacing solutions <svg class="nd-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="navdrop-menu" role="menu">
+          <span class="nd-head">Our surfaces</span>
+          <a href="resin-bound.html" role="menuitem"><span class="nd-num">01</span><span class="nd-name">Resin bound</span><span class="nd-arrow"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span></a>
+          <a href="block-paving.html" role="menuitem"><span class="nd-num">02</span><span class="nd-name">Block paving</span><span class="nd-arrow"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span></a>
+          <a href="tarmac.html" role="menuitem"><span class="nd-num">03</span><span class="nd-name">Tarmac</span><span class="nd-arrow"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span></a>
+          <a href="tar-and-chip.html" role="menuitem"><span class="nd-num">04</span><span class="nd-name">Tar &amp; chip</span><span class="nd-arrow"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span></a>
+          <a href="gravel.html" role="menuitem"><span class="nd-num">05</span><span class="nd-name">Gravel</span><span class="nd-arrow"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span></a>
+        </div>
+      </div>
+      <a class="navlink" href="index.html">Gallery</a>
+      <a class="navlink" href="articles.html">Articles</a>
+      <a class="navlink navlink-cta" href="index.html">Contact</a>
+    </div>
+  </nav>
+  <div class="shell">
+    <aside class="rail">
+      <ol class="rail-steps">
+        <li data-rstep="1"><span class="rs-n">01</span><span class="rs-t">Surface</span></li>
+        <li data-rstep="2"><span class="rs-n">02</span><span class="rs-t">Project</span></li>
+        <li data-rstep="3"><span class="rs-n">03</span><span class="rs-t">Size &amp; timing</span></li>
+        <li data-rstep="4"><span class="rs-n">04</span><span class="rs-t">Your details</span></li>
+      </ol>
+      <div class="rail-foot">
+        <a href="{{ site.phoneHref }}">{{ site.phone }}</a>
+        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      </div>
+    </aside>
+    <main class="app">
+    <header class="top" id="topBar">
+      <a class="logo" href="/" aria-label="Precision Surfacing — home"><span class="l1">Precision</span><span class="l2">Surfacing</span></a>
+      <span class="count" id="count"><b>01</b> / 04</span>
+    </header>
+
+    <!-- dark bar → light body (mobile only) -->
+    <div class="section-fade section-fade--grain fade-top" aria-hidden="true"></div>
+
+    <div class="body">
+      <!-- spam honeypot: bots fill this hidden field; real users never see it -->
+      <input type="text" id="hp" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+      <!-- STEP 1 — SURFACE -->
+      <section class="step active" data-step="1" aria-label="Step 1 of 4">
+        <h1 class="q">Pick a <em>surface.</em></h1>
+        <p class="hint">The surface you have in mind. Not sure yet? We'll talk it through.</p>
+        <div class="svc" id="svc">
+          <button type="button" class="card" data-val="Resin bound"><span class="num">01</span><span class="name">Resin bound</span></button>
+          <button type="button" class="card" data-val="Tarmac"><span class="num">02</span><span class="name">Tarmac</span></button>
+          <button type="button" class="card" data-val="Block paving"><span class="num">03</span><span class="name">Block paving</span></button>
+          <button type="button" class="card" data-val="Tar &amp; chip"><span class="num">04</span><span class="name">Tar &amp; chip</span></button>
+          <button type="button" class="card" data-val="Gravel"><span class="num">05</span><span class="name">Gravel</span></button>
+          <button type="button" class="card any" data-val="Not sure yet"><span class="num">06</span><span class="name">Not sure yet</span></button>
+        </div>
+      </section>
+
+      <!-- STEP 2 — WHAT'S IT FOR -->
+      <section class="step" data-step="2" aria-label="Step 2 of 4">
+        <h1 class="q">What's it <em>for?</em></h1>
+        <p class="hint">Pick the closest fit — we firm it all up at the site visit.</p>
+        <div class="fields">
+          <div class="group" id="g-app">
+            <div class="appgrid" id="appgrid">
+              <button type="button" class="appcard" data-val="Driveway">Driveway</button>
+              <button type="button" class="appcard" data-val="Patio">Patio</button>
+              <button type="button" class="appcard" data-val="Path">Path</button>
+              <button type="button" class="appcard" data-val="Car park">Car park</button>
+              <button type="button" class="appcard" data-val="Roadway / access">Roadway</button>
+              <button type="button" class="appcard" data-val="Other">Other</button>
+            </div>
+            <span class="msg">Pick the closest option</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- STEP 3 — SIZE & TIMING -->
+      <section class="step" data-step="3" aria-label="Step 3 of 4">
+        <h1 class="q">Size &amp; <em>timing.</em></h1>
+        <p class="hint">A rough idea is all we need for now.</p>
+        <div class="fields">
+          <div class="group" id="g-size">
+            <label class="grp-label">Approx size <span class="opt">(optional)</span></label>
+            <div class="segbar" id="sizebar">
+              <button type="button" class="seg" data-val="Up to 25m²">25m²</button>
+              <button type="button" class="seg" data-val="~50m²">50m²</button>
+              <button type="button" class="seg" data-val="~100m²">100m²</button>
+              <button type="button" class="seg" data-val="~200m²">200m²</button>
+              <button type="button" class="seg" data-val="200m²+">200m²+</button>
+            </div>
+          </div>
+          <div class="group" id="g-time">
+            <label class="grp-label">Timeline</label>
+            <div class="segbar" id="timebar">
+              <button type="button" class="seg" data-val="ASAP">ASAP</button>
+              <button type="button" class="seg" data-val="1–3 months">1–3 months</button>
+              <button type="button" class="seg" data-val="Just researching">Just researching</button>
+            </div>
+            <span class="msg">Let us know roughly when</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- STEP 4 — DETAILS -->
+      <section class="step" data-step="4" aria-label="Step 4 of 4">
+        <h1 class="q">Your <em>details.</em></h1>
+        <p class="hint">We'll only use this to arrange your free site visit and quote.</p>
+        <div class="fields">
+          <div class="field" id="f-name">
+            <label for="name">Your name</label>
+            <input id="name" type="text" placeholder="First name" autocomplete="given-name">
+            <span class="msg">Please add your name</span>
+          </div>
+          <div class="row">
+            <div class="field" id="f-pc">
+              <label for="pc">Postcode</label>
+              <input id="pc" type="text" placeholder="NR1 …" autocomplete="postal-code">
+              <span class="msg">Add a postcode</span>
+            </div>
+            <div class="field" id="f-phone">
+              <label for="phone">Phone</label>
+              <input id="phone" type="tel" placeholder="07…" autocomplete="tel">
+              <span class="msg">Add a number</span>
+            </div>
+          </div>
+          <div class="field" id="f-email">
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="you@email.com" autocomplete="email">
+            <span class="msg">Check the email address</span>
+          </div>
+          <div class="field">
+            <label for="notes">Anything else <span style="text-transform:none;letter-spacing:0">(optional)</span></label>
+            <textarea id="notes" placeholder="Access, the look you're after, a deadline…"></textarea>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONFIRMATION -->
+      <section class="done" id="done" aria-live="polite">
+        <div class="seal"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>
+        <h1 id="doneTitle">Request <em>received.</em></h1>
+        <p id="doneBody">Thanks — we've got your details and we'll be in touch within one working day.</p>
+        <div class="next-steps">
+          <div class="ns-h">What happens next</div>
+          <div class="ns"><span class="n">01</span><span class="t">We call to confirm<span>A quick chat to understand the job and book a time.</span></span></div>
+          <div class="ns"><span class="n">02</span><span class="t">Free site visit<span>We come out, measure up and check the ground.</span></span></div>
+          <div class="ns"><span class="n">03</span><span class="t">Written quote<span>A clear, itemised price — no pressure, no chasing.</span></span></div>
+        </div>
+        <a class="done-home" href="/"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg> Back to site</a>
+      </section>
+    </div>
+
+    <!-- light body → dark bar (mobile only) -->
+    <div class="section-fade section-fade--grain fade-bot" aria-hidden="true"></div>
+
+    <!-- NAV -->
+    <nav class="nav" id="nav">
+      <button type="button" class="back hide" id="back"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg> Back</button>
+      <button type="button" class="next" id="next">Continue <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    </nav>
+  </main>
+  </div>

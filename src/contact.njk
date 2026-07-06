@@ -1,0 +1,47 @@
+---
+layout: layouts/base.njk
+title: "Contact — Precision Surfacing"
+description: "Get in touch with Precision Surfacing — driveways and surfacing across Norfolk."
+---
+<main class="simple">
+  <header class="simple-head" data-theme="dark">
+    <span class="kicker">Contact</span>
+    <h1>Let's talk about your <em>project.</em></h1>
+    <p>Call, email, or request a quote — we cover Norwich and the surrounding Norfolk villages.</p>
+  </header>
+
+  <section class="simple-body" data-theme="light">
+    <div class="contact-grid">
+      <a class="contact-card" href="{{ site.phoneHref }}">
+        <span class="cc-k">Call</span>
+        <span class="cc-v">{{ site.phone }}</span>
+      </a>
+      <a class="contact-card" href="mailto:{{ site.email }}">
+        <span class="cc-k">Email</span>
+        <span class="cc-v">{{ site.email }}</span>
+      </a>
+      <a class="contact-card" href="/get-started/">
+        <span class="cc-k">Quote</span>
+        <span class="cc-v">Request a free quote →</span>
+      </a>
+    </div>
+    <p class="areas"><strong>Areas covered:</strong> {{ site.locations }}</p>
+  </section>
+</main>
+
+<style>
+  .simple{background:var(--paper,#EAEDEE);min-height:70vh}
+  .simple-head{background:var(--ink,#0E0F10);color:#fff;padding:84px 22px 64px}
+  .simple-head .kicker{color:var(--gold)}
+  .simple-head h1{font-family:var(--serif,"Instrument Serif",serif);font-size:clamp(38px,9vw,72px);line-height:1.02;margin:14px 0 16px;font-weight:400}
+  .simple-head h1 em{font-style:italic;color:var(--gold-hl)}
+  .simple-head p{color:rgba(255,255,255,.62);max-width:46ch;font-size:16px}
+  .simple-body{max-width:900px;margin:0 auto;padding:56px 22px 90px}
+  .contact-grid{display:grid;gap:14px;grid-template-columns:1fr}
+  .contact-card{display:flex;flex-direction:column;gap:8px;padding:26px;border:1px solid rgba(0,0,0,.12);border-radius:16px;background:#fff;text-decoration:none;transition:transform .2s ease,border-color .2s ease}
+  .contact-card:hover{transform:translateY(-3px);border-color:var(--gold-deep)}
+  .cc-k{font-family:var(--mono,"DM Mono",monospace);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep)}
+  .cc-v{font-size:20px;color:var(--ink,#0E0F10);font-weight:600}
+  .areas{margin-top:34px;font-size:14px;color:#55585a}
+  @media (min-width:720px){.contact-grid{grid-template-columns:repeat(3,1fr)}.simple-head{padding:120px 50px 80px}.simple-body{padding:64px 50px 110px}}
+</style>

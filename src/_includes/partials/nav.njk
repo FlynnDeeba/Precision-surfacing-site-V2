@@ -1,0 +1,19 @@
+{% set svc = services | sort(false, false, "order") %}
+<header class="sitebar">
+  <a class="sitebar-logo" href="/" aria-label="{{ site.name }} — home"><span class="l1">{{ site.logoMain }}</span><span class="l2">{{ site.logoSub }}</span></a>
+  <div class="sitebar-links">
+    <div class="navdrop">
+      <button class="navlink navdrop-btn" type="button" aria-haspopup="true" aria-expanded="false">Surfacing solutions <svg class="nd-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="navdrop-menu" role="menu">
+        <span class="nd-head">Our surfaces</span>
+        {% for s in svc %}
+        <a href="/services/{{ s.slug }}/" role="menuitem"><span class="nd-num">0{{ loop.index }}</span><span class="nd-name">{{ s.navLabel }}</span><span class="nd-arrow"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span></a>
+        {% endfor %}
+      </div>
+    </div>
+    {% for l in site.nav %}
+    <a class="navlink{% if l.cta %} navlink-cta{% endif %}" href="{{ l.url }}">{{ l.label }}</a>
+    {% endfor %}
+  </div>
+  <button class="sitebar-burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>

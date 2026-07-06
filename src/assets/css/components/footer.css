@@ -1,0 +1,251 @@
+/* ======================
+   FOOTER
+   ====================== */
+
+.main-footer {
+  background: var(--charcoal);
+  padding: 14px var(--content-padding-mobile) 40px;
+}
+
+@media (max-width: 1023px) {
+  .main-footer {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .main-footer .footer-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+.footer-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* ======================
+   FOOTER GRID
+   ====================== */
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+/* ======================
+   FOOTER COLUMNS
+   ====================== */
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Company Info Column */
+.footer-about {
+  gap: 20px;
+}
+
+.footer-logo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.footer-logo-main {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.footer-logo-sub {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--yellow);
+}
+
+.footer-description {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 320px;
+}
+
+/* Navigation Column */
+.footer-heading {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-link {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: all var(--transition-base);
+  display: inline-block;
+}
+
+.footer-link:hover {
+  color: var(--yellow);
+  transform: translateX(4px);
+}
+
+/* Contact Column */
+.footer-contact-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.footer-contact-item svg {
+  stroke: var(--yellow);
+  flex-shrink: 0;
+}
+
+.footer-contact-item:hover {
+  color: var(--white);
+}
+
+/* ======================
+   COPYRIGHT BAR
+   ====================== */
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-copyright {
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.65);
+  text-align: center;
+}
+
+.footer-legal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.footer-legal-link {
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.footer-legal-link:hover {
+  color: var(--yellow);
+}
+
+.footer-divider {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 13px;
+}
+
+/* ======================
+   TABLET BREAKPOINT
+   ====================== */
+
+@media (min-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+
+  .footer-about {
+    grid-column: 1 / -1;
+  }
+
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-copyright {
+    text-align: left;
+  }
+
+  .footer-legal {
+    justify-content: flex-end;
+  }
+}
+
+/* ======================
+   DESKTOP BREAKPOINT
+   ====================== */
+
+@media (min-width: 1024px) {
+  .main-footer {
+    padding: 80px var(--content-padding-desktop) 40px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 80px;
+    margin-bottom: 48px;
+  }
+
+  .footer-about {
+    grid-column: auto;
+  }
+
+  .footer-description {
+    max-width: 400px;
+  }
+}
+
+/* ======================
+   WIDE BREAKPOINT
+   ====================== */
+
+@media (min-width: 1440px) {
+  .main-footer {
+    padding: 100px var(--content-padding-wide) 48px;
+  }
+
+  .footer-grid {
+    gap: 120px;
+  }
+}

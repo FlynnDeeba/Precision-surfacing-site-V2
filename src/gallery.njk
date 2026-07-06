@@ -1,0 +1,38 @@
+---
+layout: layouts/base.njk
+title: "Gallery — Precision Surfacing"
+description: "Recent driveway and surfacing projects across Norfolk."
+---
+<main class="simple">
+  <header class="simple-head" data-theme="dark">
+    <span class="kicker">Gallery</span>
+    <h1>Recent work across <em>Norfolk.</em></h1>
+    <p>A selection of completed driveways and surfaces. Swap these placeholders for your own photos.</p>
+  </header>
+
+  <section class="simple-body" data-theme="light">
+    <div class="gal-grid">
+      <figure class="gal"><div class="ph resin gold"></div><figcaption>Resin bound · Eaton</figcaption></figure>
+      <figure class="gal"><div class="ph resin asphalt"></div><figcaption>Tarmac · Norwich</figcaption></figure>
+      <figure class="gal"><div class="ph resin pewter"></div><figcaption>Block paving · Wymondham</figcaption></figure>
+      <figure class="gal"><div class="ph resin tarchip"></div><figcaption>Tar &amp; chip · Aylsham</figcaption></figure>
+      <figure class="gal"><div class="ph resin gravel"></div><figcaption>Gravel · Wroxham</figcaption></figure>
+      <figure class="gal"><div class="ph resin silver"></div><figcaption>Resin bound · Dereham</figcaption></figure>
+    </div>
+  </section>
+</main>
+
+<style>
+  .simple{background:var(--paper,#EAEDEE);min-height:70vh}
+  .simple-head{background:var(--ink,#0E0F10);color:#fff;padding:84px 22px 64px}
+  .simple-head .kicker{color:var(--gold)}
+  .simple-head h1{font-family:var(--serif,"Instrument Serif",serif);font-size:clamp(38px,9vw,72px);line-height:1.02;margin:14px 0 16px;font-weight:400}
+  .simple-head h1 em{font-style:italic;color:var(--gold-hl)}
+  .simple-head p{color:rgba(255,255,255,.62);max-width:50ch;font-size:16px}
+  .simple-body{max-width:1100px;margin:0 auto;padding:56px 22px 90px}
+  .gal-grid{display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}
+  .gal{margin:0}
+  .gal .ph{aspect-ratio:4/3;border-radius:14px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
+  .gal figcaption{margin-top:10px;font-family:var(--mono,"DM Mono",monospace);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#55585a}
+  @media (min-width:760px){.gal-grid{grid-template-columns:repeat(3,1fr);gap:18px}.simple-head{padding:120px 50px 80px}.simple-body{padding:64px 50px 110px}}
+</style>

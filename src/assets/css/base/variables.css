@@ -1,0 +1,80 @@
+/* ======================
+   CSS CUSTOM PROPERTIES
+   ====================== */
+
+:root {
+  /* ==================
+     COLORS
+     ================== */
+  --black: #050505;
+  --charcoal: #0e0e0e;
+  --grey-dark: #3a3a3a;
+  --grey: #6a6a6a;
+  --grey-light: #9a9a9a;
+  --silver: #c8c8c8;
+  --off-white: #f0f0ee;
+  --white: #fafafa;
+  --yellow: #F0CC3A;
+  --font-logo: 'Montserrat', sans-serif;
+
+  /* ==================
+     TYPOGRAPHY
+     ================== */
+  --font-primary: 'Outfit', sans-serif;
+  --font-serif: 'Instrument Serif', serif;
+
+  /* ==================
+     LAYOUT
+     ================== */
+  --max-width: 1400px;
+  --content-padding-mobile: 20px;
+  --content-padding-tablet: 48px;
+  --content-padding-desktop: 80px;
+  --content-padding-wide: 120px;
+
+  /* ==================
+     SPACING SCALE
+     ================== */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 80px;
+
+  /* ==================
+     TRANSITIONS
+     ================== */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-spring: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* ==================
+     BORDER RADIUS
+     ================== */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-full: 50%;
+
+  /* ==================
+     Z-INDEX LAYERS
+     ================== */
+  --z-base: 1;
+  --z-nav: 100;
+  --z-overlay: 998;
+  --z-menu: 999;
+  --z-modal: 1000;
+
+  /* ==================
+     BREAKPOINTS
+     (For JS reference)
+     ================== */
+  --bp-mobile: 640px;
+  --bp-tablet: 768px;
+  --bp-desktop: 1024px;
+  --bp-wide: 1440px;
+}

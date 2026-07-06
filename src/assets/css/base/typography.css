@@ -1,0 +1,62 @@
+/* ======================
+   TYPOGRAPHY
+   ====================== */
+
+/* Font families are loaded via Google Fonts in the head */
+
+body {
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--white);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: var(--font-primary);
+  cursor: pointer;
+}
+
+/* Serif font for specific elements */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+/* Text utilities */
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-italic {
+  font-style: italic;
+}
+
+/* ======================
+   FONT TEST OVERRIDES
+   ====================== */
+
+/* Test Roboto Slab on headlines */
+.font-test-roboto-slab .hero-headline,
+.font-test-roboto-slab .gallery-headline,
+.font-test-roboto-slab .benefits-headline,
+.font-test-roboto-slab .build-headline,
+.font-test-roboto-slab .colours-headline,
+.font-test-roboto-slab .contact-headline,
+.font-test-roboto-slab .faq-headline {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 300;
+}

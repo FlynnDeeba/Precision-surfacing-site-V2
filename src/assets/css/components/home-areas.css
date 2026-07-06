@@ -1,0 +1,88 @@
+/* ======================
+   HOME SERVICE AREAS
+   ====================== */
+
+.home-areas-section {
+  background: var(--charcoal);
+  padding: 48px var(--content-padding-mobile);
+}
+
+.home-areas-headline {
+  font-family: var(--font-serif);
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--white);
+  margin: 16px 0 32px;
+}
+
+.home-areas-headline em {
+  font-style: italic;
+}
+
+.areas-content {
+  max-width: 800px;
+}
+
+.areas-intro {
+  font-size: 18px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 20px;
+}
+
+.areas-towns {
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  font-style: italic;
+  margin: 0;
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+  .home-areas-section {
+    padding: 80px var(--content-padding-desktop);
+  }
+
+  .home-areas-headline {
+    font-size: 48px;
+    margin: 20px 0 40px;
+  }
+
+  .areas-content {
+    max-width: 900px;
+  }
+
+  .areas-intro {
+    font-size: 20px;
+    margin-bottom: 24px;
+  }
+
+  .areas-towns {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .home-areas-section {
+    padding: 96px var(--content-padding-wide);
+  }
+
+  .home-areas-headline {
+    font-size: 56px;
+    margin: 24px 0 48px;
+  }
+
+  .areas-content {
+    max-width: 1000px;
+  }
+
+  .areas-intro {
+    font-size: 22px;
+  }
+
+  .areas-towns {
+    font-size: 19px;
+  }
+}

@@ -1,0 +1,195 @@
+---
+layout: layouts/base.njk
+extraCss: service.css
+extraJs: service.js
+---
+{% set s = service %}
+{% if s.comingSoon %}
+<section class="coming-soon" data-theme="light">
+  <div class="cs-inner">
+    <span class="cs-kicker">Precision Surfacing</span>
+    <h1 class="cs-h1">Sorry — we're <em>updating</em> this page.</h1>
+    <p class="cs-note">We're giving this page a refresh. If you have any questions about this service — or you'd like a free, no-obligation quote — just get in touch and we'll be happy to help.</p>
+    <a class="start-go cs-go" href="/get-started/">Get a free quote <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <div class="cs-contact">
+      <a href="{{ site.phoneHref }}"><span class="cs-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L19 13l2 5v3a1 1 0 0 1-1 1C11 22 2 13 2 4a1 1 0 0 1 1-1z"/></svg></span> {{ site.phone }}</a>
+      <a href="mailto:{{ site.email }}"><span class="cs-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M4 7l8 6 8-6"/></svg></span> {{ site.email }}</a>
+    </div>
+  </div>
+</section>
+{% else %}
+<section class="hero" data-theme="dark">
+  <div class="hero-copy">
+    <span class="eyebrow">{{ s.eyebrow }}</span>
+    <h1>{% if s.h1Html %}{{ s.h1Html | safe }}{% else %}{{ s.h1Lead }} <em>{{ s.h1Em }}</em>{% endif %}</h1>
+    {% if s.heroLede %}<p class="lede">{{ s.heroLede }}</p>{% endif %}
+    {% if s.work and s.workLayout != "stack" %}
+    <div class="hero-strip">
+      {% for w in s.work %}<button type="button" class="hs-tile" onclick="openLB({{ loop.index0 }})" aria-label="View {{ w.title }}, {{ w.place }}">{% if w.img %}<img src="{{ w.img }}" alt="{{ w.title }}, {{ w.place }}">{% else %}<span class="ph resin {{ w.blend }}"></span>{% endif %}</button>{% endfor %}
+    </div>
+    {% endif %}
+  </div>
+  {% if s.specbar %}
+  <div class="specbar">
+    {% for sp in s.specbar %}<div class="sp"><b>{{ sp.big }}</b><span>{{ sp.small }}</span></div>{% endfor %}
+  </div>
+  {% endif %}
+</section>
+
+<section class="sec prevwork" data-theme="dark" data-service="{{ s.slug }}">
+  <div class="mosaic-wrap rv">
+    {% if s.workLayout == "stack" %}
+    {# Single centred column, images slightly narrower than the column so they can
+       stagger left/right. All sizing is inline on the image, so nothing can shrink it. #}
+    <div class="mosaic stack" style="display:block;width:100%;max-width:620px;margin:0 auto">
+      {% for w in s.work %}{% set tmargin = "margin-left:auto;" if (loop.index0 % 2 == 1) else "margin-right:auto;" %}<button type="button" class="tile" style="display:block;width:88%;{{ tmargin }}margin-bottom:26px;border:0;padding:0;overflow:hidden;border-radius:12px;cursor:pointer;line-height:0;background:#1c1c1d" onclick="openLB({{ loop.index0 }})" aria-label="View {{ w.title }}, {{ w.place }}">{% if w.img %}<img src="{{ w.img }}" alt="{{ w.title }}, {{ w.place }}" style="display:block;width:100%;height:300px;object-fit:cover">{% else %}<span class="ph resin {{ w.blend }}" style="display:block;width:100%;height:300px"></span>{% endif %}</button>{% endfor %}
+    </div>
+    {% else %}
+    <div class="mosaic" id="mosaic"></div>
+    {% endif %}
+  </div>
+</section>
+
+<!-- dark → light transition -->
+<div class="section-fade section-fade--grain" aria-hidden="true"></div>
+
+<section class="sec why" data-theme="light">
+  <div class="sec-head">
+    <span class="kicker">01 — Why {{ s.name }}</span>
+    <h2 class="dh">{{ s.why.heading }} <em>{{ s.why.em }}</em></h2>
+    <p class="sec-lede">{{ s.why.lede }}</p>
+  </div>
+  {% set featIcons = {
+    drain:    '<path d="M12 3c3.5 4.5 5.5 7 5.5 9.8a5.5 5.5 0 0 1-11 0C6.5 10 8.5 7.5 12 3z"/>',
+    spark:    '<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/>',
+    sun:      '<circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/>',
+    flex:     '<path d="M3 17c0-5 4-9 9-9s9 4 9 9"/><path d="M3 17h18"/>',
+    palette:  '<circle cx="9.5" cy="10" r="4.2"/><circle cx="14.5" cy="14" r="4.2"/>',
+    weight:   '<path d="M6 9h12l1.5 10.5H4.5z"/><path d="M9 9a3 3 0 0 1 6 0"/>',
+    roller:   '<rect x="4" y="5" width="12" height="5" rx="1"/><path d="M10 10v3.5H7.5V20"/><path d="M16 7h4"/>',
+    seamless: '<path d="M4 12h16"/><path d="M8 8l-4 4 4 4M16 8l4 4-4 4"/>',
+    clock:    '<circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2"/>',
+    value:    '<circle cx="12" cy="12" r="8.5"/><path d="M9 16.5h6M8.8 12.3h4.2M9.6 16.5c1-.8 1.3-1.8 1.3-3 0-1-.4-1.8-.4-2.7 0-1.5 1.1-2.5 2.6-2.5 1 0 1.7.4 2.1.9"/>',
+    repair:   '<path d="M4 9a7 7 0 0 1 12-3l2 2M20 15a7 7 0 0 1-12 3l-2-2"/><path d="M18 4v4h-4M6 20v-4h4"/>',
+    grid:     '<rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/>',
+    shield:   '<path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/>',
+    edges:    '<path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/>',
+    home:     '<path d="M4 11l8-6 8 6"/><path d="M6 10v9h12v-9"/><path d="M10 19v-5h4v5"/>',
+    stone:    '<ellipse cx="9" cy="14" rx="4.5" ry="3.5"/><ellipse cx="16" cy="10.5" rx="3.5" ry="2.8"/>',
+    grip:     '<path d="M4 7l4 4-4 4M10 7l4 4-4 4M16 7l4 4-4 4"/>',
+    lock:     '<rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>',
+    check:    '<path d="M5 12l4 4L19 7"/>'
+  } %}
+  <ul class="feat">
+    {% for p in s.why.points %}
+    <li class="rv">
+      <span class="ficon"><svg viewBox="0 0 24 24">{{ (featIcons[p.icon] or featIcons.check) | safe }}</svg></span>
+      <span class="ftxt"><b>{{ p.title }}</b><span>{{ p.sub }}</span></span>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="sec build" data-theme="light">
+  <div class="build-text">
+  <span class="kicker">02 — How it's built</span>
+  <h2 class="dh">{{ s.build.heading }} <em>{{ s.build.em }}</em></h2>
+  <p class="sec-lede">{{ s.build.lede }}</p>
+  <div class="steps">
+    {% for st in s.build.steps %}
+    <div class="step rv">
+      <div class="stepnum">{{ "0" + (loop.index | string) }}</div>
+      <div class="step-body">
+        <span class="tag">{{ st.tag }}</span>
+        <h3>{{ st.title }}</h3>
+        <p>{{ st.body }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  </div>
+  <div class="build-media" aria-hidden="true"></div>
+</section>
+
+{% if s.finishes and not s.hideFinishes %}
+<section class="sec finishes" data-theme="light">
+  <span class="kicker">03 — {{ s.finishes.kicker }}</span>
+  <h2 class="dh">{{ s.finishes.heading }} <em>{{ s.finishes.em }}</em></h2>
+  <p class="sec-lede">{{ s.finishes.lede }}</p>
+  <div class="swatches" id="swatches"></div>
+  {% if s.finishes.more %}<p class="more">{{ s.finishes.more }}</p>{% endif %}
+</section>
+{% endif %}
+
+<!-- light → dark transition -->
+<div class="section-fade section-fade--up section-fade--grain" aria-hidden="true"></div>
+
+<section class="about" data-theme="dark">
+  <div class="sec-head">
+    <span class="kicker">04 — About us</span>
+    <h2 class="dh">Modern meets <em>heritage.</em></h2>
+    <p class="about-copy">A modern evolution of a sixty-year regional legacy. We pair decades of inherited, multi-generational site expertise with strict engineering standards — and we don't subcontract, cut corners on the sub-base, or disappear after handover.</p>
+  </div>
+  <div class="usp">
+    <div class="item"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg></span><span class="uspt">10-year structural warranty</span></div>
+    <div class="item"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3 2.5-5 6-5s6 2 6 5"/><path d="M16.5 5.6a3 3 0 0 1 0 5.8M21 20c0-2.4-1.4-4-3.6-4.6"/></svg></span><span class="uspt">Sixty-year legacy</span></div>
+    <div class="item"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s7-5.5 7-11a7 7 0 0 0-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span class="uspt">Norfolk based</span></div>
+    <div class="item"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 11.5l2 2 4-4"/></svg></span><span class="uspt">Fully insured</span></div>
+    <div class="item"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.2"/><path d="M5.5 20c0-3.6 3-6 6.5-6s6.5 2.4 6.5 6"/></svg></span><span class="uspt">In-house execution</span></div>
+    <div class="item"><span class="ic"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></span><span class="uspt">Transparent quotations</span></div>
+  </div>
+
+  <div class="start">
+    <span class="kicker">05 — Get started</span>
+    <h2 class="dh">Ready when <em>you are.</em></h2>
+    <p class="about-copy">Tell us about your project and we'll come and measure up — no pressure, no obligation, just an honest quote.</p>
+    <a class="start-go" href="/get-started/">Start your free quote <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <div class="start-or">or</div>
+    <div class="start-contact">
+      <a href="{{ site.phoneHref }}"><span class="sc-k" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L19 13l2 5v3a1 1 0 0 1-1 1C11 22 2 13 2 4a1 1 0 0 1 1-1z"/></svg></span> {{ site.phone }}</a>
+      <a href="mailto:{{ site.email }}"><span class="sc-k" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M4 7l8 6 8-6"/></svg></span> {{ site.email }}</a>
+    </div>
+  </div>
+</section>
+
+{% if s.faqs %}
+<section class="sec faqs" data-theme="dark">
+  <div class="sec-head">
+    <span class="kicker">06 — FAQs</span>
+    <h2 class="dh">Common <em>questions.</em></h2>
+  </div>
+  <div class="faq-list">
+    {% for f in s.faqs %}
+    <details class="faq">
+      <summary><span class="faq-q">{{ f.q }}</span><span class="faq-ic" aria-hidden="true"></span></summary>
+      <div class="faq-a"><p>{{ f.a }}</p></div>
+    </details>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<!-- lightbox -->
+<div class="lb" id="lb">
+  <div class="lb-top"><button class="lb-x" id="lbX" aria-label="Close">CLOSE ✕</button></div>
+  <div class="lb-stage">
+    <div class="lb-view">
+      <div class="lb-head">
+        <span class="lb-label"><span class="lb-pl" id="lbPlace"></span><span class="lb-sep"> — </span><span class="lb-ti" id="lbTitle"></span></span>
+        <span class="lb-count" id="lbCount">01 / 01</span>
+      </div>
+      <div class="lb-frame-wrap">
+        <div class="lb-frame" id="lbFrame"></div>
+        <button class="lb-arrow prev" id="lbPrev" aria-label="Previous image"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+        <button class="lb-arrow next" id="lbNext" aria-label="Next image"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  window.WORK = {{ s.work | dump | safe }};
+  window.WORK_LAYOUT = {{ (s.workLayout or "mosaic") | dump | safe }};
+  window.FINISHES = {{ s.finishes.items | dump | safe }};
+</script>
+{% endif %}

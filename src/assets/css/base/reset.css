@@ -1,0 +1,122 @@
+/* ======================
+   CSS RESET
+   ====================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+  max-width: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-primary);
+  background: var(--charcoal);
+  color: var(--white);
+  overflow-x: clip;
+  max-width: 100%;
+  width: 100%;
+  position: relative;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+/* ======================
+   ACCESSIBILITY
+   ====================== */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ======================
+   MOBILE SCROLL SNAP
+   ====================== */
+@media (max-width: 1023px) {
+  html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: auto;
+    overscroll-behavior-y: none;
+  }
+
+  .hero-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    /* Viewport-unit cascade for cross-browser scroll-snap reliability:
+       1. vh — universal fallback (may be too tall on Android with visible address bar)
+       2. svh — small viewport height (matches the smallest possible viewport, prevents bleed)
+       3. dvh — dynamic viewport height (adapts as Android browser chrome shrinks/grows)
+       Last declared rule wins where supported, so dvh > svh > vh. */
+    height: 100vh !important;
+    height: 100svh !important;
+    height: 100dvh !important;
+    overflow: hidden;
+  }
+
+  .gallery-section,
+  .benefits-section,
+  .build-section,
+  .colours-section,
+  .blocks-section,
+  .customisation-section,
+  .contact-section,
+  .faq-section,
+  .home-services-section,
+  .home-about-section,
+  .about-v2-section,
+  .home-process-section,
+  .about-process {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    min-height: 100vh !important;
+    min-height: 100svh !important;
+    min-height: 100dvh !important;
+  }
+
+  .main-footer {
+    scroll-snap-align: start;
+  }
+
+  /* Disable scroll-snap on pages that don't need it */
+  html:has(body.no-snap) {
+    scroll-snap-type: none;
+  }
+
+  .no-snap .hero-section,
+  .no-snap .gallery-section,
+  .no-snap .benefits-section,
+  .no-snap .build-section,
+  .no-snap .colours-section,
+  .no-snap .blocks-section,
+  .no-snap .customisation-section,
+  .no-snap .contact-section,
+  .no-snap .faq-section,
+  .no-snap .home-services-section,
+  .no-snap .home-about-section,
+  .no-snap .about-v2-section,
+  .no-snap .home-process-section,
+  .no-snap .about-process,
+  .no-snap .main-footer {
+    scroll-snap-align: none;
+    scroll-snap-stop: normal;
+    min-height: auto !important;
+  }
+
+}

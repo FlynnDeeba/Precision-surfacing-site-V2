@@ -1,0 +1,26 @@
+{% set svc = services | sort(false, false, "order") %}
+<div class="menu" id="menu">
+  <div class="menu-scrim" id="menuScrim"></div>
+  <aside class="menu-panel">
+    <div class="menu-head">
+      <div class="mh-lead">
+        <a class="mh-title-wrap" href="/get-started/"><span class="mh-title">Get a free <em>quote</em></span></a>
+        <div class="mf-contacts">
+          <a class="mf-circle call" href="{{ site.phoneHref }}" aria-label="Call us"><svg viewBox="0 0 24 24"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L19 13l2 5v3a1 1 0 0 1-1 1C11 22 2 13 2 4a1 1 0 0 1 1-1z"/></svg></a>
+          <a class="mf-circle" href="/get-started/" aria-label="Get a free quote"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M4 7l8 6 8-6"/></svg></a>
+        </div>
+      </div>
+      <button class="mh-close" id="menuClose" aria-label="Close menu"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <nav class="menu-nav">
+      <div class="nav-group">Surfaces</div>
+      {% for s in svc %}
+      <a class="nav-item" href="/services/{{ s.slug }}/"><span class="ni-num">0{{ loop.index }}</span><span class="ni-label">{{ s.navLabel }}</span><span class="ni-arrow"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span></a>
+      {% endfor %}
+      <div class="nav-group mt">More</div>
+      <a class="nav-item" href="/gallery/"><span class="ni-num">06</span><span class="ni-label">Gallery</span><span class="ni-arrow"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span></a>
+      <a class="nav-item" href="/articles/"><span class="ni-num">07</span><span class="ni-label">Articles</span><span class="ni-arrow"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span></a>
+      <a class="nav-item" href="/contact/"><span class="ni-num">08</span><span class="ni-label">Contact</span><span class="ni-arrow"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span></a>
+    </nav>
+  </aside>
+</div>

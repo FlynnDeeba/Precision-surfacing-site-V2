@@ -1,0 +1,13 @@
+{
+  "name": "precision-surfacing",
+  "version": "1.0.0",
+  "description": "Precision Surfacing — Eleventy site",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "debug": "DEBUG=Eleventy* eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

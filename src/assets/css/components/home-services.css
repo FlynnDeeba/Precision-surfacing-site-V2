@@ -1,0 +1,196 @@
+/* ======================
+   HOME SERVICES SECTION
+   ====================== */
+
+.home-services-section {
+  min-height: 100svh;
+  background: var(--charcoal);
+  padding: 14px var(--content-padding-mobile) 48px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ======================
+   SERVICES GRID — gallery style
+   ====================== */
+
+.home-services-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+/* Mobile/tablet: hide the 4th and 5th service cards (Block paving + Gravel).
+   These only show on desktop where the grid layout has room for them. */
+@media (max-width: 1023px) {
+  .home-service-item:nth-child(n+4) {
+    display: none;
+  }
+}
+
+.home-service-item {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform var(--transition-base);
+  aspect-ratio: 16 / 9;
+  display: block;
+}
+
+.home-service-item:hover {
+  transform: scale(0.98);
+}
+
+.home-service-item-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.4s ease;
+}
+
+.home-service-item:hover .home-service-item-bg {
+  transform: scale(1.05);
+}
+
+.home-service-item-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(26, 26, 26, 0.85) 0%,
+    rgba(26, 26, 26, 0.1) 60%
+  );
+}
+
+.home-service-item-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.home-service-item-name {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--white);
+  line-height: 1.2;
+}
+
+.home-service-item-desc {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 0.2px;
+}
+
+.home-services-section .section-label {
+  display: none;
+}
+
+.home-services-headline {
+  display: block;
+  position: relative;
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--white);
+  margin: 0 0 16px;
+  padding-bottom: 10px;
+}
+
+.home-services-headline::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--yellow) 0%, rgba(240, 204, 58, 0.4) 35%, transparent 75%);
+}
+
+.home-services-headline em {
+  font-style: italic;
+  color: var(--yellow);
+}
+
+.home-services-subheadline {
+  display: none;
+}
+
+/* ======================
+   DESKTOP STYLES
+   ====================== */
+
+@media (min-width: 1024px) {
+  .home-services-section {
+    padding: 40px var(--content-padding-desktop) 100px;
+    min-height: auto;
+  }
+
+  .home-services-headline {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--white);
+    margin: 8px 0 28px;
+  }
+
+  .home-services-headline em {
+    font-style: italic;
+    color: var(--yellow);
+  }
+
+  .home-services-subheadline {
+    display: block;
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.65);
+    margin: 0 0 40px;
+    max-width: 520px;
+  }
+
+  .home-services-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    min-height: 500px;
+  }
+
+  .home-service-item {
+    aspect-ratio: auto;
+    height: 100%;
+  }
+
+  .home-service-item--featured {
+    grid-column: 1;
+    grid-row: 1 / 3;
+  }
+
+  .home-service-item-name {
+    font-size: 18px;
+  }
+
+  .home-service-item--featured .home-service-item-name {
+    font-size: 26px;
+  }
+
+  .home-service-item-desc {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .home-services-section {
+    padding: 50px var(--content-padding-wide) 120px;
+  }
+}

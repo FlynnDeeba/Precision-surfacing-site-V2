@@ -1,0 +1,501 @@
+/* ======================
+   BUILD SECTION
+   ====================== */
+
+.build-section {
+  min-height: 100svh;
+  background: var(--charcoal);
+  padding: 24px var(--content-padding-mobile) 48px;
+  display: flex;
+  flex-direction: column;
+}
+
+.build-section .section-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.build-section .section-label {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.build-headline {
+  font-family: var(--font-serif);
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.build-headline em {
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.build-intro {
+  font-size: 15px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.65;
+  margin-bottom: 0;
+}
+
+/* On mobile, the intro lives inside the carousel diagram slide
+   so it's swiped away with the layers. Hide the .build-left copy. */
+.build-left > .build-intro {
+  display: none;
+}
+
+.build-intro--mobile {
+  margin-bottom: 18px;
+}
+
+.build-intro strong,
+.build-detail strong {
+  font-weight: 600;
+  color: var(--white);
+}
+
+.build-detail {
+  display: none;
+}
+
+/* Build Carousel — mobile horizontal swipe */
+.build-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  margin-left: calc(-1 * var(--content-padding-mobile));
+  margin-right: calc(-1 * var(--content-padding-mobile));
+  align-items: stretch;
+}
+
+.build-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.build-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  padding: 0 var(--content-padding-mobile);
+  display: flex;
+  flex-direction: column;
+  min-width: 100%;
+}
+
+.build-carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.build-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.build-dot.active {
+  width: 20px;
+  border-radius: 3px;
+  background: var(--yellow);
+}
+
+/* Swipe hint */
+.build-swipe-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.build-swipe-hint svg {
+  stroke: var(--yellow);
+  animation: swipeNudge 1.6s ease-in-out infinite;
+}
+
+@keyframes swipeNudge {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(4px); }
+}
+
+/* Build Steps List */
+.build-steps {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* The left-column steps are hidden on mobile (they live in carousel) */
+.build-left .build-steps {
+  display: none;
+}
+
+.build-step {
+  display: flex;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.build-step:last-child {
+  border-bottom: none;
+}
+
+.build-step-num {
+  font-family: var(--font-primary);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--yellow);
+  flex-shrink: 0;
+  min-width: 24px;
+  padding-top: 3px;
+}
+
+.build-step-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.build-step-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: -0.1px;
+}
+
+.build-step-text {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.build-right {
+  display: flex;
+  flex-direction: column;
+  margin-top: 12px;
+}
+
+.build-layers {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.build-layer {
+  display: flex;
+  align-items: stretch;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  min-height: max(48px, calc(var(--layer-flex, 1) * 38px));
+}
+
+.layer-visual {
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.layer-texture {
+  position: absolute;
+  inset: 0;
+}
+
+.layer-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.layer-texture.resin {
+  background: linear-gradient(135deg, #c4a35a 0%, #9a7a40 100%);
+}
+
+.layer-texture.tack {
+  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+}
+
+.layer-texture.base {
+  background: linear-gradient(135deg, #6a6a6a 0%, #4a4a4a 100%);
+}
+
+.layer-texture.sub {
+  background: linear-gradient(135deg, #8a7a6a 0%, #6a5a4a 100%);
+}
+
+.layer-texture.geo {
+  background: linear-gradient(135deg, #3a3a3a 0%, #2a2a2a 100%);
+}
+
+/* Tarmac / block paving layers */
+.layer-texture.layer-smooth {
+  background: linear-gradient(135deg, #282828 0%, #141414 100%);
+}
+
+.layer-texture.layer-fine {
+  background: linear-gradient(135deg, #484848 0%, #303030 100%);
+}
+
+.layer-texture.layer-medium {
+  background: linear-gradient(135deg, #686868 0%, #4a4a4a 100%);
+}
+
+.layer-texture.layer-rough {
+  background: linear-gradient(135deg, #8a7a6a 0%, #6a5a4a 100%);
+}
+
+.layer-texture.layer-blocks {
+  background: linear-gradient(135deg, #9a6a5a 0%, #7a4a3a 100%);
+}
+
+/* Gravel / tar-and-chip layers */
+.layer-texture.gravel {
+  background: linear-gradient(135deg, #c4a460 0%, #a08040 100%);
+}
+
+.layer-texture.membrane {
+  background: linear-gradient(135deg, #252525 0%, #141414 100%);
+}
+
+.layer-texture.aggregate {
+  background: linear-gradient(135deg, #8a7a6a 0%, #6a5a4a 100%);
+}
+
+.layer-texture.soil {
+  background: linear-gradient(135deg, #7a5a3a 0%, #5a3a1a 100%);
+}
+
+.layer-texture.bitumen {
+  background: linear-gradient(135deg, #1e1e1e 0%, #0a0a0a 100%);
+}
+
+.layer-number {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-style: italic;
+  color: var(--white);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.layer-info {
+  flex: 1;
+  padding: 14px 16px;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.layer-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--charcoal);
+  margin-bottom: 2px;
+}
+
+.layer-depth {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--grey);
+}
+
+.build-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  margin-top: 16px;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.total-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--grey);
+}
+
+.total-value {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--charcoal);
+}
+
+/* ======================
+   DESKTOP STYLES
+   ====================== */
+
+@media (min-width: 1024px) {
+  .build-section {
+    padding: 0 var(--content-padding-desktop) 80px;
+    min-height: auto;
+  }
+
+  /* 2-column layout: left = text, right = layers + total */
+  .build-section .section-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 80px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    width: 100%;
+    align-items: start;
+    flex: none;
+  }
+
+  .build-left {
+    padding-top: 0;
+  }
+
+  .build-headline {
+    display: block;
+    font-size: 44px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 8px;
+  }
+
+  .build-headline::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    max-width: 480px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.85), transparent 65%);
+  }
+
+  .build-intro {
+    display: none;
+  }
+
+  .build-detail {
+    display: none;
+  }
+
+  /* Desktop: show steps in left column, kill mobile carousel */
+  .build-left .build-steps {
+    display: block;
+    margin-top: 28px;
+  }
+
+  .build-step {
+    padding: 16px 0;
+  }
+
+  .build-step-title {
+    font-size: 15px;
+  }
+
+  .build-step-text {
+    font-size: 14px;
+  }
+
+  .build-carousel {
+    display: block;
+    overflow: visible;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .build-slide {
+    padding: 0;
+  }
+
+  .build-slide--steps {
+    display: none;
+  }
+
+  .build-carousel-dots {
+    display: none;
+  }
+
+  .build-swipe-hint {
+    display: none;
+  }
+
+  /* Right column */
+  .build-right {
+    flex: none;
+    margin-top: 0;
+    padding-top: 100px;
+  }
+
+  .build-layers {
+    flex-direction: column;
+    gap: 8px;
+    flex: none;
+    height: auto;
+  }
+
+  .build-layer {
+    flex-direction: row;
+    flex: none;
+    min-height: max(32px, calc(var(--layer-flex, 1) * 35px));
+  }
+
+  .layer-visual {
+    width: 120px;
+    height: auto;
+    min-height: 0;
+    flex-shrink: 0;
+  }
+
+  .layer-number {
+    font-size: 20px;
+  }
+
+  .layer-info {
+    padding: 16px 20px;
+    flex: 1;
+  }
+
+  .layer-name {
+    font-size: 15px;
+    margin-bottom: 3px;
+  }
+
+  .layer-depth {
+    font-size: 12px;
+  }
+
+  .build-total {
+    margin-top: 12px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .build-section {
+    padding: 80px var(--content-padding-wide) 100px;
+  }
+}

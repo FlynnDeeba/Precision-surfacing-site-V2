@@ -1,0 +1,105 @@
+/* ======================
+   COMING SOON SECTION
+   ====================== */
+
+.coming-soon-section {
+  min-height: 100svh;
+  background: var(--charcoal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px var(--content-padding-mobile) 80px;
+}
+
+.coming-soon-inner {
+  max-width: 540px;
+  width: 100%;
+  text-align: left;
+}
+
+.coming-soon-eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--yellow);
+  padding-bottom: 8px;
+  margin-bottom: 18px;
+  border-bottom: 2px solid var(--yellow);
+}
+
+.coming-soon-headline {
+  font-family: var(--font-serif);
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 1.05;
+  color: var(--white);
+  margin: 0 0 18px;
+}
+
+.coming-soon-headline em {
+  font-style: italic;
+  color: var(--yellow);
+}
+
+.coming-soon-text {
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 32px;
+}
+
+.coming-soon-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.coming-soon-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--yellow);
+  color: var(--black);
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  padding: 14px 28px;
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  transition: filter var(--transition-base);
+}
+
+.coming-soon-cta:active {
+  filter: brightness(0.9);
+}
+
+.coming-soon-back {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+  letter-spacing: 0.2px;
+  transition: color var(--transition-base);
+}
+
+.coming-soon-back:hover {
+  color: var(--white);
+}
+
+@media (min-width: 1024px) {
+  .coming-soon-section {
+    padding: 140px var(--content-padding-desktop) 100px;
+  }
+
+  .coming-soon-headline {
+    font-size: 56px;
+  }
+
+  .coming-soon-text {
+    font-size: 16px;
+  }
+}

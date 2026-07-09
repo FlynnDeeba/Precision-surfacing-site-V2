@@ -1,38 +1,171 @@
 ---
 layout: layouts/base.njk
 title: "Gallery — Precision Surfacing"
-description: "Recent driveway and surfacing projects across Norfolk."
+description: "Recent driveway and surfacing projects across Norfolk — resin, tarmac, tar & chip, block paving and gravel."
 ---
-<main class="simple">
-  <header class="simple-head" data-theme="dark">
+<main class="gallery">
+  <header class="gal-head" data-theme="dark">
     <span class="kicker">Gallery</span>
     <h1>Recent work across <em>Norfolk.</em></h1>
-    <p>A selection of completed driveways and surfaces. Swap these placeholders for your own photos.</p>
+    <p>A selection of driveways and surfaces we've laid — filter by finish, or tap any photo to see it full-size.</p>
   </header>
 
-  <section class="simple-body" data-theme="light">
-    <div class="gal-grid">
-      <figure class="gal"><div class="ph resin gold"></div><figcaption>Resin bound · Eaton</figcaption></figure>
-      <figure class="gal"><div class="ph resin asphalt"></div><figcaption>Tarmac · Norwich</figcaption></figure>
-      <figure class="gal"><div class="ph resin pewter"></div><figcaption>Block paving · Wymondham</figcaption></figure>
-      <figure class="gal"><div class="ph resin tarchip"></div><figcaption>Tar &amp; chip · Aylsham</figcaption></figure>
-      <figure class="gal"><div class="ph resin gravel"></div><figcaption>Gravel · Wroxham</figcaption></figure>
-      <figure class="gal"><div class="ph resin silver"></div><figcaption>Resin bound · Dereham</figcaption></figure>
+  <div class="gal-body" data-theme="light">
+    <div class="gal-filter" role="group" aria-label="Filter by surface">
+      <button class="fbtn is-on" type="button" data-filter="all">All</button>
+      <button class="fbtn" type="button" data-filter="resin">Resin bound</button>
+      <button class="fbtn" type="button" data-filter="tarmac">Tarmac</button>
+      <button class="fbtn" type="button" data-filter="tarchip">Tar &amp; chip</button>
+      <button class="fbtn" type="button" data-filter="block">Block paving</button>
+      <button class="fbtn" type="button" data-filter="gravel">Gravel</button>
     </div>
-  </section>
+
+    <div class="gal-grid" id="galGrid">
+      <button class="gal" type="button" data-cat="resin" data-cap="Silver Grey resin bound · Wells"><img src="/assets/images/resin/projects/wells-silver-grey/wells-silver-grey-resin-driveway-finished.webp" alt="Silver grey resin bound driveway in Wells" loading="lazy" decoding="async"><span class="gal-cap"><b>Wells</b><i>Resin bound</i></span></button>
+      <button class="gal" type="button" data-cat="tarmac" data-cap="Tarmac with buff chippings · Norfolk"><img src="/assets/images/general-gallery/norfolk-tarmac-driveway-buff-chippings-front-view.webp" alt="Tarmac driveway with buff chippings, front view" loading="lazy" decoding="async"><span class="gal-cap"><b>Norfolk</b><i>Tarmac</i></span></button>
+      <button class="gal" type="button" data-cat="resin" data-cap="Golden Harvest resin bound · Sheringham"><img src="/assets/images/resin/projects/sheringham-golden-path/sheringham-golden-path-resin-driveway-finished.webp" alt="Golden Harvest resin bound path in Sheringham" loading="lazy" decoding="async"><span class="gal-cap"><b>Sheringham</b><i>Resin bound</i></span></button>
+      <button class="gal" type="button" data-cat="block" data-cap="Block paving · St Faiths"><img src="/assets/images/block-paving/projects/st-faiths/st-faiths-block-paving-driveway-finished.webp" alt="Block paving driveway in St Faiths" loading="lazy" decoding="async"><span class="gal-cap"><b>St Faiths</b><i>Block paving</i></span></button>
+      <button class="gal" type="button" data-cat="tarmac" data-cap="Tarmac driveway, twin garage · Norfolk"><img src="/assets/images/general-gallery/norfolk-tarmac-driveway-twin-garage.webp" alt="Tarmac driveway to a twin garage" loading="lazy" decoding="async"><span class="gal-cap"><b>Norfolk</b><i>Tarmac</i></span></button>
+      <button class="gal" type="button" data-cat="resin" data-cap="Resin bound · Buxton"><img src="/assets/images/resin/projects/buxton-resin-driveway/buxton-resin-driveway-finished.webp" alt="Large resin bound driveway in Buxton" loading="lazy" decoding="async"><span class="gal-cap"><b>Buxton</b><i>Resin bound</i></span></button>
+      <button class="gal" type="button" data-cat="tarchip" data-cap="Tar &amp; chip driveway · Foulsham"><img src="/assets/images/tar-and-chip/projects/foulsham/foulsham-tar-and-chip-driveway-photo-01.webp" alt="Tar and chip driveway in Foulsham" loading="lazy" decoding="async"><span class="gal-cap"><b>Foulsham</b><i>Tar &amp; chip</i></span></button>
+      <button class="gal" type="button" data-cat="resin" data-cap="Grey Marble resin bound · King's Lynn"><img src="/assets/images/resin/projects/kings-lynn-grey-marble/kings-lynn-grey-marble-resin-driveway-finished.webp" alt="Grey Marble resin bound driveway in King's Lynn" loading="lazy" decoding="async"><span class="gal-cap"><b>King's Lynn</b><i>Resin bound</i></span></button>
+      <button class="gal" type="button" data-cat="tarmac" data-cap="Tarmac with red chippings &amp; border · Norfolk"><img src="/assets/images/general-gallery/norfolk-tarmac-driveway-red-chippings-with-red-border.webp" alt="Tarmac driveway with red chippings and a red border" loading="lazy" decoding="async"><span class="gal-cap"><b>Norfolk</b><i>Tarmac</i></span></button>
+      <button class="gal" type="button" data-cat="resin" data-cap="Charcoal resin bound · Fakenham"><img src="/assets/images/resin/projects/fakenham-charcoal/fakenham-charcoal-resin-driveway-finished.webp" alt="Charcoal resin bound driveway in Fakenham" loading="lazy" decoding="async"><span class="gal-cap"><b>Fakenham</b><i>Resin bound</i></span></button>
+      <button class="gal" type="button" data-cat="tarmac" data-cap="Tarmac driveway · Sheringham"><img src="/assets/images/tarmac/projects/sheringham-grey/sheringham-grey-tarmac-driveway-finished.webp" alt="Grey tarmac driveway in Sheringham" loading="lazy" decoding="async"><span class="gal-cap"><b>Sheringham</b><i>Tarmac</i></span></button>
+      <button class="gal" type="button" data-cat="gravel" data-cap="Golden gravel driveway · Norfolk"><img src="/assets/images/gravel/projects/bungalow-golden/bungalow-golden-gravel-driveway-finished.webp" alt="Golden gravel driveway to a bungalow" loading="lazy" decoding="async"><span class="gal-cap"><b>Norfolk</b><i>Gravel</i></span></button>
+      <button class="gal" type="button" data-cat="resin" data-cap="Resin bound · Thorpe Marriott"><img src="/assets/images/resin/projects/thorpe-marriott/thorpe-marriott-resin-driveway-full-view.webp" alt="Resin bound driveway in Thorpe Marriott" loading="lazy" decoding="async"><span class="gal-cap"><b>Thorpe Marriott</b><i>Resin bound</i></span></button>
+      <button class="gal" type="button" data-cat="tarchip" data-cap="Tar &amp; chip driveway · Easton"><img src="/assets/images/tar-and-chip/projects/easton/easton-tar-and-chip-driveway-1.jpg" alt="Tar and chip driveway in Easton" loading="lazy" decoding="async"><span class="gal-cap"><b>Easton</b><i>Tar &amp; chip</i></span></button>
+      <button class="gal" type="button" data-cat="tarmac" data-cap="Shingle-dressed tarmac · Colkirk"><img src="/assets/images/tarmac/projects/colkirk-shingle-chippings/colkirk-shingle-chippings-tarmac-driveway-finished.webp" alt="Shingle-dressed tarmac driveway in Colkirk" loading="lazy" decoding="async"><span class="gal-cap"><b>Colkirk</b><i>Tarmac</i></span></button>
+      <button class="gal" type="button" data-cat="resin" data-cap="Golden Harvest resin bound · Burnham"><img src="/assets/images/resin/projects/burnham-golden-harvest/burnham-golden-harvest-resin-driveway-finished.webp" alt="Golden Harvest resin bound driveway in Burnham" loading="lazy" decoding="async"><span class="gal-cap"><b>Burnham</b><i>Resin bound</i></span></button>
+      <button class="gal" type="button" data-cat="tarchip" data-cap="Tar &amp; chip front path · Norfolk"><img src="/assets/images/general-gallery/norfolk-tar-and-chip-driveway-front-path.webp" alt="Tar and chip driveway and front path" loading="lazy" decoding="async"><span class="gal-cap"><b>Norfolk</b><i>Tar &amp; chip</i></span></button>
+      <button class="gal" type="button" data-cat="tarmac" data-cap="Tarmac driveway · North Walsham"><img src="/assets/images/tarmac/projects/north-walsham/north-walsham-tarmac-driveway-finished.webp" alt="Tarmac driveway in North Walsham" loading="lazy" decoding="async"><span class="gal-cap"><b>North Walsham</b><i>Tarmac</i></span></button>
+      <button class="gal" type="button" data-cat="resin" data-cap="Resin bound · Sandringham"><img src="/assets/images/resin/projects/sandringham-case-study/sandringham-resin-driveway-closeup-finished.webp" alt="Resin bound driveway near Sandringham" loading="lazy" decoding="async"><span class="gal-cap"><b>Sandringham</b><i>Resin bound</i></span></button>
+      <button class="gal" type="button" data-cat="tarmac" data-cap="Tarmac driveway, bungalow · Norfolk"><img src="/assets/images/general-gallery/norfolk-tarmac-driveway-bungalow-side-view.webp" alt="Tarmac driveway to a bungalow, side view" loading="lazy" decoding="async"><span class="gal-cap"><b>Norfolk</b><i>Tarmac</i></span></button>
+      <button class="gal" type="button" data-cat="tarchip" data-cap="Tar &amp; chip driveway · Broadland"><img src="/assets/images/tar-and-chip/projects/broadland/broadland-tar-and-chip-driveway-photo-01.webp" alt="Tar and chip driveway in Broadland" loading="lazy" decoding="async"><span class="gal-cap"><b>Broadland</b><i>Tar &amp; chip</i></span></button>
+      <button class="gal" type="button" data-cat="resin" data-cap="Golden Harvest resin bound · Holt"><img src="/assets/images/resin/projects/holt-golden-harvest/holt-golden-harvest-resin-driveway-finished.webp" alt="Golden Harvest resin bound driveway in Holt" loading="lazy" decoding="async"><span class="gal-cap"><b>Holt</b><i>Resin bound</i></span></button>
+      <button class="gal" type="button" data-cat="tarmac" data-cap="Tarmac with red border · Norfolk"><img src="/assets/images/tarmac/projects/red-border/red-border-tarmac-driveway-finished.webp" alt="Tarmac driveway with a red border" loading="lazy" decoding="async"><span class="gal-cap"><b>Norfolk</b><i>Tarmac</i></span></button>
+      <button class="gal" type="button" data-cat="tarmac" data-cap="Tarmac driveway · Easton"><img src="/assets/images/tarmac/projects/tarmac%20driveway%20easton/easton-tarmac-driveway-finished-1.webp" alt="Tarmac driveway in Easton" loading="lazy" decoding="async"><span class="gal-cap"><b>Easton</b><i>Tarmac</i></span></button>
+      <button class="gal" type="button" data-cat="gravel" data-cap="Gravel driveway · Norfolk"><img src="/assets/images/gravel/projects/gravel-driveway/gravel-driveway-finished.webp" alt="Gravel driveway in Norfolk" loading="lazy" decoding="async"><span class="gal-cap"><b>Norfolk</b><i>Gravel</i></span></button>
+    </div>
+
+    <p class="gal-empty" id="galEmpty" hidden>No projects in that category yet — <a href="/get-started/">start a quote</a> and yours could be next.</p>
+
+    <div class="gal-cta">
+      <h2>Like what you <em>see?</em></h2>
+      <p>Every one of these started with a free site visit and an honest quote. Yours can too.</p>
+      <a class="start-go" href="/get-started/">Start your free quote <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+
+  <!-- lightbox -->
+  <div class="glb" id="glb" aria-hidden="true">
+    <button class="glb-x" id="glbX" type="button" aria-label="Close">Close ✕</button>
+    <div class="glb-stage">
+      <button class="glb-arrow prev" id="glbPrev" type="button" aria-label="Previous"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+      <figure class="glb-fig"><img id="glbImg" src="" alt=""></figure>
+      <button class="glb-arrow next" id="glbNext" type="button" aria-label="Next"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+    </div>
+    <figcaption class="glb-cap" id="glbCap"></figcaption>
+  </div>
 </main>
 
 <style>
-  .simple{background:var(--paper,#EAEDEE);min-height:70vh}
-  .simple-head{background:var(--ink,#0E0F10);color:#fff;padding:84px 22px 64px}
-  .simple-head .kicker{color:var(--gold)}
-  .simple-head h1{font-family:var(--serif,"Instrument Serif",serif);font-size:clamp(38px,9vw,72px);line-height:1.02;margin:14px 0 16px;font-weight:400}
-  .simple-head h1 em{font-style:italic;color:var(--gold-hl)}
-  .simple-head p{color:rgba(255,255,255,.62);max-width:50ch;font-size:16px}
-  .simple-body{max-width:1100px;margin:0 auto;padding:56px 22px 90px}
-  .gal-grid{display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}
-  .gal{margin:0}
-  .gal .ph{aspect-ratio:4/3;border-radius:14px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
-  .gal figcaption{margin-top:10px;font-family:var(--mono,"DM Mono",monospace);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#55585a}
-  @media (min-width:760px){.gal-grid{grid-template-columns:repeat(3,1fr);gap:18px}.simple-head{padding:120px 50px 80px}.simple-body{padding:64px 50px 110px}}
+  .gallery{background:var(--paper,#EAEDEE)}
+  /* ---- header ---- */
+  .gal-head{background:var(--ink,#0E0F10);color:#fff;padding:84px 22px 60px}
+  .gal-head .kicker{color:var(--gold)}
+  .gal-head h1{font-family:var(--serif,"Instrument Serif",serif);font-weight:400;font-size:clamp(38px,9vw,72px);line-height:1.02;margin:14px 0 16px}
+  .gal-head h1 em{font-style:italic;color:var(--gold-hl)}
+  .gal-head p{color:rgba(255,255,255,.62);max-width:52ch;font-size:16px}
+  /* ---- body ---- */
+  .gal-body{max-width:1240px;margin:0 auto;padding:26px 16px 90px}
+  /* filter chips */
+  .gal-filter{display:flex;flex-wrap:wrap;gap:9px;padding:8px 6px 22px}
+  .fbtn{font-family:var(--mono,"DM Mono",monospace);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--graphite,#1B1D1E);background:transparent;border:1px solid rgba(14,15,16,.2);border-radius:30px;
+    padding:9px 15px;cursor:pointer;transition:background .18s ease,color .18s ease,border-color .18s ease}
+  .fbtn:hover{border-color:rgba(14,15,16,.5)}
+  .fbtn.is-on{background:var(--ink,#0E0F10);border-color:var(--ink,#0E0F10);color:var(--gold-hl,#F0CC3A)}
+  /* masonry grid */
+  .gal-grid{columns:2;column-gap:14px}
+  .gal{break-inside:avoid;display:block;width:100%;margin:0 0 14px;padding:0;border:0;background:#1c1c1d;
+    border-radius:14px;overflow:hidden;position:relative;cursor:pointer;line-height:0;
+    box-shadow:0 1px 2px rgba(14,15,16,.05);transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s ease}
+  .gal.hide{display:none}
+  .gal img{width:100%;height:auto;display:block;transition:transform .5s cubic-bezier(.22,1,.36,1)}
+  .gal-cap{position:absolute;left:0;right:0;bottom:0;display:flex;flex-direction:column;gap:2px;
+    padding:34px 14px 12px;text-align:left;line-height:1.3;
+    background:linear-gradient(to top,rgba(8,9,10,.82),rgba(8,9,10,0));
+    opacity:0;transform:translateY(6px);transition:opacity .3s ease,transform .3s ease}
+  .gal-cap b{font-family:var(--font-logo,"Raleway",sans-serif);font-weight:600;font-size:13px;letter-spacing:.06em;color:#fff}
+  .gal-cap i{font-family:var(--mono,"DM Mono",monospace);font-style:normal;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-hl,#F0CC3A)}
+  .gal:hover{transform:translateY(-3px);box-shadow:0 16px 34px -14px rgba(14,15,16,.45)}
+  .gal:hover img{transform:scale(1.05)}
+  .gal:hover .gal-cap,.gal:focus-visible .gal-cap{opacity:1;transform:none}
+  .gal-empty{padding:30px 6px;color:var(--mist,#7E817A);font-size:15px}
+  .gal-empty a{color:var(--gold-deep)}
+  /* ---- closing cta ---- */
+  .gal-cta{text-align:center;padding:64px 20px 8px;margin-top:20px;border-top:1px solid rgba(14,15,16,.1)}
+  .gal-cta h2{font-family:var(--serif,"Instrument Serif",serif);font-weight:400;font-size:clamp(30px,7vw,42px);color:var(--ink,#0E0F10);margin-bottom:10px}
+  .gal-cta h2 em{font-style:italic;color:var(--gold-deep)}
+  .gal-cta p{color:#55585a;font-size:15.5px;line-height:1.6;max-width:42ch;margin:0 auto 26px}
+  .gal-cta .start-go{display:inline-flex;align-items:center;gap:10px;background:var(--gold-hl);color:var(--ink);text-decoration:none;font-family:var(--mono,"DM Mono",monospace);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:16px 26px;border-radius:8px;transition:background .2s ease,transform .12s ease}
+  .gal-cta .start-go svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.9}
+  .gal-cta .start-go:hover{background:#F4D44A}
+  .gal-cta .start-go:active{transform:scale(.98)}
+  /* ---- lightbox ---- */
+  .glb{position:fixed;inset:0;z-index:80;background:rgba(8,8,9,.96);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+    display:flex;flex-direction:column;opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease}
+  .glb.on{opacity:1;visibility:visible}
+  .glb-x{align-self:flex-end;margin:18px 20px 0;background:none;border:0;cursor:pointer;color:rgba(255,255,255,.6);font-family:var(--mono,"DM Mono",monospace);font-size:12px;letter-spacing:.14em}
+  .glb-x:hover{color:var(--gold-hl)}
+  .glb-stage{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;min-height:0;padding:6px 8px}
+  .glb-fig{margin:0;max-width:92vw;max-height:78vh;display:flex}
+  .glb-fig img{max-width:92vw;max-height:78vh;width:auto;height:auto;object-fit:contain;border-radius:6px;display:block}
+  .glb-arrow{flex:0 0 auto;background:none;border:0;padding:6px;cursor:pointer}
+  .glb-arrow svg{width:30px;height:30px;stroke:#fff;fill:none;stroke-width:2;filter:drop-shadow(0 1px 4px rgba(0,0,0,.7));display:block;transition:stroke .2s ease}
+  .glb-arrow:hover svg{stroke:var(--gold-hl)}
+  .glb-cap{text-align:center;padding:14px 20px 26px;font-family:var(--mono,"DM Mono",monospace);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+
+  @media (min-width:680px){ .gal-grid{columns:3;column-gap:18px} .gal{margin-bottom:18px} }
+  @media (min-width:1040px){ .gal-grid{columns:4} }
+  @media (min-width:760px){
+    .gal-head{padding:118px 50px 74px}
+    .gal-body{padding:30px 40px 110px}
+    .glb-x{margin:22px clamp(28px,4vw,56px) 0}
+  }
 </style>
+
+<script>
+  (function(){
+    var grid=document.getElementById('galGrid'); if(!grid) return;
+    var tiles=[].slice.call(grid.querySelectorAll('.gal'));
+    var fbtns=[].slice.call(document.querySelectorAll('.fbtn'));
+    var empty=document.getElementById('galEmpty');
+    function apply(f){
+      fbtns.forEach(function(b){b.classList.toggle('is-on', b.dataset.filter===f);});
+      var shown=0;
+      tiles.forEach(function(t){ var hide = f!=='all' && t.dataset.cat!==f; t.classList.toggle('hide',hide); if(!hide)shown++; });
+      if(empty) empty.hidden = shown>0;
+    }
+    fbtns.forEach(function(b){ b.addEventListener('click',function(){ apply(b.dataset.filter); }); });
+
+    var glb=document.getElementById('glb'), gimg=document.getElementById('glbImg'), gcap=document.getElementById('glbCap');
+    var prev=document.getElementById('glbPrev'), next=document.getElementById('glbNext');
+    var cur=-1;
+    function visible(){ return tiles.filter(function(t){ return !t.classList.contains('hide'); }); }
+    function paint(vis){ var t=vis[cur]; if(!t) return; var im=t.querySelector('img'); gimg.src=im.currentSrc||im.src; gimg.alt=im.alt; gcap.textContent=t.dataset.cap; }
+    function open(t){ var vis=visible(); cur=vis.indexOf(t); paint(vis); glb.classList.add('on'); glb.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
+    function close(){ glb.classList.remove('on'); glb.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+    function step(d){ var vis=visible(); if(!vis.length) return; cur=(cur+d+vis.length)%vis.length; paint(vis); }
+    tiles.forEach(function(t){ t.addEventListener('click',function(){ open(t); }); });
+    document.getElementById('glbX').addEventListener('click',close);
+    prev.addEventListener('click',function(e){ e.stopPropagation(); step(-1); });
+    next.addEventListener('click',function(e){ e.stopPropagation(); step(1); });
+    glb.addEventListener('click',function(e){ if(!e.target.closest('.glb-fig') && !e.target.closest('button')) close(); });
+    document.addEventListener('keydown',function(e){ if(!glb.classList.contains('on')) return; if(e.key==='Escape')close(); if(e.key==='ArrowLeft')step(-1); if(e.key==='ArrowRight')step(1); });
+    var tx=0;
+    glb.addEventListener('touchstart',function(e){ tx=e.changedTouches[0].clientX; },{passive:true});
+    glb.addEventListener('touchend',function(e){ var dx=e.changedTouches[0].clientX-tx; if(Math.abs(dx)>45) step(dx<0?1:-1); },{passive:true});
+  })();
+</script>

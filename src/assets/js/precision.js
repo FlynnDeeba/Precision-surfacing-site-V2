@@ -33,7 +33,7 @@
   }
 
   /* ---- nav bar: transparent over hero, reveal on scroll-up, adaptive burger ---- */
-  var topnav = $('.sitebar'), hasHero = !!($('.hero') || $('.simple-head') || $('.art-hero'));
+  var topnav = $('.sitebar'), hasHero = !!($('.hero') || $('.simple-head') || $('.art-hero') || $('.gal-head'));
   var burgerBtn = burger; // #burger
   var themed = $$('[data-theme]');
   /* On mobile the burger is the only nav element — flip it dark/light to stay

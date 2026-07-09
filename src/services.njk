@@ -6,5 +6,6 @@ pagination:
 permalink: "/services/{{ service.slug }}/"
 layout: layouts/service.njk
 eleventyComputed:
-  title: "{{ service.title }}"
+  title: "{{ service.title | safe }}"
+  description: "{{ service.heroLede | safe }}"
 ---

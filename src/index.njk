@@ -55,6 +55,8 @@ extraJs: home.js
     </div>
   </section>
 
+  {% include "partials/reviews.njk" %}
+
   <!-- GET STARTED -->
   <section class="start" id="start" data-theme="dark">
    <div class="start-grid">
@@ -73,6 +75,9 @@ extraJs: home.js
     </div>
    </div>
   </section>
+
+  {% set coverageDark = true %}
+  {% include "partials/areas.njk" %}
 
   <div class="lb" id="lb" role="dialog" aria-modal="true">
     <div class="lb-top"><button class="lb-x" id="lbX">CLOSE ✕</button></div>

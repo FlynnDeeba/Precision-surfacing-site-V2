@@ -202,6 +202,45 @@
     #guides{padding-bottom:48px}
     .home .start{padding-top:158px}
   }
+
+  /* ===== Reviews + Areas we cover (shared partials) ===== */
+  .sect-kick{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep)}
+  .sect-h{font-family:var(--serif);font-weight:400;font-size:clamp(30px,8vw,44px);line-height:1.04;color:var(--ink);margin-top:12px}
+  .sect-h em{font-style:italic;color:var(--gold-deep)}
+
+  .reviews{background:var(--paper);padding:58px 0;display:none} /* desktop only */
+  .reviews-in{max-width:1120px;margin:0 auto;padding:0 var(--pad)}
+  .rev-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:32px}
+  .rev-grid .rev-card:nth-child(n+4){display:none} /* mobile shows 3; desktop shows all 6 */
+  .rev-card{background:#fff;border:1px solid rgba(14,15,16,.09);border-radius:16px;padding:26px 24px;display:flex;flex-direction:column;gap:14px;box-shadow:0 1px 3px rgba(14,15,16,.04)}
+  .rev-stars{color:var(--gold-hl);font-size:13px;letter-spacing:3px;line-height:1}
+  .rev-card blockquote{margin:0;font-size:15.5px;line-height:1.62;color:var(--graphite)}
+  .rev-card figcaption{display:flex;flex-direction:column;gap:2px}
+  .rev-card figcaption b{font-weight:600;font-size:14px;color:var(--ink)}
+  .rev-card figcaption span{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mist)}
+
+  .coverage{background:var(--paper);padding:56px 0}
+  .coverage-in{max-width:1120px;margin:0 auto;padding:0 var(--pad)}
+  .cov-lede{margin-top:16px;max-width:48ch;color:var(--mist);font-size:15px;line-height:1.6}
+  .cov-list{list-style:none;margin:26px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:12px 18px}
+  .cov-list li{font-size:14.5px;color:var(--graphite);padding-left:15px;position:relative}
+  .cov-list li::before{content:"";position:absolute;left:0;top:.6em;width:5px;height:5px;border-radius:50%;background:var(--gold)}
+  .cov-note{margin-top:26px;font-size:14px;color:var(--mist)}
+  .cov-note a{color:var(--gold-deep)}
+  .coverage--dark{background:var(--ink)}
+  .coverage--dark .sect-h{color:#fff}
+  .coverage--dark .sect-h em{color:#B7BAB4}
+  .coverage--dark .cov-lede{color:rgba(255,255,255,.6)}
+  .coverage--dark .cov-list li{color:rgba(255,255,255,.82)}
+  .coverage--dark .cov-note{color:rgba(255,255,255,.5)}
+
+  @media (min-width:760px){
+    .reviews{display:block}
+    .reviews,.coverage{padding-block:92px}
+    .rev-grid{grid-template-columns:repeat(3,1fr);gap:20px;margin-top:38px}
+    .rev-grid .rev-card:nth-child(n+4){display:flex}
+    .cov-list{grid-template-columns:repeat(4,1fr);gap:14px 24px}
+  }
   .start .kicker{color:rgba(255,255,255,.5)}
   .start .kicker::after{background:var(--line-d)}
   .start h2.dh{color:#fff}.start h2.dh em{color:var(--gold-hl)}
@@ -457,7 +496,7 @@
   .sitebar-logo .l2{font-family:var(--font-logo,"Raleway",sans-serif);font-weight:600;font-size:13px;letter-spacing:10px;text-transform:uppercase;color:var(--gold-hl);margin-top:3px}
   .sitebar-logo{transition:opacity .3s ease,transform .3s ease}
   .sitebar-links{display:none}
-  .sitebar-burger{width:32px;height:20px;background:none;border:0;cursor:pointer;display:flex;flex-direction:column;justify-content:space-between;padding:0}
+  .sitebar-burger{width:32px;height:20px;background:none;border:0;cursor:pointer;display:flex;flex-direction:column;justify-content:flex-start;gap:7px;padding:0}
   .sitebar-burger span{display:block;height:2px;width:100%;background:#fff;border-radius:2px;transition:background .25s ease}
   .sitebar-burger.on-light span{background:var(--graphite)}
 

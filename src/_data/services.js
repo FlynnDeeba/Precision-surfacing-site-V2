@@ -8,7 +8,7 @@
   Shared "About" copy lives in the layout; override here with `about` if needed.
 */
 
-const ABOUT = "A modern evolution of a sixty-year regional legacy. We pair decades of inherited, multi-generational site expertise with strict engineering standards — and we don't subcontract, cut corners on the sub-base, or disappear after handover.";
+const ABOUT = "A modern evolution of a sixty-year regional legacy. We pair decades of inherited, hands-on site expertise with strict engineering standards — and we don't subcontract, cut corners on the sub-base, or disappear after handover.";
 
 module.exports = [
   {
@@ -88,7 +88,9 @@ module.exports = [
         ["bracken","Copper Multi",     "6mm", "/assets/images/resin/resin-bound-copper-multi-aggregate.webp"],
         ["oyster", "Toffee Earth",     "6mm", "/assets/images/resin/resin-bound-toffee-earth-aggregate.webp"],
         ["forest", "Ash Contrast",     "6mm", "/assets/images/resin/resin-bound-ash-contrast-aggregate.webp"],
-        ["pewter", "Golden Harvest",   "6mm", "/assets/images/resin/resin-bound-golden-harvest-aggregate.webp"]
+        ["pewter", "Golden Harvest",   "6mm", "/assets/images/resin/resin-bound-golden-harvest-aggregate.webp"],
+        ["silvr",  "Silver Grey",      "6mm", "/assets/images/resin/resin-bound-silver-grey-aggregate.webp"],
+        ["tarmac", "Onyx Black",       "6mm", "/assets/images/resin/resin-bound-onyx-black-aggregate.webp"]
       ]
     },
     faqs: [
@@ -148,10 +150,11 @@ module.exports = [
       heading: "Strength is in the", em: "base.",
       lede: "Anyone can lay a skim of tarmac. It lasts because of what goes under it — and how hard it's compacted.",
       steps: [
-        { tag: "Excavate", title: "Dig out & set the falls", body: "We strip back to a firm formation and grade the falls so water runs clear of the surface.", layers: ["l-earth"] },
-        { tag: "Sub-base", title: "Compacted MOT Type 1", body: "A deep, whacker-plated stone sub-base — the load-bearing foundation everything rides on.", layers: ["l-base-sub","l-earth"] },
-        { tag: "Binder course", title: "Dense binder layer", body: "A coarse, dense binder course laid and rolled hot to take the structural load.", layers: ["l-binder","l-base-sub","l-earth"] },
-        { tag: "Surface course", title: "Wearing course, hot-rolled", body: "A tack coat, then the final wearing course — laid hot and rolled tight to a sealed, true finish.", layers: ["l-wearing resin asphalt","l-tack","l-binder","l-base-sub","l-earth"] }
+        { tag: "Excavate", title: "Dig out to 220mm", body: "We excavate down to 220mm and cart every bit of spoil away through a licensed waste carrier — often our own vehicles." },
+        { tag: "Compact", title: "Level & compact the base", body: "The formation is graded level and thoroughly compacted to give everything above it a firm, stable footing." },
+        { tag: "Membrane", title: "Weed-control membrane", body: "A membrane is rolled across the base — it stops weeds pushing through and keeps the soil from working up into the sub-base over time." },
+        { tag: "Sub-base", title: "150mm compacted gravel", body: "A 150mm layer of gravel is spread, then rolled and compacted with commercial-grade rollers into a solid, load-bearing sub-base." },
+        { tag: "Surface", title: "50mm asphalt", body: "A 50mm layer of asphalt is laid hot over the sub-base and rolled tight to a true, level, sealed finish." }
       ]
     },
     finishes: {

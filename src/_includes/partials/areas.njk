@@ -1,0 +1,16 @@
+{# Set `coverageDark = true` before including to render the dark variant (used below the FAQs on service pages). #}
+<section class="coverage{% if coverageDark %} coverage--dark{% endif %}" data-theme="{{ 'dark' if coverageDark else 'light' }}">
+  <div class="coverage-in">
+    {% if coverageNum %}<span class="kicker">{{ coverageNum }} — Areas we cover</span>{% else %}<span class="sect-kick">Areas we cover</span>{% endif %}
+    <h2 class="sect-h">Right across <em>Norfolk.</em></h2>
+    <p class="cov-lede">Norfolk born and based — from the coast to the Broads to the market towns. A few of the places we work:</p>
+    <ul class="cov-list">
+      <li>Norwich</li><li>King's Lynn</li><li>Great Yarmouth</li><li>Dereham</li>
+      <li>Wymondham</li><li>Attleborough</li><li>Thetford</li><li>Diss</li>
+      <li>North Walsham</li><li>Cromer</li><li>Sheringham</li><li>Fakenham</li>
+      <li>Holt</li><li>Aylsham</li><li>Wroxham</li><li>Swaffham</li>
+      <li>Hunstanton</li><li>Watton</li><li>Downham Market</li><li>Reepham</li>
+    </ul>
+    <p class="cov-note">Don't see your area? <a href="/get-started/">Just ask</a> — if you're in Norfolk, chances are we cover you.</p>
+  </div>
+</section>

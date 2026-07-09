@@ -18,11 +18,13 @@ extraJs: service.js
   </div>
 </section>
 {% else %}
-<section class="hero" data-theme="dark">
+<section class="hero" data-theme="dark" data-service="{{ s.slug }}">
   <div class="hero-copy">
-    <span class="eyebrow">{{ s.eyebrow }}</span>
-    <h1>{% if s.h1Html %}{{ s.h1Html | safe }}{% else %}{{ s.h1Lead }} <em>{{ s.h1Em }}</em>{% endif %}</h1>
-    {% if s.heroLede %}<p class="lede">{{ s.heroLede }}</p>{% endif %}
+    <div class="hero-text">
+      <span class="eyebrow">{{ s.eyebrow }}</span>
+      <h1>{% if s.h1Html %}{{ s.h1Html | safe }}{% else %}{{ s.h1Lead }} <em>{{ s.h1Em }}</em>{% endif %}</h1>
+      {% if s.heroLede %}<p class="lede">{{ s.heroLede }}</p>{% endif %}
+    </div>
     {% if s.work and s.workLayout != "stack" %}
     <div class="hero-strip">
       {% for w in s.work %}<button type="button" class="hs-tile" onclick="openLB({{ loop.index0 }})" aria-label="View {{ w.title }}, {{ w.place }}">{% if w.img %}<img src="{{ w.img }}" alt="{{ w.title }}, {{ w.place }}">{% else %}<span class="ph resin {{ w.blend }}"></span>{% endif %}</button>{% endfor %}
@@ -126,9 +128,9 @@ extraJs: service.js
 
 <section class="about" data-theme="dark">
   <div class="sec-head">
-    <span class="kicker">04 — About us</span>
-    <h2 class="dh">Modern meets <em>heritage.</em></h2>
-    <p class="about-copy">A modern evolution of a sixty-year regional legacy. We pair decades of inherited, multi-generational site expertise with strict engineering standards — and we don't subcontract, cut corners on the sub-base, or disappear after handover.</p>
+    <span class="kicker">04 — Why us</span>
+    <h2 class="dh"><em>Heritage.</em></h2>
+    <p class="about-copy">A modern evolution of a sixty-year regional legacy. We pair decades of inherited, hands-on site expertise with strict engineering standards — and we don't subcontract, cut corners on the sub-base, or disappear after handover.</p>
   </div>
   <div class="usp">
     <div class="item"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg></span><span class="uspt">10-year structural warranty</span></div>
@@ -168,6 +170,10 @@ extraJs: service.js
   </div>
 </section>
 {% endif %}
+
+{% set coverageDark = true %}
+{% set coverageNum = "07" %}
+{% include "partials/areas.njk" %}
 
 <!-- lightbox -->
 <div class="lb" id="lb">

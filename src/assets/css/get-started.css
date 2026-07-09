@@ -70,7 +70,7 @@
 
   /* ---- fields ---- */
   .fields{margin-top:30px;display:flex;flex-direction:column;gap:24px}
-  .step[data-step="3"] .fields{gap:17px} /* final step — tighter field spacing */
+  .step[data-step="4"] .fields{gap:17px} /* final step — tighter field spacing */
   .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
   .field{display:flex;flex-direction:column}
   .field label{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--mist);margin-bottom:9px}
@@ -200,9 +200,9 @@
     .app .fade-top{--fade-from:var(--black);--fade-to:var(--paper)}
     .app .fade-bot{--fade-from:var(--paper);--fade-to:var(--black)}
     /* Drop the subheadline on steps 2 & 3 to save vertical space */
-    .step[data-step="2"] .hint,.step[data-step="3"] .hint{display:none}
+    .step[data-step="4"] .hint{display:none}
     /* Final step — pull the headline and fields closer together */
-    .step[data-step="3"] .fields{margin-top:20px;gap:14px}
+    .step[data-step="4"] .fields{margin-top:20px;gap:14px}
   }
 
   /* ============ TABLET & DESKTOP (two-column) ============

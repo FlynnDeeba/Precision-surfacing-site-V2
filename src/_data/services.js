@@ -53,7 +53,17 @@ module.exports = [
         "/assets/images/resin/projects/sandringham-case-study/sandringham-resin-driveway-tarmac-base-laid.webp",
         "/assets/images/resin/projects/sandringham-case-study/sandringham-resin-driveway-closeup-finished.webp"
       ] },
-      { img: "/assets/images/resin/projects/kings-lynn-grey-marble/kings-lynn-grey-marble-resin-driveway-finished.webp", title: "Grey Marble driveway",  place: "King's Lynn" }
+      { img: "/assets/images/resin/projects/reedham/reedham-tarmac-closeup.jpg", title: "Resin driveway", place: "Reedham", images: [
+        "/assets/images/resin/projects/reedham/reedham-before.jpg",
+        "/assets/images/resin/projects/reedham/reedham-type1-half.jpg",
+        "/assets/images/resin/projects/reedham/reedham-type1-full.jpg",
+        "/assets/images/resin/projects/reedham/reedham-tarmac-wide.jpg",
+        "/assets/images/resin/projects/reedham/reedham-tarmac-closeup.jpg",
+        "/assets/images/resin/projects/reedham/reedham-resin-third.jpg",
+        "/assets/images/resin/projects/reedham/reedham-resin-two-thirds.jpg",
+        "/assets/images/resin/projects/reedham/reedham-finished.jpg",
+        "/assets/images/resin/projects/reedham/reedham-other-side.jpg"
+      ] }
     ],
     why: {
       heading: "Looks new.", em: "Stays new.",
@@ -106,7 +116,7 @@ module.exports = [
 
   {
     slug: "tarmac",
-    order: 3,
+    order: 2,
     name: "Tarmac",
     navLabel: "Tarmac",
     title: "Precision Surfacing — Norfolk tarmac & surfacing contractors",
@@ -181,7 +191,7 @@ module.exports = [
   {
     slug: "block-paving",
     comingSoon: true,
-    order: 2,
+    order: 4,
     name: "Block paving",
     navLabel: "Block paving",
     title: "Block paving — Precision Surfacing, Norfolk",
@@ -237,7 +247,7 @@ module.exports = [
   {
     slug: "tar-and-chip",
     hideFinishes: true,
-    order: 4,
+    order: 3,
     name: "Tar & chip",
     navLabel: "Tar & chip",
     title: "Tar & chip surfacing — Precision Surfacing, Norfolk",

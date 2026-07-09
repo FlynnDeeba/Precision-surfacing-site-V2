@@ -5,9 +5,11 @@ description: "Guides and advice on driveways and surfacing in Norfolk."
 ---
 <main class="simple">
   <header class="simple-head" data-theme="dark">
-    <span class="kicker">Articles</span>
-    <h1>Expert <em>advice.</em></h1>
-    <p>Honest guides on choosing and caring for a new driveway — no jargon, no sales fluff.</p>
+    <div class="simple-head-in">
+      <span class="kicker">Articles</span>
+      <h1>Expert <em>advice.</em></h1>
+      <p>Honest guides on choosing and caring for a new driveway — no jargon, no sales fluff.</p>
+    </div>
   </header>
 
   <section class="simple-body" data-theme="light">
@@ -68,7 +70,8 @@ description: "Guides and advice on driveways and surfacing in Norfolk."
 
 <style>
   .simple{background:var(--paper,#EAEDEE);min-height:70vh}
-  .simple-head{background:var(--ink,#0E0F10);color:#fff;padding:84px 22px 64px}
+  .simple-head{background:var(--ink,#0E0F10);color:#fff;padding:84px 0 64px}
+  .simple-head-in{max-width:1040px;margin:0 auto;padding:0 22px}
   .simple-head .kicker{color:var(--gold)}
   .simple-head h1{font-family:var(--serif,"Instrument Serif",serif);font-size:clamp(38px,9vw,72px);line-height:1.02;margin:14px 0 16px;font-weight:400}
   .simple-head h1 em{font-style:italic;color:var(--gold-hl)}
@@ -119,7 +122,8 @@ description: "Guides and advice on driveways and surfacing in Norfolk."
   .areas a{color:var(--gold-deep)}
 
   @media (min-width:760px){
-    .simple-head{padding:120px 50px 80px}
+    .simple-head{padding:120px 0 80px}
+    .simple-head-in{padding:0 50px}
     .simple-body{padding:56px 50px 110px}
     .feat-grid{grid-template-columns:1fr 1fr;gap:20px}
     .feat-card{min-height:300px;padding:28px}

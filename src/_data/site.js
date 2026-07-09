@@ -30,6 +30,6 @@ module.exports = {
   nav: [
     { label: "Gallery", url: "/gallery/" },
     { label: "Articles", url: "/articles/" },
-    { label: "Contact", url: "/contact/", cta: true }
+    { label: "Get started", url: "/get-a-quote/", cta: true }
   ]
 };

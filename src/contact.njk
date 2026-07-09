@@ -5,9 +5,11 @@ description: "Get in touch with Precision Surfacing — driveways and surfacing 
 ---
 <main class="simple">
   <header class="simple-head" data-theme="dark">
-    <span class="kicker">Contact</span>
-    <h1>Let's talk about your <em>project.</em></h1>
-    <p>Call, email, or request a quote — we cover Norwich and the surrounding Norfolk villages.</p>
+    <div class="simple-head-in">
+      <span class="kicker">Contact</span>
+      <h1>Let's talk about your <em>project.</em></h1>
+      <p>Call, email, or request a quote — we cover Norwich and the surrounding Norfolk villages.</p>
+    </div>
   </header>
 
   <section class="simple-body" data-theme="light">
@@ -31,7 +33,8 @@ description: "Get in touch with Precision Surfacing — driveways and surfacing 
 
 <style>
   .simple{background:var(--paper,#EAEDEE);min-height:70vh}
-  .simple-head{background:var(--ink,#0E0F10);color:#fff;padding:84px 22px 64px}
+  .simple-head{background:var(--ink,#0E0F10);color:#fff;padding:84px 0 64px}
+  .simple-head-in{max-width:900px;margin:0 auto;padding:0 22px}
   .simple-head .kicker{color:var(--gold)}
   .simple-head h1{font-family:var(--serif,"Instrument Serif",serif);font-size:clamp(38px,9vw,72px);line-height:1.02;margin:14px 0 16px;font-weight:400}
   .simple-head h1 em{font-style:italic;color:var(--gold-hl)}
@@ -43,5 +46,5 @@ description: "Get in touch with Precision Surfacing — driveways and surfacing 
   .cc-k{font-family:var(--mono,"DM Mono",monospace);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep)}
   .cc-v{font-size:20px;color:var(--ink,#0E0F10);font-weight:600}
   .areas{margin-top:34px;font-size:14px;color:#55585a}
-  @media (min-width:720px){.contact-grid{grid-template-columns:repeat(3,1fr)}.simple-head{padding:120px 50px 80px}.simple-body{padding:64px 50px 110px}}
+  @media (min-width:720px){.contact-grid{grid-template-columns:repeat(3,1fr)}.simple-head{padding:120px 0 80px}.simple-head-in{padding:0 50px}.simple-body{padding:64px 50px 110px}}
 </style>

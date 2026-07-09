@@ -108,9 +108,9 @@
        149.08% of a column for the 3rd tile) + a fixed px gap, so the height terms cancel
        and BOTH the 1→2 and 2→3 gaps stay constant at any screen size. */
     .prevwork[data-service="tarmac"] .mcol.right,
-    .prevwork[data-service="tar-and-chip"] .mcol.right{margin-top:calc(74.54% + 22px)}
+    .prevwork[data-service="tar-and-chip"] .mcol.right{margin-top:calc(74.54% + 20px)}
     .prevwork[data-service="tarmac"] .mcol.left .tile:nth-child(2),
-    .prevwork[data-service="tar-and-chip"] .mcol.left .tile:nth-child(2){margin-top:calc(149.08% - 186px)}
+    .prevwork[data-service="tar-and-chip"] .mcol.left .tile:nth-child(2){margin-top:calc(149.08% - 188px)}
   }
   /* single full-width column of wide cover images (e.g. tarmac). Block layout
      with an explicit tile height — no flex/aspect-ratio, so it can't collapse. */
@@ -254,6 +254,13 @@
   .faq[open] .faq-ic{transform:rotate(-135deg)}
   .faq-a{padding:0 2px 22px;max-width:66ch}
   .faq-a p{font-family:var(--sans);font-size:15px;line-height:1.72;color:rgba(255,255,255,.62)}
+  /* Desktop: centre the FAQ block + its headline */
+  @media (min-width:900px){
+    .faqs .sec-head{text-align:center}
+    .faqs .kicker{justify-content:center}
+    .faqs .kicker::after{display:none}
+    .faq-list{margin-left:auto;margin-right:auto}
+  }
 
   footer{margin-top:104px;padding:40px var(--pad) 54px;border-top:1px solid rgba(255,255,255,.08);text-align:center}
   footer .logo{align-items:center}

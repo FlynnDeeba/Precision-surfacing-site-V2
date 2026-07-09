@@ -5,9 +5,11 @@ description: "Recent driveway and surfacing projects across Norfolk — resin, t
 ---
 <main class="gallery">
   <header class="gal-head" data-theme="dark">
-    <span class="kicker">Gallery</span>
-    <h1>Recent work across <em>Norfolk.</em></h1>
-    <p>A selection of driveways and surfaces we've laid — tap any photo to see it full-size.</p>
+    <div class="gal-head-in">
+      <span class="kicker">Gallery</span>
+      <h1>Recent work across <em>Norfolk.</em></h1>
+      <p>A selection of driveways and surfaces we've laid — tap any photo to see it full-size.</p>
+    </div>
   </header>
 
   <div class="gal-body" data-theme="light">
@@ -52,6 +54,17 @@ description: "Recent driveway and surfacing projects across Norfolk — resin, t
       <button class="gal" type="button" data-cat="tarmac" data-cap="Tarmac, red chippings — close-up · Norfolk"><img src="/assets/images/general-gallery/norfolk-tarmac-driveway-red-chippings-closeup.webp" alt="Close-up of tarmac driveway with red chippings" loading="lazy" decoding="async"><span class="gal-cap"><b>Norfolk</b><i>Tarmac</i></span></button>
       <button class="gal" type="button" data-cat="tarmac" data-cap="Tarmac, grey chippings — close-up · Norfolk"><img src="/assets/images/general-gallery/norfolk-tarmac-driveway-grey-chippings-closeup.webp" alt="Close-up of tarmac driveway with grey chippings" loading="lazy" decoding="async"><span class="gal-cap"><b>Norfolk</b><i>Tarmac</i></span></button>
       <button class="gal" type="button" data-cat="tarmac" data-cap="Grey tarmac driveway, angle · Sheringham"><img src="/assets/images/tarmac/projects/sheringham-grey/sheringham-grey-tarmac-driveway-angle.webp" alt="Grey tarmac driveway in Sheringham, angle" loading="lazy" decoding="async"><span class="gal-cap"><b>Sheringham</b><i>Tarmac</i></span></button>
+      <button class="gal" type="button" data-cat="resin" data-cap="Resin bound driveway · Reedham"><img src="/assets/images/resin/projects/reedham/reedham-finished.jpg" alt="Resin bound driveway in Reedham" loading="lazy" decoding="async"><span class="gal-cap"><b>Reedham</b><i>Resin bound</i></span></button>
+      <button class="gal" type="button" data-cat="block" data-cap="Block paving driveway · Norfolk"><img src="/assets/images/general-gallery/block-paving-wide.jpg" alt="Block paving driveway, wide view" loading="lazy" decoding="async"><span class="gal-cap"><b>Norfolk</b><i>Block paving</i></span></button>
+      <button class="gal" type="button" data-cat="gravel" data-cap="Gravel driveway · Norfolk"><img src="/assets/images/general-gallery/gravel-drive.jpg" alt="Gravel driveway in Norfolk" loading="lazy" decoding="async"><span class="gal-cap"><b>Norfolk</b><i>Gravel</i></span></button>
+      <button class="gal" type="button" data-cat="resin" data-cap="Twin resin bound driveways · Norfolk"><img src="/assets/images/general-gallery/resin-twin-driveways.jpg" alt="Twin resin bound driveways" loading="lazy" decoding="async"><span class="gal-cap"><b>Norfolk</b><i>Resin bound</i></span></button>
+      <button class="gal" type="button" data-cat="tarmac" data-cap="Grey-fleck tarmac driveway · Norfolk"><img src="/assets/images/general-gallery/tarmac-grey-fleck.jpg" alt="Grey-fleck tarmac driveway" loading="lazy" decoding="async"><span class="gal-cap"><b>Norfolk</b><i>Tarmac</i></span></button>
+      <button class="gal" type="button" data-cat="block" data-cap="Block paving, front view · Norfolk"><img src="/assets/images/general-gallery/block-paving-front-view.jpg" alt="Block paving driveway, front view" loading="lazy" decoding="async"><span class="gal-cap"><b>Norfolk</b><i>Block paving</i></span></button>
+      <button class="gal" type="button" data-cat="resin" data-cap="Resin bound patio · Norfolk"><img src="/assets/images/general-gallery/resin-patio-closeup.jpg" alt="Resin bound patio close-up" loading="lazy" decoding="async"><span class="gal-cap"><b>Norfolk</b><i>Resin bound</i></span></button>
+      <button class="gal" type="button" data-cat="gravel" data-cap="Gravel driveway &amp; pathway · Norfolk"><img src="/assets/images/general-gallery/gravel-pathway.jpg" alt="Gravel driveway and pathway" loading="lazy" decoding="async"><span class="gal-cap"><b>Norfolk</b><i>Gravel</i></span></button>
+      <button class="gal" type="button" data-cat="resin" data-cap="Resin being laid · Reedham"><img src="/assets/images/resin/projects/reedham/reedham-resin-two-thirds.jpg" alt="Resin bound driveway being laid in Reedham" loading="lazy" decoding="async"><span class="gal-cap"><b>Reedham</b><i>Resin bound</i></span></button>
+      <button class="gal" type="button" data-cat="tarmac" data-cap="Tarmac driveway · Easton"><img src="/assets/images/general-gallery/tarmac-easton-extra.jpg" alt="Tarmac driveway in Easton" loading="lazy" decoding="async"><span class="gal-cap"><b>Easton</b><i>Tarmac</i></span></button>
+      <button class="gal" type="button" data-cat="resin" data-cap="Twin resin bound driveway · Norfolk"><img src="/assets/images/general-gallery/resin-twin-finished.jpg" alt="Twin resin bound driveway, finished" loading="lazy" decoding="async"><span class="gal-cap"><b>Norfolk</b><i>Resin bound</i></span></button>
     </div>
 
     <div class="gal-cta">
@@ -76,7 +89,8 @@ description: "Recent driveway and surfacing projects across Norfolk — resin, t
 <style>
   .gallery{background:var(--paper,#EAEDEE)}
   /* ---- header ---- */
-  .gal-head{background:var(--ink,#0E0F10);color:#fff;padding:84px 22px 60px}
+  .gal-head{background:var(--ink,#0E0F10);color:#fff;padding:84px 0 60px}
+  .gal-head-in{max-width:1240px;margin:0 auto;padding:0 16px}
   .gal-head .kicker{color:var(--gold)}
   .gal-head h1{font-family:var(--serif,"Instrument Serif",serif);font-weight:400;font-size:clamp(38px,9vw,72px);line-height:1.02;margin:14px 0 16px}
   .gal-head h1 em{font-style:italic;color:var(--gold-hl)}
@@ -134,7 +148,8 @@ description: "Recent driveway and surfacing projects across Norfolk — resin, t
   @media (min-width:680px){ .gal-grid{columns:2;column-gap:18px} .gal{margin-bottom:18px} }
   @media (min-width:1040px){ .gal-grid{columns:3;column-gap:20px} }
   @media (min-width:760px){
-    .gal-head{padding:118px 50px 74px}
+    .gal-head{padding:118px 0 74px}
+    .gal-head-in{padding:0 40px}
     .gal-body{padding:30px 40px 110px}
     .glb-x{margin:22px clamp(28px,4vw,56px) 0}
   }

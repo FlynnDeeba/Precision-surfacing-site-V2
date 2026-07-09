@@ -219,7 +219,7 @@
   .sect-h em{font-style:italic;color:var(--gold-deep)}
 
   .reviews{background:var(--paper);padding:58px 0;display:none} /* desktop only */
-  .reviews-in{max-width:1120px;margin:0 auto;padding:0 var(--pad)}
+  .reviews-in{padding-inline:max(48px,calc((100% - 1120px) / 2))}
   .rev-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:32px}
   .rev-grid .rev-card:nth-child(n+4){display:none} /* mobile shows 3; desktop shows all 6 */
   .rev-card{background:#fff;border:1px solid rgba(14,15,16,.09);border-radius:16px;padding:26px 24px;display:flex;flex-direction:column;gap:14px;box-shadow:0 1px 3px rgba(14,15,16,.04)}
@@ -512,6 +512,8 @@
     transition:background .3s ease,border-color .3s ease,transform .4s cubic-bezier(.4,0,.2,1)}
   .sitebar.scrolled{background:rgba(13,14,15,.82);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
     border-bottom-color:rgba(255,255,255,.08);box-shadow:0 10px 34px rgba(0,0,0,.28)}
+  /* no-hero pages (block-paving / gravel "updating" pages): solid black top bar, not translucent */
+  .sitebar.scrolled:not(.has-hero){background:#0D0E0F;-webkit-backdrop-filter:none;backdrop-filter:none}
   .sitebar.nav-hidden{transform:translateY(-100%)}
   .sitebar-logo{display:flex;flex-direction:column;text-decoration:none;line-height:1}
   .sitebar-logo .l1{font-family:var(--font-logo,"Raleway",sans-serif);font-weight:600;font-size:22px;letter-spacing:5px;text-transform:uppercase;color:#fafafa}

@@ -225,6 +225,8 @@
   .cov-list{list-style:none;margin:26px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:12px 18px}
   .cov-list li{font-size:14.5px;color:var(--graphite);padding-left:15px;position:relative}
   .cov-list li::before{content:"";position:absolute;left:0;top:.6em;width:5px;height:5px;border-radius:50%;background:var(--gold)}
+  .cov-list a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s ease}
+  .cov-list a:hover{border-bottom-color:currentColor}
   .cov-note{margin-top:26px;font-size:14px;color:var(--mist)}
   .cov-note a{color:var(--gold-deep)}
   .coverage--dark{background:var(--ink)}
@@ -256,7 +258,7 @@
   .start-contact a:hover{color:var(--gold-hl)}
   .start-contact a:hover .sc-k svg{stroke:var(--gold-hl)}
   form{margin-top:30px;display:flex;flex-direction:column}
-  /* Homepage get-started — button opens the interactive quote form at /get-started/ */
+  /* Homepage get-started — button opens the interactive quote form at /get-a-quote/ */
   .start-go{margin-top:30px;width:100%;display:flex;align-items:center;justify-content:center;gap:11px;background:var(--gold);color:var(--ink);border:1px solid var(--gold);border-radius:6px;font-family:var(--sans);font-weight:600;font-size:16px;letter-spacing:.02em;padding:19px;text-decoration:none;transition:filter .2s ease,transform .15s ease}
   .start-go:hover{filter:brightness(1.06);transform:translateY(-1px)}
   .start-go:active{transform:scale(.99)}

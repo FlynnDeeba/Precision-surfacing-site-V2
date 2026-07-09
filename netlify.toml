@@ -6,3 +6,16 @@
 
 [build.environment]
   NODE_VERSION = "18"
+
+# Old lead form retired — send it (and any legacy variants) to the current quote form.
+[[redirects]]
+  from = "/enquire/"
+  to = "/get-a-quote/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/enquire"
+  to = "/get-a-quote/"
+  status = 301
+  force = true

@@ -1,0 +1,93 @@
+---
+layout: layouts/base.njk
+extraCss: location.css
+---
+{% set resin = (locKind == "resin") %}
+
+<section class="hero" data-theme="dark">
+  <div class="hero-copy">
+    <div class="hero-text">
+      <span class="eyebrow">{% if resin %}Resin driveways{% else %}Driveways &amp; surfacing{% endif %} · Norfolk</span>
+      <h1>{% if resin %}Resin driveways<br>in <em>{{ loc.name }}.</em>{% else %}Driveways<br>in <em>{{ loc.name }}.</em>{% endif %}</h1>
+      <p class="lede">{{ loc.note }}</p>
+      <a class="start-go loc-hero-cta" href="/get-a-quote/">Get a free quote <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- dark → light transition -->
+<div class="section-fade section-fade--grain" aria-hidden="true"></div>
+
+<section class="sec" data-theme="light">
+  <div class="sec-head">
+    <span class="kicker">01 — {% if resin %}Resin in{% else %}Surfacing in{% endif %} {{ loc.name }}</span>
+    <h2 class="dh">{% if resin %}Seamless resin, <em>locally laid.</em>{% else %}Every surface, <em>done properly.</em>{% endif %}</h2>
+    {% set nearList %}{% for n in loc.nearby %}{{ n.name }}{% if loop.revindex0 == 1 %} and {% elif not loop.last %}, {% endif %}{% endfor %}{% endset %}
+    {% if resin %}
+    <p class="sec-lede">We lay resin bound driveways across {{ loc.name }}{% if loc.nearby.length %} and nearby {{ nearList }}{% endif %} — permeable, seamless and available in over fifty colours. Every drive is dug out, built up and laid by our own team, then backed by a ten-year structural warranty.</p>
+    {% else %}
+    <p class="sec-lede">Precision Surfacing installs driveways across {{ loc.name }}{% if loc.nearby.length %} and nearby {{ nearList }}{% endif %}. Resin bound, tarmac, tar &amp; chip, block paving or gravel — we survey the ground, build the base to last and lay every surface in-house, never subcontracted.</p>
+    {% endif %}
+  </div>
+
+  {% if resin %}
+  <div class="loc-resin">
+    <a class="loc-linkcard" href="/services/resin/">
+      <img src="/assets/images/resin/projects/wells-silver-grey/wells-silver-grey-resin-driveway-finished.webp" alt="Resin bound driveway, {{ loc.name }}" loading="lazy" decoding="async">
+      <span class="loc-linkcard-t"><b>Resin bound driveways</b><span>Permeable · seamless · fifty-plus colours</span></span>
+      <span class="loc-linkcard-go"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+  </div>
+  {% else %}
+  {% include "partials/services-grid.njk" %}
+  {% endif %}
+</section>
+
+{% if loc.nearby.length %}
+<section class="sec loc-near" data-theme="light">
+  <span class="kicker">02 — Nearby</span>
+  <h2 class="dh">We also cover <em>nearby.</em></h2>
+  <ul class="loc-nearby">
+    {% for n in loc.nearby %}<li><a href="/locations/driveways-{{ n.slug }}/">Driveways in {{ n.name }}</a></li>{% endfor %}
+  </ul>
+</section>
+{% endif %}
+
+{% include "partials/reviews.njk" %}
+
+<!-- light → dark transition -->
+<div class="section-fade section-fade--up section-fade--grain" aria-hidden="true"></div>
+
+<section class="start" data-theme="dark">
+  <div class="start-grid">
+    <div class="start-intro">
+      <div class="kicker rv"><span class="num" style="color:var(--gold)">03</span> Get started</div>
+      <h2 class="dh rv">{% if resin %}Resin driveways in {{ loc.name }}{% else %}Driveways in {{ loc.name }}{% endif %}, <em>done right.</em></h2>
+      <p class="sec-lede rv">Tell us about your project and we'll come out, measure up and price it properly — no obligation.</p>
+    </div>
+    <div class="start-form">
+      <a class="start-go rv" href="/get-a-quote/">Start your free quote <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <div class="start-or rv">or</div>
+      <div class="start-contact rv">
+        <a href="{{ site.phoneHref }}"><span class="sc-k" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L19 13l2 5v3a1 1 0 0 1-1 1C11 22 2 13 2 4a1 1 0 0 1 1-1z"/></svg></span> {{ site.phone }}</a>
+        <a href="mailto:{{ site.email }}"><span class="sc-k" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M4 7l8 6 8-6"/></svg></span> {{ site.email }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% set locationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": (resin and "Resin bound driveway installation" or "Driveway installation and surfacing"),
+  "name": ((resin and "Resin driveways in " or "Driveways in ") + loc.name),
+  "areaServed": { "@type": "City", "name": loc.name },
+  "provider": {
+    "@type": "HomeAndConstructionBusiness",
+    "name": site.name,
+    "telephone": site.telephone,
+    "url": site.url
+  },
+  "url": (site.url + page.url)
+} %}
+<script type="application/ld+json">{{ locationSchema | dump | safe }}</script>

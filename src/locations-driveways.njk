@@ -1,0 +1,13 @@
+---
+layout: layouts/location.njk
+locKind: "driveways"
+pagination:
+  data: locations.driveways
+  size: 1
+  alias: loc
+  addAllPagesToCollections: true
+permalink: "/locations/driveways-{{ loc.slug }}/"
+eleventyComputed:
+  title: "Driveways in {{ loc.name | safe }} — Precision Surfacing"
+  description: "Driveway installation and surfacing in {{ loc.name | safe }}, Norfolk — resin bound, tarmac, tar & chip, block paving and gravel, laid in-house. Free, no-obligation quotes."
+---

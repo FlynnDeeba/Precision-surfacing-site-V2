@@ -1,0 +1,13 @@
+---
+layout: layouts/location.njk
+locKind: "resin"
+pagination:
+  data: locations.resinDriveways
+  size: 1
+  alias: loc
+  addAllPagesToCollections: true
+permalink: "/locations/resin-driveways-{{ loc.slug }}/"
+eleventyComputed:
+  title: "Resin Driveways in {{ loc.name | safe }} — Precision Surfacing"
+  description: "Resin bound driveways in {{ loc.name | safe }}, Norfolk — permeable, seamless and available in fifty-plus colours. Installed in-house by Precision Surfacing. Free quotes."
+---

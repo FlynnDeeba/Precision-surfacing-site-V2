@@ -12,7 +12,7 @@ const ABOUT = "A modern evolution of a sixty-year regional legacy. We pair decad
 
 module.exports = [
   {
-    slug: "resin-bound",
+    slug: "resin",
     order: 1,
     name: "Resin bound",
     navLabel: "Resin bound",

@@ -46,4 +46,16 @@
     document.addEventListener('keydown', function (e) { if (lb.classList.contains('open') && e.key === 'Escape') closeLB(); });
   }
 
+  /* hero slideshow — cross-fade the photos beside the headline (desktop) */
+  var slides = document.querySelectorAll('.hero-slides .hs-slide');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (slides.length > 1 && !reduce) {
+    var si = 0;
+    setInterval(function () {
+      slides[si].classList.remove('is-active');
+      si = (si + 1) % slides.length;
+      slides[si].classList.add('is-active');
+    }, 4200);
+  }
+
 })();

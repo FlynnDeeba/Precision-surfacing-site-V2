@@ -255,16 +255,26 @@
     .rail-foot a{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:rgba(255,255,255,.6);text-decoration:none;transition:color .2s ease}
     .rail-foot a:hover{color:var(--gold-hl)}
 
-    /* right form panel — light, no dark bands */
-    .app{flex:1;max-width:none;min-height:calc(100dvh - 80px);padding:0 clamp(36px,5vw,64px);background:var(--paper)}
+    /* right form panel — light, no dark bands. Centre the [content + Continue]
+       group vertically so the button sits at centre height, not stuck at the base. */
+    .app{flex:1;max-width:none;min-height:calc(100dvh - 80px);padding:0 clamp(36px,5vw,64px);background:var(--paper);justify-content:center}
     .top{display:none}
-    .body{justify-content:center;padding:56px 0}
-    .step,.done{max-width:520px;width:100%;margin:0 auto}
-    .q{font-size:46px}
-    .svc,.appgrid{grid-template-columns:1fr 1fr 1fr}
+    .body{flex:0 1 auto;justify-content:center;padding:20px 0}
+    .step,.done{max-width:560px;width:100%;margin:0 auto}
+    .q{font-size:54px}
+    .hint{font-size:16px;max-width:46ch;margin-top:16px}
+    .svc,.appgrid{grid-template-columns:1fr 1fr 1fr;gap:15px;margin-top:36px}
+    /* scale the selection buttons up so the step fills the space */
+    .card{min-height:132px;padding:22px 20px;border-radius:14px}
+    .card .num{font-size:12px}
+    .card .name{font-size:15px}
+    .appcard{min-height:86px;padding:26px 16px;font-size:15.5px}
+    .seg{padding:18px 8px;font-size:14px}
+    .fields{margin-top:36px}
 
-    /* nav on light */
-    .nav{background:var(--paper);max-width:520px;width:100%;margin:0 auto;padding:26px 0 44px}
+    /* nav on light — grouped with the centred content, Continue right-aligned */
+    .nav{background:var(--paper);max-width:560px;width:100%;margin:0 auto;padding:8px 0 0}
+    .next{padding:18px 34px;font-size:16px}
     .back{color:rgba(14,15,16,.5)}
     .back:hover{color:var(--ink)}
     .next{border-color:rgba(14,15,16,.28);color:var(--graphite)}

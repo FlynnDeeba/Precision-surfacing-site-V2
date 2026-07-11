@@ -540,7 +540,7 @@
     .sitebar-logo .l2{font-size:14px;letter-spacing:11px}
     .sitebar-burger{display:none}
     .sitebar-links{display:flex;align-items:center;gap:36px}
-    .sitebar-links .navlink{font-family:var(--mono,"DM Mono",monospace);font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.82);text-decoration:none;cursor:pointer;background:none;border:0;display:inline-flex;align-items:center;gap:7px;transition:color .2s ease}
+    .sitebar-links .navlink{font-family:var(--font-logo);font-weight:600;font-size:13px;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.82);text-decoration:none;cursor:pointer;background:none;border:0;display:inline-flex;align-items:center;gap:7px;transition:color .2s ease}
     .sitebar-links .navlink:hover{color:var(--gold-hl)}
     .sitebar-links .navlink-cta{border:1px solid var(--gold-hl);border-radius:6px;padding:11px 20px;color:var(--gold-hl)}
     .sitebar-links .navlink-cta:hover{background:var(--gold-hl);color:var(--ink)}

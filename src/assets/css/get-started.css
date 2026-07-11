@@ -216,12 +216,12 @@
     .topnav-logo .logo-main{font-family:var(--logo);font-weight:600;font-size:21px;letter-spacing:5px;text-transform:uppercase;color:#fafafa}
     .topnav-logo .logo-sub{font-family:var(--logo);font-weight:600;font-size:12.5px;letter-spacing:9.5px;text-transform:uppercase;color:var(--gold-hl);margin-top:3px}
     .topnav-links{display:flex;align-items:center;gap:clamp(18px,2.6vw,30px)}
-    .navlink{font-family:var(--mono);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.82);text-decoration:none;cursor:pointer;background:none;border:0;display:inline-flex;align-items:center;gap:7px;transition:color .2s ease}
+    .navlink{font-family:var(--logo);font-weight:600;font-size:13px;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.82);text-decoration:none;cursor:pointer;background:none;border:0;display:inline-flex;align-items:center;gap:7px;transition:color .2s ease}
     .navlink:hover{color:var(--gold-hl)}
     .navlink-cta{border:1px solid var(--gold-hl);border-radius:6px;padding:9px 16px;color:var(--gold-hl)}
     .navlink-cta:hover{background:var(--gold-hl);color:var(--ink);border-color:var(--gold-hl)}
     .navdrop{position:relative}
-    .navdrop-btn{font-family:var(--mono)}
+    .navdrop-btn{font-family:var(--logo);font-weight:600}
     .nd-chev{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;transition:transform .25s ease}
     .navdrop:hover .nd-chev,.navdrop.open .nd-chev{transform:rotate(180deg)}
     .navdrop-menu{position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%) translateY(-6px);

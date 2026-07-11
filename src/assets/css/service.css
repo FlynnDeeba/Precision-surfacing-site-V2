@@ -318,7 +318,6 @@
     /* Tarmac & tar-and-chip: filmstrip of project photos below the headline */
     .hero-strip{display:flex;gap:16px;margin-top:52px;align-items:flex-start}
     .hs-tile{flex:1;min-width:0;height:260px;border:0;padding:0;border-radius:12px;overflow:hidden;position:relative;cursor:pointer;background:#1c1c1d}
-    .hs-tile:nth-child(even){margin-top:40px}
     /* Resin only: larger portrait gallery to the RIGHT of the text, cascading left→right */
     .hero[data-service="resin"] .hero-copy{display:grid;grid-template-columns:minmax(0,0.82fr) minmax(0,1.3fr);column-gap:56px;align-items:center}
     .hero[data-service="resin"] .hero-text{grid-column:1;min-width:0;transform:translateY(-74px)}

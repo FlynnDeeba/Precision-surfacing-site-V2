@@ -252,8 +252,8 @@ module.exports = [
     navLabel: "Tar & chip",
     title: "Tar & chip surfacing — Precision Surfacing, Norfolk",
     eyebrow: "Tar & chip surfacing",
-    h1Lead: "Rural, rugged",
-    h1Em: "& rolled.",
+    h1Html: "Norfolk's<br>tar &amp; chip<br><em>specialists.</em>",
+    heroLede: "Decorative stone chippings rolled hard into hot binder — a rugged, grippy, natural finish that's right at home on driveways, courtyards and country lanes.",
     workHead: "Recent work",
     work: [
       { img: "/assets/images/tar-and-chip/projects/broadland/broadland-tar-and-chip-driveway-photo-01.webp", title: "Country drive", place: "Broadland", images: [

@@ -51,11 +51,12 @@
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (slides.length > 1 && !reduce) {
     var si = 0;
+    var rapid = window.matchMedia && window.matchMedia('(max-width:1023px)').matches;
     setInterval(function () {
       slides[si].classList.remove('is-active');
       si = (si + 1) % slides.length;
       slides[si].classList.add('is-active');
-    }, 4200);
+    }, rapid ? 1800 : 4200);
   }
 
 })();

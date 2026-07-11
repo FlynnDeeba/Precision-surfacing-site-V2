@@ -106,7 +106,14 @@
   .hero h1{font-family:var(--serif);font-weight:400;color:#fff;font-size:clamp(44px,13vw,56px);line-height:1.0;letter-spacing:.4px;margin-top:22px}
   .hero h1 em{font-style:italic;color:var(--gold-hl)}
   .hero p.lede{margin-top:24px;max-width:32ch;color:rgba(255,255,255,.62);font-size:15px;line-height:1.65}
-  .hero-slides{display:none} /* homepage hero image slideshow — desktop only */
+  .hero-slides{display:none} /* homepage hero image slideshow */
+  /* mobile + tablet: slideshow sits full-width below the headline */
+  @media (max-width:1023px){
+    .home .hero-slides{display:block;position:relative;margin-top:30px;aspect-ratio:4/3;border-radius:8px;overflow:hidden;background:#1c1c1d}
+    .home .hero-slides::after{content:"";position:absolute;inset:0;border-radius:8px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);pointer-events:none}
+    .home .hs-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s ease}
+    .home .hs-slide.is-active{opacity:1}
+  }
 
   /* ===== SHARED ===== */
   section{position:relative}
@@ -123,14 +130,15 @@
   .light{background:var(--paper)}
   /* Homepage About: on mobile it sits on the dark run with the hero; on desktop
      (≥900px, where the burger is gone) it becomes the usual light section. */
-  #about{background:var(--ink);padding-block:4px 34px}
-  #about .about-copy{margin-top:6px;font-size:16px;line-height:1.62;color:rgba(255,255,255,.9)}
-  #about .about-copy span{color:rgba(255,255,255,.6)}
-  #about .kicker{color:rgba(255,255,255,.5)}
-  #about .kicker::after{background:var(--line-d)}
-  #about .kicker .num{color:var(--gold-hl)}
+  #about{background:var(--paper);padding-block:38px 44px}
+  #about .about-copy{margin-top:6px;font-size:16px;line-height:1.62;color:#484b4a}
+  #about .about-copy span{color:#484b4a}
+  #about .kicker{color:var(--mist)}
+  #about .kicker::after{background:var(--line-l)}
+  #about .kicker .num{color:var(--gold-deep)}
   #services{padding-top:50px}
-  .fade-desk{display:none}   /* hero → about fade: desktop only */
+  .fade-desk{display:block}   /* hero → about fade (now on all sizes — About is light everywhere) */
+  .fade-mob{display:none}     /* About is light now, so no about→light join is needed */
 
   /* ===== ABOUT (top) ===== */
   .about-copy{margin-top:20px;color:var(--graphite);font-size:14.5px;line-height:1.7;max-width:44ch}
@@ -140,8 +148,8 @@
   .trust .item{display:flex;align-items:flex-start;gap:14px}
   /* icons flush to the container's left edge */
   .trust .ic{width:28px;height:28px;display:flex;align-items:center;justify-content:flex-start;flex:0 0 auto}
-  .trust .ic svg{width:27px;height:27px;stroke:var(--gold-hl);fill:none;stroke-width:1.4}
-  .trust .t{font-weight:500;font-size:14.5px;color:#fff;line-height:1.25;margin-top:5px}
+  .trust .ic svg{width:27px;height:27px;stroke:var(--graphite);fill:none;stroke-width:1.4}
+  .trust .t{font-weight:500;font-size:14.5px;color:var(--graphite);line-height:1.25;margin-top:5px}
 
   /* Desktop restores the light About + the hero→about fade */
   @media (min-width:900px){
@@ -505,8 +513,8 @@
   @media (min-width:1024px){
     .home .hero-copy{display:grid;grid-template-columns:minmax(0,0.95fr) minmax(0,1.05fr);column-gap:60px;align-items:center}
     .home .hero-text{grid-column:1;min-width:0}
-    .home .hero-slides{grid-column:2;display:block;position:relative;aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:#1c1c1d;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
-    .home .hero-slides::after{content:"";position:absolute;inset:0;border-radius:16px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.09);pointer-events:none}
+    .home .hero-slides{grid-column:2;display:block;position:relative;aspect-ratio:4/3;border-radius:8px;overflow:hidden;background:#1c1c1d;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+    .home .hero-slides::after{content:"";position:absolute;inset:0;border-radius:8px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.09);pointer-events:none}
     .home .hs-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.1s ease}
     .home .hs-slide.is-active{opacity:1}
   }

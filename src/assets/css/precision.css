@@ -245,6 +245,13 @@
   .coverage--dark .cov-lede{color:rgba(255,255,255,.6)}
   .coverage--dark .cov-list li{color:rgba(255,255,255,.82)}
   .coverage--dark .cov-note{color:rgba(255,255,255,.5)}
+  /* centred layout + standard kicker */
+  .coverage-in{text-align:center}
+  .coverage .kicker{justify-content:center}
+  .coverage .kicker::after{display:none}
+  .coverage--dark .kicker{color:rgba(255,255,255,.5)}
+  .coverage .cov-lede{margin-left:auto;margin-right:auto}
+  .coverage .cov-list{display:flex;flex-wrap:wrap;justify-content:center;gap:9px 20px;max-width:860px;margin:24px auto 0}
 
   @media (min-width:760px){
     .reviews{display:block}

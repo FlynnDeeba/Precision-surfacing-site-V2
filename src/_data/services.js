@@ -53,16 +53,16 @@ module.exports = [
         "/assets/images/resin/projects/sandringham-case-study/sandringham-resin-driveway-tarmac-base-laid.webp",
         "/assets/images/resin/projects/sandringham-case-study/sandringham-resin-driveway-closeup-finished.webp"
       ] },
-      { img: "/assets/images/resin/projects/reedham/reedham-tarmac-closeup.jpg", title: "Resin driveway", place: "Reedham", images: [
-        "/assets/images/resin/projects/reedham/reedham-before.jpg",
-        "/assets/images/resin/projects/reedham/reedham-type1-half.jpg",
-        "/assets/images/resin/projects/reedham/reedham-type1-full.jpg",
-        "/assets/images/resin/projects/reedham/reedham-tarmac-wide.jpg",
-        "/assets/images/resin/projects/reedham/reedham-tarmac-closeup.jpg",
-        "/assets/images/resin/projects/reedham/reedham-resin-third.jpg",
-        "/assets/images/resin/projects/reedham/reedham-resin-two-thirds.jpg",
-        "/assets/images/resin/projects/reedham/reedham-finished.jpg",
-        "/assets/images/resin/projects/reedham/reedham-other-side.jpg"
+      { img: "/assets/images/resin/projects/reedham/reedham-tarmac-closeup.webp", title: "Resin driveway", place: "Reedham", images: [
+        "/assets/images/resin/projects/reedham/reedham-before.webp",
+        "/assets/images/resin/projects/reedham/reedham-type1-half.webp",
+        "/assets/images/resin/projects/reedham/reedham-type1-full.webp",
+        "/assets/images/resin/projects/reedham/reedham-tarmac-wide.webp",
+        "/assets/images/resin/projects/reedham/reedham-tarmac-closeup.webp",
+        "/assets/images/resin/projects/reedham/reedham-resin-third.webp",
+        "/assets/images/resin/projects/reedham/reedham-resin-two-thirds.webp",
+        "/assets/images/resin/projects/reedham/reedham-finished.webp",
+        "/assets/images/resin/projects/reedham/reedham-other-side.webp"
       ] }
     ],
     why: {
@@ -172,10 +172,10 @@ module.exports = [
       lede: "Decorative chippings rolled into the hot surface. Tap one to see it.",
       more: "",
       items: [
-        ["honey", "Golden Buff",     "warm",    "/assets/images/tarmac/chippings/tarmac-buff-chippings-closeup.jpg"],
-        ["pewter","Silver Grey",     "cool",    "/assets/images/tarmac/chippings/tarmac-grey-chippings-closeup.jpg"],
-        ["redtar","Red Granite",     "feature", "/assets/images/tarmac/chippings/tarmac-red-chippings-closeup.jpg"],
-        ["gravel","Natural Shingle", "coastal", "/assets/images/tarmac/chippings/tarmac-shingle-chippings-surface.jpg"]
+        ["honey", "Golden Buff",     "warm",    "/assets/images/tarmac/chippings/tarmac-buff-chippings-closeup.webp"],
+        ["pewter","Silver Grey",     "cool",    "/assets/images/tarmac/chippings/tarmac-grey-chippings-closeup.webp"],
+        ["redtar","Red Granite",     "feature", "/assets/images/tarmac/chippings/tarmac-red-chippings-closeup.webp"],
+        ["gravel","Natural Shingle", "coastal", "/assets/images/tarmac/chippings/tarmac-shingle-chippings-surface.webp"]
       ]
     },
     faqs: [
@@ -259,10 +259,10 @@ module.exports = [
       { img: "/assets/images/tar-and-chip/projects/broadland/broadland-tar-and-chip-driveway-photo-01.webp", title: "Country drive", place: "Broadland", images: [
         "/assets/images/tar-and-chip/projects/broadland/broadland-tar-and-chip-driveway-photo-01.webp"
       ] },
-      { img: "/assets/images/tar-and-chip/projects/easton/easton-tar-and-chip-driveway-1.jpg", title: "Farm driveway", place: "Easton", images: [
-        "/assets/images/tar-and-chip/projects/easton/easton-tar-and-chip-driveway-1.jpg",
-        "/assets/images/tar-and-chip/projects/easton/easton-tar-and-chip-driveway-2.jpg",
-        "/assets/images/tar-and-chip/projects/easton/easton-tar-and-chip-driveway-3.jpg"
+      { img: "/assets/images/tar-and-chip/projects/easton/easton-tar-and-chip-driveway-1.webp", title: "Farm driveway", place: "Easton", images: [
+        "/assets/images/tar-and-chip/projects/easton/easton-tar-and-chip-driveway-1.webp",
+        "/assets/images/tar-and-chip/projects/easton/easton-tar-and-chip-driveway-2.webp",
+        "/assets/images/tar-and-chip/projects/easton/easton-tar-and-chip-driveway-3.webp"
       ] },
       { img: "/assets/images/tar-and-chip/projects/foulsham/foulsham-tar-and-chip-driveway-photo-01.webp", title: "Rural driveway", place: "Foulsham", images: [
         "/assets/images/tar-and-chip/projects/foulsham/foulsham-tar-and-chip-driveway-photo-01.webp"

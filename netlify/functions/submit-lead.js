@@ -37,6 +37,20 @@ exports.handler = async (event) => {
   const REPLY_TO = process.env.REPLY_TO || "info@psurfacing.co.uk";
   const PHONE = process.env.PHONE || "07836 441717";
 
+  // Optional photos from step 3: [{ filename, content }] with content as base64
+  // (already resized in the browser). Re-checked here — never trust the client.
+  const MAX_PHOTOS = 4;
+  const MAX_B64 = 4 * 1024 * 1024;
+  const attachments = [];
+  let b64Used = 0;
+  for (const p of (Array.isArray(d.photos) ? d.photos : []).slice(0, MAX_PHOTOS)) {
+    const content = String((p && p.content) || "").replace(/\s+/g, "");
+    if (!content || !/^[A-Za-z0-9+/]+={0,2}$/.test(content)) continue;
+    b64Used += content.length;
+    if (b64Used > MAX_B64) break;
+    attachments.push({ filename: safeName(p && p.filename, attachments.length + 1), content });
+  }
+
   const service = Array.isArray(d.service) ? d.service.join(", ") : String(d.service || "");
   const rows = [
     ["Surface", service],
@@ -48,6 +62,7 @@ exports.handler = async (event) => {
     ["Phone", d.phone],
     ["Email", email],
     ["Notes", d.notes],
+    ["Photos", attachments.length ? `${attachments.length} attached` : ""],
   ];
   const tableRows = rows
     .map(([k, v]) => `<tr><td style="padding:6px 16px 6px 0;color:#777;white-space:nowrap;vertical-align:top">${esc(k)}</td><td style="padding:6px 0;color:#111"><strong>${esc(v) || "&mdash;"}</strong></td></tr>`)
@@ -70,6 +85,7 @@ exports.handler = async (event) => {
   const biz = await sendEmail(key, {
     from: MAIL_FROM, to: [LEAD_TO], reply_to: email,
     subject: `New quote request — ${name}`, html: bizHtml,
+    ...(attachments.length ? { attachments } : {}),
   });
   if (!biz.ok) return json(502, { ok: false, error: "Could not send your request." });
 
@@ -93,6 +109,12 @@ async function sendEmail(key, payload) {
   } catch {
     return { ok: false };
   }
+}
+
+// Only ever let a sanitised, image-extensioned name through to the mail API.
+function safeName(n, i) {
+  const base = String(n || "").replace(/[^A-Za-z0-9._-]/g, "").slice(0, 60);
+  return /^[A-Za-z0-9][A-Za-z0-9._-]*\.(jpe?g|png|webp)$/i.test(base) ? base : `photo-${i}.jpg`;
 }
 
 function json(statusCode, obj) {

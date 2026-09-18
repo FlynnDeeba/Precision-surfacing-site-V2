@@ -8,7 +8,7 @@
   Shared "About" copy lives in the layout; override here with `about` if needed.
 */
 
-const ABOUT = "A modern evolution of a sixty-year regional legacy. We pair decades of inherited, hands-on site expertise with strict engineering standards — and we don't subcontract, cut corners on the sub-base, or disappear after handover.";
+const ABOUT = "Setting the standard across Norfolk. We pair decades of inherited, hands-on site expertise with strict engineering standards — and we don't subcontract, cut corners on the sub-base, or disappear after handover.";
 
 module.exports = [
   {

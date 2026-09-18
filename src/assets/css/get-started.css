@@ -100,6 +100,28 @@
   .grp-label{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--mist);display:block;margin-bottom:12px}
   .opt{text-transform:none;letter-spacing:0;color:rgba(14,15,16,.4)}
 
+  /* optional photo upload — step 3 */
+  .field input.ph-input{position:absolute;width:1px;height:1px;padding:0;margin:-1px;border:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .field label.ph-drop{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+    margin-bottom:0;padding:22px 16px;cursor:pointer;text-align:center;
+    border:1px dashed rgba(14,15,16,.26);border-radius:10px;background:rgba(14,15,16,.02);
+    font-family:var(--sans);letter-spacing:0;text-transform:none;color:var(--ink);
+    transition:border-color .2s ease,background .2s ease}
+  .field label.ph-drop:hover,.field label.ph-drop.drag{border-color:var(--gold-deep);background:rgba(230,178,62,.09)}
+  .ph-input:focus-visible~.ph-drop{border-color:var(--gold-deep);background:rgba(230,178,62,.09)}
+  .ph-drop svg{width:26px;height:26px;margin-bottom:5px;fill:none;stroke:var(--gold-deep);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+  .ph-drop-t{font-size:14.5px;font-weight:600}
+  .ph-drop-s{font-size:12px;color:var(--mist)}
+
+  .ph-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+  .ph-item{position:relative;width:74px;height:74px;border-radius:8px;overflow:hidden;background:rgba(14,15,16,.07)}
+  .ph-item img{width:100%;height:100%;object-fit:cover;display:block}
+  .ph-x{position:absolute;top:3px;right:3px;width:20px;height:20px;padding:0;border:0;border-radius:50%;cursor:pointer;
+    background:rgba(8,9,10,.66);color:#fff;font-size:14px;line-height:20px;text-align:center;transition:background .2s ease}
+  .ph-x:hover{background:rgba(8,9,10,.9)}
+  .ph-note{font-family:var(--mono);font-size:11px;color:var(--mist);margin-top:9px}
+  .ph-note.warn{color:var(--err)}
+
   /* what's it for — card grid */
   .appgrid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
   .appcard{cursor:pointer;background:#fff;border:1px solid rgba(14,15,16,.14);border-radius:12px;

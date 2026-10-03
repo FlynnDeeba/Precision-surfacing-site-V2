@@ -7,7 +7,7 @@
     --err:#E0775B;
     --serif:"Instrument Serif",Georgia,serif;
     --sans:"Inter",system-ui,sans-serif;
-    --mono:"DM Mono",ui-monospace,monospace;
+    --mono:"Raleway",system-ui,sans-serif;   /* small all-caps labels — see precision.css */
     --logo:"Raleway",sans-serif;
     --pad:26px;
   }

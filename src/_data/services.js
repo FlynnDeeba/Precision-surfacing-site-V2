@@ -256,15 +256,32 @@ module.exports = [
     heroLede: "Decorative stone chippings rolled hard into hot binder — a rugged, grippy, natural finish that's right at home on driveways, courtyards and country lanes.",
     workHead: "Recent work",
     work: [
-      { img: "/assets/images/tar-and-chip/projects/broadland/broadland-tar-and-chip-driveway-photo-01.webp", title: "Country drive", place: "Broadland", images: [
-        "/assets/images/tar-and-chip/projects/broadland/broadland-tar-and-chip-driveway-photo-01.webp"
+      { img: "/assets/images/tar-and-chip/projects/the-old-hall/the-old-hall-tar-and-chip-driveway-finished.webp", title: "Sweeping country drive", place: "The Old Hall", images: [
+        "/assets/images/tar-and-chip/projects/the-old-hall/the-old-hall-tar-and-chip-driveway-before-start.webp",
+        "/assets/images/tar-and-chip/projects/the-old-hall/the-old-hall-tar-and-chip-driveway-steel-edging-installation.webp",
+        "/assets/images/tar-and-chip/projects/the-old-hall/the-old-hall-tar-and-chip-driveway-steel-edging-in.webp",
+        "/assets/images/tar-and-chip/projects/the-old-hall/the-old-hall-tar-and-chip-driveway-base-prepared.webp",
+        "/assets/images/tar-and-chip/projects/the-old-hall/the-old-hall-tar-and-chip-driveway-binder-sprayed.webp",
+        "/assets/images/tar-and-chip/projects/the-old-hall/the-old-hall-tar-and-chip-driveway-chip-spread-and-rolled.webp",
+        "/assets/images/tar-and-chip/projects/the-old-hall/the-old-hall-tar-and-chip-driveway-binder-and-chip-phone-box.webp",
+        "/assets/images/tar-and-chip/projects/the-old-hall/the-old-hall-tar-and-chip-driveway-closeup.webp",
+        "/assets/images/tar-and-chip/projects/the-old-hall/the-old-hall-tar-and-chip-driveway-driveway-curve.webp",
+        "/assets/images/tar-and-chip/projects/the-old-hall/the-old-hall-tar-and-chip-driveway-junction.webp",
+        "/assets/images/tar-and-chip/projects/the-old-hall/the-old-hall-tar-and-chip-driveway-phone-box-finished.webp",
+        "/assets/images/tar-and-chip/projects/the-old-hall/the-old-hall-tar-and-chip-driveway-house-entrance.webp",
+        "/assets/images/tar-and-chip/projects/the-old-hall/the-old-hall-tar-and-chip-driveway-finished.webp"
       ] },
-      { img: "/assets/images/tar-and-chip/projects/easton/easton-tar-and-chip-driveway-1.webp", title: "Farm driveway", place: "Easton", images: [
-        "/assets/images/tar-and-chip/projects/easton/easton-tar-and-chip-driveway-1.webp",
-        "/assets/images/tar-and-chip/projects/easton/easton-tar-and-chip-driveway-2.webp",
-        "/assets/images/tar-and-chip/projects/easton/easton-tar-and-chip-driveway-3.webp"
+      { img: "/assets/images/tar-and-chip/projects/north-walsham/north-walsham-tar-and-chip-driveway-closeup-hero.webp", title: "New-build driveway", place: "North Walsham", images: [
+        "/assets/images/tar-and-chip/projects/north-walsham/north-walsham-tar-and-chip-driveway-binder-poured.webp",
+        "/assets/images/tar-and-chip/projects/north-walsham/north-walsham-tar-and-chip-driveway-binder-sprayed.webp",
+        "/assets/images/tar-and-chip/projects/north-walsham/north-walsham-tar-and-chip-driveway-chip-being-spread.webp",
+        "/assets/images/tar-and-chip/projects/north-walsham/north-walsham-tar-and-chip-driveway-wide-view.webp",
+        "/assets/images/tar-and-chip/projects/north-walsham/north-walsham-tar-and-chip-driveway-wide-view-other-side.webp",
+        "/assets/images/tar-and-chip/projects/north-walsham/north-walsham-tar-and-chip-driveway-finished.webp",
+        "/assets/images/tar-and-chip/projects/north-walsham/north-walsham-tar-and-chip-driveway-closeup-hero.webp"
       ] },
-      { img: "/assets/images/tar-and-chip/projects/foulsham/foulsham-tar-and-chip-driveway-photo-01.webp", title: "Rural driveway", place: "Foulsham", images: [
+      { img: "/assets/images/tar-and-chip/projects/foulsham/foulsham-tar-and-chip-driveway-photo-01.webp", title: "Farmhouse courtyard", place: "Foulsham", images: [
+        "/assets/images/tar-and-chip/projects/foulsham/foulsham-tar-and-chip-driveway-photo-02.webp",
         "/assets/images/tar-and-chip/projects/foulsham/foulsham-tar-and-chip-driveway-photo-01.webp"
       ] }
     ],

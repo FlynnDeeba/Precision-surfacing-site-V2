@@ -14,7 +14,8 @@
   var m = document.getElementById('mosaic');
   function makeTile(item, i, ar) {
     var t = document.createElement('button');
-    t.className = 'tile'; t.type = 'button';
+    t.className = 'tile'; t.type = 'button'; t.dataset.lb = i;
+    t.style.order = i;                 /* keeps project order when the two columns collapse into one on mobile */
     if (ar) t.style.aspectRatio = ar;
     t.setAttribute('aria-label', 'View ' + item.title + ', ' + item.place);
     fill(t, item);
@@ -48,15 +49,32 @@
     if (item.img) return [item.img];
     return null;                       // swatch-only project (block paving / gravel)
   }
+  /* preload cache — images are fetched ahead of time so the lightbox shows them instantly */
+  var cache = {};
+  function preload(src) {
+    if (!cache[src]) { var p = new Image(); p.decoding = 'async'; p.src = src; cache[src] = p; }
+    return cache[src];
+  }
+  function warm(item) { var g = galleryOf(item); if (g) g.forEach(preload); }
+  var renderId = 0;
   function render() {
     if (!frame) return;
-    var item = work[cur];
-    frame.innerHTML = '';
+    var item = work[cur], id = ++renderId;
     if (gal) {
-      var im = document.createElement('img');
-      im.src = gal[sub]; im.alt = item.title + ', ' + item.place; frame.appendChild(im);
+      var src = gal[sub], p = preload(src);
+      var show = function () {
+        if (id !== renderId) return;          // user already moved on to another image
+        var im = document.createElement('img');
+        im.src = src; im.alt = item.title + ', ' + item.place;
+        frame.innerHTML = ''; frame.appendChild(im);
+      };
+      /* keep the previous image up until the new one is decoded — no blank frame / progressive paint */
+      if (p.complete && p.naturalWidth) show();
+      else if (p.decode) p.decode().then(show, show);
+      else { p.addEventListener('load', show); p.addEventListener('error', show); }
       document.getElementById('lbCount').textContent = pad(sub + 1) + ' / ' + pad(gal.length);
     } else {
+      frame.innerHTML = '';
       fill(frame, item);
       document.getElementById('lbCount').textContent = '01 / 01';
     }
@@ -71,8 +89,19 @@
     cur = i; gal = galleryOf(work[i]);
     sub = gal ? Math.max(0, gal.indexOf(work[i].img)) : 0;   // open on the cover image
     lb.classList.toggle('is-portrait', !!work[i].portrait);  // show tall images uncropped
-    render(); lb.classList.add('open'); document.body.style.overflow = 'hidden';
+    if (frame && gal) frame.innerHTML = '';                  // don't flash the previously opened project
+    render();
+    warm(work[i]);                                           // fetch the rest of this project's images now
+    lb.classList.add('open'); document.body.style.overflow = 'hidden';
   };
+  /* start fetching a project's images the moment a tile is hovered, touched or focused */
+  function warmFrom(e) {
+    var t = e.target.closest && e.target.closest('[data-lb]');
+    if (t && work[+t.dataset.lb]) warm(work[+t.dataset.lb]);
+  }
+  document.addEventListener('pointerover', warmFrom, { passive: true });
+  document.addEventListener('touchstart', warmFrom, { passive: true });
+  document.addEventListener('focusin', warmFrom);
   function closeLB() { if (!lb) return; lb.classList.remove('open'); document.body.style.overflow = ''; }
   function step(d) { if (gal && gal.length) { sub = (sub + d + gal.length) % gal.length; render(); } }
   if (lb) {

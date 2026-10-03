@@ -7,7 +7,7 @@
     --line-l:rgba(27,29,30,.12);--line-d:rgba(255,255,255,.10);
     --serif:"Instrument Serif",Georgia,serif;
     --sans:"Inter",system-ui,sans-serif;
-    --mono:"DM Mono",ui-monospace,monospace;
+    --mono:"Raleway",system-ui,sans-serif;   /* small all-caps labels — see precision.css */
     --font-logo:"Raleway",system-ui,sans-serif;
     --pad:26px;--maxw:480px;
   }
@@ -92,25 +92,20 @@
   .mosaic{display:flex;gap:10px;align-items:flex-start}
   .mcol{flex:1;min-width:0;display:flex;flex-direction:column;gap:10px}
   .mcol.right{margin-top:42px}
-  /* Tarmac & tar-and-chip have only a few images — space them out more vertically on mobile */
+  /* Tarmac & tar-and-chip have only a few, wide images — on mobile they read better as
+     one straight full-width column than as two staggered ones. `display:contents` takes
+     the two columns out of the layout so every tile becomes a child of the mosaic, and
+     the `order` service.js sets on each tile keeps them in project order. */
   @media (max-width:899px){
     /* pull the gallery up closer to the headline + lede */
     .prevwork[data-service="tarmac"],
     .prevwork[data-service="tar-and-chip"]{margin-top:-30px}
+    .prevwork[data-service="tarmac"] .mosaic,
+    .prevwork[data-service="tar-and-chip"] .mosaic{flex-direction:column;align-items:stretch;gap:14px}
     .prevwork[data-service="tarmac"] .mcol,
-    .prevwork[data-service="tar-and-chip"] .mcol{gap:220px}
-    /* each image ~90% of the section width, shorter (staggered left / right) */
+    .prevwork[data-service="tar-and-chip"] .mcol{display:contents}
     .prevwork[data-service="tarmac"] .tile,
-    .prevwork[data-service="tar-and-chip"] .tile{width:190%;aspect-ratio:13/10.2!important}
-    .prevwork[data-service="tarmac"] .mcol.right,
-    .prevwork[data-service="tar-and-chip"] .mcol.right{align-items:flex-end}
-    /* Offsets scale with image height (74.54% of mosaic width for the right column,
-       149.08% of a column for the 3rd tile) + a fixed px gap, so the height terms cancel
-       and BOTH the 1→2 and 2→3 gaps stay constant at any screen size. */
-    .prevwork[data-service="tarmac"] .mcol.right,
-    .prevwork[data-service="tar-and-chip"] .mcol.right{margin-top:calc(74.54% + 20px)}
-    .prevwork[data-service="tarmac"] .mcol.left .tile:nth-child(2),
-    .prevwork[data-service="tar-and-chip"] .mcol.left .tile:nth-child(2){margin-top:calc(149.08% - 188px)}
+    .prevwork[data-service="tar-and-chip"] .tile{width:100%;aspect-ratio:4/3!important}
   }
   /* single full-width column of wide cover images (e.g. tarmac). Block layout
      with an explicit tile height — no flex/aspect-ratio, so it can't collapse. */
@@ -137,7 +132,7 @@
   .sec .grid{z-index:0;position:absolute;inset:0}
   .sec>*{position:relative;z-index:2}
   .num{font-family:var(--mono);font-size:11px;letter-spacing:.3em;color:var(--gold-deep)}
-  .kicker{display:flex;align-items:center;gap:12px;margin-bottom:20px;font-family:"DM Mono",var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mist)}
+  .kicker{display:flex;align-items:center;gap:12px;margin-bottom:20px;font-family:var(--font-logo);font-weight:500;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--mist)}
   h2.dh{font-family:var(--serif);font-weight:400;color:var(--graphite);font-size:clamp(34px,9.5vw,42px);line-height:1.02;letter-spacing:0}
   h2.dh em{font-style:italic;color:#6B6E6B;font-weight:400}
   .sec-lede{margin-top:18px;color:var(--mist);font-size:15px;line-height:1.7;max-width:36ch}

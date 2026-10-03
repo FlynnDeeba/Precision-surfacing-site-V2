@@ -8,7 +8,10 @@
     --line-l:rgba(27,29,30,.12);--line-d:rgba(255,255,255,.10);
     --serif:"Instrument Serif",Georgia,serif;
     --sans:"Inter",system-ui,sans-serif;
-    --mono:"JetBrains Mono",ui-monospace,monospace;
+    /* Small all-caps labels — kickers, eyebrows, counters, nav group headings.
+       Raleway, to match the logo and nav links. Weight 400 isn't loaded, so the
+       browser resolves these to Raleway 500, which holds up at label sizes. */
+    --mono:"Raleway",system-ui,sans-serif;
     --font-logo:"Raleway",system-ui,sans-serif;
     --pad:26px;--maxw:480px;
   }
@@ -568,9 +571,9 @@
       opacity:0;visibility:hidden;transition:opacity .2s ease,transform .22s ease;box-shadow:0 30px 70px rgba(0,0,0,.55)}
     .navdrop-menu::before{content:"";position:absolute;top:-14px;left:0;right:0;height:14px}
     .navdrop:hover .navdrop-menu,.navdrop:focus-within .navdrop-menu,.navdrop.open .navdrop-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
-    .nd-head{font-family:var(--mono,"DM Mono",monospace);font-size:9.5px;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.4);padding:8px 12px 10px}
+    .nd-head{font-family:var(--mono,"Raleway",sans-serif);font-size:9.5px;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.4);padding:8px 12px 10px}
     .navdrop-menu a{display:flex;align-items:center;gap:13px;padding:12px;border-radius:8px;text-decoration:none;transition:background .18s ease}
-    .nd-num{font-family:var(--mono,"DM Mono",monospace);font-size:11px;color:var(--gold);width:18px;flex:0 0 auto}
+    .nd-num{font-family:var(--mono,"Raleway",sans-serif);font-size:11px;color:var(--gold);width:18px;flex:0 0 auto}
     .nd-name{font-family:var(--font-logo,"Raleway",sans-serif);font-weight:600;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#fff;flex:1;transition:color .18s ease,transform .22s ease}
     .nd-arrow{flex:0 0 auto;opacity:0;transform:translateX(-5px);transition:opacity .2s ease,transform .2s ease}
     .nd-arrow svg{width:14px;height:14px;stroke:var(--gold-hl);stroke-width:1.8;fill:none;display:block}

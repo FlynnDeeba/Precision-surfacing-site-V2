@@ -46,28 +46,45 @@
     document.addEventListener('keydown', function (e) { if (lb.classList.contains('open') && e.key === 'Escape') closeLB(); });
   }
 
-  /* hero slideshow — cross-fade; only slide 1 loads on paint, the rest stream in
-     lazily (data-src) so the homepage isn't 5 MB of images before it's usable. */
-  var slides = document.querySelectorAll('.hero-slides .hs-slide');
+  /* hero slideshow — a slow cross-fade behind the headline. Only the first photo
+     loads on paint; the others stream in lazily so the homepage isn't megabytes of
+     images before it's usable. Each photo carries its own caption (data-cap) so a
+     visitor can see what the surface is and where it was laid. */
+  var slides = [].slice.call(document.querySelectorAll('.hero-media .hs-slide'));
+  var cap = document.getElementById('heroCap'), dotWrap = document.getElementById('heroDots');
   function loadSlide(el){ if (el && el.dataset.src){ el.src = el.dataset.src; el.removeAttribute('data-src'); } }
   if (slides.length) {
-    loadSlide(slides[1]); // preload the one after the active slide
+    var si = 0, dots = [], timer = null;
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (slides.length > 1 && !reduce) {
-      var si = 0;
-      var rapid = window.matchMedia && window.matchMedia('(max-width:1023px)').matches;
-      setInterval(function () {
-        slides[si].classList.remove('is-active');
-        si = (si + 1) % slides.length;
-        loadSlide(slides[si]);                         // current
-        loadSlide(slides[(si + 1) % slides.length]);   // preload next
-        slides[si].classList.add('is-active');
-      }, rapid ? 1800 : 4200);
+
+    function show(i) {
+      slides[si].classList.remove('is-active');
+      si = (i + slides.length) % slides.length;
+      loadSlide(slides[si]);
+      loadSlide(slides[(si + 1) % slides.length]);     // the next one is ready before it's needed
+      slides[si].classList.add('is-active');
+      if (cap && slides[si].dataset.cap) cap.textContent = slides[si].dataset.cap;
+      dots.forEach(function (d, n) { d.setAttribute('aria-selected', n === si ? 'true' : 'false'); });
     }
-    /* after the page is loaded, quietly pull in the remaining slides so they're cached */
+    function start() { if (!reduce && slides.length > 1) { clearInterval(timer); timer = setInterval(function () { show(si + 1); }, 6000); } }
+
+    if (dotWrap && slides.length > 1) {
+      slides.forEach(function (s, n) {
+        var d = document.createElement('button');
+        d.type = 'button'; d.setAttribute('role', 'tab');
+        d.setAttribute('aria-selected', n === 0 ? 'true' : 'false');
+        d.setAttribute('aria-label', s.dataset.cap || ('Photo ' + (n + 1)));
+        d.addEventListener('click', function () { show(n); start(); });   // tapping restarts the clock
+        dotWrap.appendChild(d); dots.push(d);
+      });
+    }
+
+    loadSlide(slides[1]);
+    start();
+    /* once the page is loaded, quietly pull in the rest so they're cached */
     window.addEventListener('load', function () {
       var idle = window.requestIdleCallback || function (f) { setTimeout(f, 800); };
-      idle(function () { slides.forEach(function (s, i) { setTimeout(function () { loadSlide(s); }, i * 200); }); });
+      idle(function () { slides.forEach(function (s, i) { setTimeout(function () { loadSlide(s); }, i * 250); }); });
     });
   }
 

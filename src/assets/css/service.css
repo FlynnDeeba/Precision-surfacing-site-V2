@@ -310,9 +310,25 @@
 
     /* HERO — filmstrip of project photos under the headline (uses the horizontal
        space); the duplicate mosaic below becomes a slim dark→paper fade band. */
-    /* Tarmac & tar-and-chip: filmstrip of project photos below the headline */
     .hero-strip{display:flex;gap:16px;margin-top:52px;align-items:flex-start}
     .hs-tile{flex:1;min-width:0;height:260px;border:0;padding:0;border-radius:12px;overflow:hidden;position:relative;cursor:pointer;background:#1c1c1d}
+
+    /* Tarmac & tar-and-chip: photos move to the RIGHT of the headline, one wide lead
+       shot above two smaller ones, with the last dropped to break the line. Their
+       photos are landscape, so they get a wide-over-two arrangement rather than the
+       three portrait columns resin uses. */
+    .hero[data-service="tarmac"] .hero-copy,
+    .hero[data-service="tar-and-chip"] .hero-copy{display:grid;grid-template-columns:minmax(0,0.86fr) minmax(0,1.18fr);column-gap:56px;align-items:center}
+    .hero[data-service="tarmac"] .hero-text,
+    .hero[data-service="tar-and-chip"] .hero-text{grid-column:1;min-width:0;transform:translateY(-18px)}
+    .hero[data-service="tarmac"] .hero-strip,
+    .hero[data-service="tar-and-chip"] .hero-strip{grid-column:2;display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:0;padding-bottom:44px;align-items:start}
+    .hero[data-service="tarmac"] .hs-tile,
+    .hero[data-service="tar-and-chip"] .hs-tile{flex:none;height:auto;aspect-ratio:4/3}
+    .hero[data-service="tarmac"] .hs-tile:nth-child(1),
+    .hero[data-service="tar-and-chip"] .hs-tile:nth-child(1){grid-column:1 / -1;aspect-ratio:16/9}
+    .hero[data-service="tarmac"] .hs-tile:nth-child(3),
+    .hero[data-service="tar-and-chip"] .hs-tile:nth-child(3){transform:translateY(38px)}   /* the stagger */
     /* Resin only: larger portrait gallery to the RIGHT of the text, cascading left→right */
     .hero[data-service="resin"] .hero-copy{display:grid;grid-template-columns:minmax(0,0.82fr) minmax(0,1.3fr);column-gap:56px;align-items:center}
     .hero[data-service="resin"] .hero-text{grid-column:1;min-width:0;transform:translateY(-74px)}

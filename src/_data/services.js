@@ -116,7 +116,7 @@ module.exports = [
 
   {
     slug: "tarmac",
-    order: 2,
+    order: 3,
     name: "Tarmac",
     navLabel: "Tarmac",
     title: "Precision Surfacing — Norfolk tarmac & surfacing contractors",
@@ -247,12 +247,12 @@ module.exports = [
   {
     slug: "tar-and-chip",
     hideFinishes: true,
-    order: 3,
+    order: 2,
     name: "Tar & chip",
     navLabel: "Tar & chip",
     title: "Tar & chip surfacing — Precision Surfacing, Norfolk",
     eyebrow: "Tar & chip surfacing",
-    h1Html: "Norfolk's<br>tar &amp; chip<br><em>specialists.</em>",
+    h1Html: "Rustic by<br><em>nature.</em>",
     heroLede: "Decorative stone chippings rolled hard into hot binder — a rugged, grippy, natural finish that's right at home on driveways, courtyards and country lanes.",
     workHead: "Recent work",
     work: [

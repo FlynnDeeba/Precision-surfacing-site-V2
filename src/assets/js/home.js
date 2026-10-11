@@ -79,6 +79,22 @@
       });
     }
 
+    /* Swipe left/right across the hero to move between photos. Only acts on a
+       clearly horizontal drag, so it never fights with scrolling down the page. */
+    var hero = document.querySelector('.hero--full');
+    if (hero && slides.length > 1) {
+      var tx = 0, ty = 0;
+      hero.addEventListener('touchstart', function (e) {
+        tx = e.changedTouches[0].clientX; ty = e.changedTouches[0].clientY;
+      }, { passive: true });
+      hero.addEventListener('touchend', function (e) {
+        var dx = e.changedTouches[0].clientX - tx, dy = e.changedTouches[0].clientY - ty;
+        if (Math.abs(dx) < 45 || Math.abs(dx) < Math.abs(dy)) return;   // a scroll, not a swipe
+        show(si + (dx < 0 ? 1 : -1));
+        start();                                                        // restart the clock
+      }, { passive: true });
+    }
+
     loadSlide(slides[1]);
     start();
     /* once the page is loaded, quietly pull in the rest so they're cached */

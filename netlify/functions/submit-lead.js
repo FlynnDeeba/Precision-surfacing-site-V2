@@ -7,7 +7,7 @@
 //   LEAD_TO   — inbox that receives leads      (default: info@psurfacing.co.uk)
 //   MAIL_FROM — verified Resend sender          (default: Precision Surfacing <info@psurfacing.co.uk>)
 //   REPLY_TO  — where customer replies should go (default: info@psurfacing.co.uk)
-//   PHONE     — phone shown in the auto-reply    (default: 07836 441717)
+//   PHONE     — phone shown in the auto-reply    (default: 07946 525674)
 
 const RESEND_URL = "https://api.resend.com/emails";
 
@@ -35,7 +35,7 @@ exports.handler = async (event) => {
   const LEAD_TO = process.env.LEAD_TO || "info@psurfacing.co.uk";
   const MAIL_FROM = process.env.MAIL_FROM || "Precision Surfacing <info@psurfacing.co.uk>";
   const REPLY_TO = process.env.REPLY_TO || "info@psurfacing.co.uk";
-  const PHONE = process.env.PHONE || "07836 441717";
+  const PHONE = process.env.PHONE || "07946 525674";
 
   // Optional photos from step 3: [{ filename, content }] with content as base64
   // (already resized in the browser). Re-checked here — never trust the client.

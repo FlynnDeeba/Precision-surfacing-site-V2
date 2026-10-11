@@ -128,7 +128,7 @@
     var nm=data.name?(', '+data.name):'';
     if(!ok){
       document.getElementById('doneTitle').innerHTML='Almost <em>there.</em>';
-      document.getElementById('doneBody').innerHTML='Sorry — something went wrong sending your request. Please call <strong>07836 441717</strong> or email <strong>info@psurfacing.co.uk</strong> and we’ll sort it right away.';
+      document.getElementById('doneBody').innerHTML='Sorry — something went wrong sending your request. Please call <strong>07946 525674</strong> or email <strong>info@psurfacing.co.uk</strong> and we’ll sort it right away.';
       document.getElementById('done').classList.add('show');
       window.scrollTo({top:0,behavior:'smooth'});
       return;

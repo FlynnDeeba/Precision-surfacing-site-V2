@@ -71,99 +71,6 @@
     var el=document.getElementById(id); if(el) el.addEventListener('input',updateReady);
   });
 
-  /* optional photos (step 3) — resized in-browser so the payload stays well
-     under Netlify's 6MB function body limit (base64 adds ~33% on top). */
-  var MAX_PHOTOS=4, MAX_EDGE=1600, JPEG_Q=0.72, MAX_B64=3.6*1024*1024;
-  var photos=[];
-  var phInput=document.getElementById('photos');
-  var phDrop=document.getElementById('phDrop');
-  var phList=document.getElementById('phList');
-  var phNote=document.getElementById('phNote');
-
-  function phTotal(){var n=0;photos.forEach(function(p){n+=p.bytes;});return n;}
-  function setNote(msg,warn){
-    if(!phNote)return;
-    if(!msg){phNote.hidden=true;phNote.textContent='';phNote.classList.remove('warn');return;}
-    phNote.hidden=false;phNote.textContent=msg;phNote.classList.toggle('warn',!!warn);
-  }
-  function renderPhotos(){
-    if(!phList)return;
-    phList.innerHTML='';
-    phList.hidden=!photos.length;
-    photos.forEach(function(p,i){
-      var cell=document.createElement('div'); cell.className='ph-item';
-      var im=document.createElement('img'); im.src=p.dataUrl; im.alt=p.name;
-      var x=document.createElement('button');
-      x.type='button'; x.className='ph-x'; x.innerHTML='&times;';
-      x.setAttribute('aria-label','Remove '+p.name);
-      x.addEventListener('click',function(){photos.splice(i,1);renderPhotos();});
-      cell.appendChild(im); cell.appendChild(x); phList.appendChild(cell);
-    });
-    var t=phDrop&&phDrop.querySelector('.ph-drop-t');
-    if(t) t.textContent = photos.length ? 'Add another photo' : 'Add photos of the area';
-    setNote(photos.length ? photos.length+' of '+MAX_PHOTOS+' added' : '');
-  }
-
-  /* draw to a canvas at a sane size and re-encode as JPEG */
-  function shrink(file){
-    return new Promise(function(resolve,reject){
-      var url=URL.createObjectURL(file), img=new Image();
-      img.onload=function(){
-        URL.revokeObjectURL(url);
-        var scale=Math.min(1, MAX_EDGE/Math.max(img.naturalWidth,img.naturalHeight));
-        var w=Math.max(1,Math.round(img.naturalWidth*scale));
-        var h=Math.max(1,Math.round(img.naturalHeight*scale));
-        var cv=document.createElement('canvas'); cv.width=w; cv.height=h;
-        var cx=cv.getContext('2d');
-        cx.fillStyle='#fff'; cx.fillRect(0,0,w,h);   /* flatten alpha for JPEG */
-        cx.drawImage(img,0,0,w,h);
-        var dataUrl=cv.toDataURL('image/jpeg',JPEG_Q);
-        var b64=dataUrl.slice(dataUrl.indexOf(',')+1);
-        if(!b64){reject();return;}
-        resolve({dataUrl:dataUrl,b64:b64,bytes:b64.length});
-      };
-      img.onerror=function(){URL.revokeObjectURL(url);reject();};
-      img.src=url;
-    });
-  }
-
-  function addFiles(list){
-    var picked=[].slice.call(list||[]).filter(function(f){return /^image\//.test(f.type);});
-    if(!picked.length)return;
-    var room=MAX_PHOTOS-photos.length;
-    if(room<=0){setNote('You can attach up to '+MAX_PHOTOS+' photos.',true);return;}
-    var overflow=picked.length-room;
-    picked=picked.slice(0,room);
-    setNote('Processing…');
-    Promise.all(picked.map(function(f){
-      return shrink(f).then(function(r){
-        return {name:f.name||'photo',dataUrl:r.dataUrl,b64:r.b64,bytes:r.bytes};
-      }).catch(function(){return null;});
-    })).then(function(done){
-      var dropped=0;
-      done.forEach(function(p){
-        if(!p||phTotal()+p.bytes>MAX_B64){dropped++;return;}
-        photos.push(p);
-      });
-      renderPhotos();
-      if(overflow>0) setNote('Only the first '+MAX_PHOTOS+' photos were added.',true);
-      else if(dropped) setNote(dropped+(dropped>1?' photos':' photo')+" couldn't be added — try a smaller image.",true);
-    });
-  }
-
-  if(phInput&&phDrop){
-    phInput.addEventListener('change',function(){addFiles(phInput.files);phInput.value='';});
-    ['dragenter','dragover'].forEach(function(ev){
-      phDrop.addEventListener(ev,function(e){e.preventDefault();phDrop.classList.add('drag');});
-    });
-    ['dragleave','drop'].forEach(function(ev){
-      phDrop.addEventListener(ev,function(e){e.preventDefault();phDrop.classList.remove('drag');});
-    });
-    phDrop.addEventListener('drop',function(e){
-      if(e.dataTransfer&&e.dataTransfer.files) addFiles(e.dataTransfer.files);
-    });
-  }
-
   function setErr(id,on){document.getElementById(id).classList.toggle('err',on);}
   function validEmail(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);}
 
@@ -207,9 +114,6 @@
 
   function submit(){
     var hp=document.getElementById('hp'); data.company = hp ? hp.value : '';
-    data.photos = photos.map(function(p,i){
-      return {filename:'photo-'+(i+1)+'.jpg', content:p.b64};
-    });
     next.disabled=true; next.firstChild.textContent='Sending… ';
     fetch('/.netlify/functions/submit-lead',{
       method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data)

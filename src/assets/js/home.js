@@ -88,4 +88,41 @@
     });
   }
 
+  /* "Who we are" figures count up the first time they scroll into view. The final
+     value lives in the markup, so with no JS (or with reduced motion on) it simply
+     shows as written. Any prefix/suffix — £, m, hr — is kept and only the number runs. */
+  var figs = [].slice.call(document.querySelectorAll('.facts .fig'));
+  if (figs.length) {
+    var noMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var parsed = figs.map(function (el) {
+      var m = /^(\D*)(\d+)(.*)$/.exec(el.textContent.trim());
+      return m ? { el: el, pre: m[1], to: parseInt(m[2], 10), post: m[3] } : null;
+    }).filter(Boolean);
+
+    function run(f) {
+      if (noMotion || f.to === 0) return;              // nothing to count to
+      var dur = 900 + Math.min(f.to, 30) * 12, start = 0;
+      f.el.textContent = f.pre + '0' + f.post;
+      requestAnimationFrame(function tick(now) {
+        if (!start) start = now;
+        var p = Math.min((now - start) / dur, 1);
+        var eased = 1 - Math.pow(1 - p, 3);            // easeOutCubic — quick, then settles
+        f.el.textContent = f.pre + Math.round(f.to * eased) + f.post;
+        if (p < 1) requestAnimationFrame(tick);
+      });
+    }
+
+    /* The list is watched as a whole and the figures then run one after another,
+       in step with the rows fading in, so the sequence reads top to bottom. */
+    var list = document.querySelector('.facts');
+    if (list && 'IntersectionObserver' in window && !noMotion) {
+      var fio = new IntersectionObserver(function (entries) {
+        if (!entries[0].isIntersecting) return;
+        fio.disconnect();
+        parsed.forEach(function (f, i) { setTimeout(function () { run(f); }, 260 + i * 320); });
+      }, { threshold: 0.25 });
+      fio.observe(list);
+    }
+  }
+
 })();

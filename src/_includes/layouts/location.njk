@@ -24,7 +24,7 @@ extraCss: location.css
     <h2 class="dh">{% if resin %}Seamless resin, <em>locally laid.</em>{% else %}Every surface, <em>done properly.</em>{% endif %}</h2>
     {% set nearList %}{% for n in loc.nearby %}{{ n.name }}{% if loop.revindex0 == 1 %} and {% elif not loop.last %}, {% endif %}{% endfor %}{% endset %}
     {% if resin %}
-    <p class="sec-lede">We lay resin bound driveways across {{ loc.name }}{% if loc.nearby.length %} and nearby {{ nearList }}{% endif %} — permeable, seamless and available in over fifty colours. Every drive is dug out, built up and laid by our own team, then backed by a ten-year structural warranty.</p>
+    <p class="sec-lede">We lay resin bound driveways across {{ loc.name }}{% if loc.nearby.length %} and nearby {{ nearList }}{% endif %} — permeable, seamless and available in over fifty colours. Every drive is dug out, built up and laid by our own team.</p>
     {% else %}
     <p class="sec-lede">Precision Surfacing installs driveways across {{ loc.name }}{% if loc.nearby.length %} and nearby {{ nearList }}{% endif %}. Resin bound, tarmac, tar &amp; chip, block paving or gravel — we survey the ground, build the base to last and lay every surface in-house, never subcontracted.</p>
     {% endif %}

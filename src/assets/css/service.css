@@ -327,8 +327,6 @@
     .hero[data-service="tar-and-chip"] .hs-tile{flex:none;height:auto;aspect-ratio:4/3}
     .hero[data-service="tarmac"] .hs-tile:nth-child(1),
     .hero[data-service="tar-and-chip"] .hs-tile:nth-child(1){grid-column:1 / -1;aspect-ratio:16/9}
-    .hero[data-service="tarmac"] .hs-tile:nth-child(3),
-    .hero[data-service="tar-and-chip"] .hs-tile:nth-child(3){transform:translateY(38px)}   /* the stagger */
     /* Resin only: larger portrait gallery to the RIGHT of the text, cascading left→right */
     .hero[data-service="resin"] .hero-copy{display:grid;grid-template-columns:minmax(0,0.82fr) minmax(0,1.3fr);column-gap:56px;align-items:center}
     .hero[data-service="resin"] .hero-text{grid-column:1;min-width:0;transform:translateY(-74px)}

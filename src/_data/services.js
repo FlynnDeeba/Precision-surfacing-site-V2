@@ -13,6 +13,7 @@ const ABOUT = "Setting the standard across Norfolk. We pair decades of inherited
 module.exports = [
   {
     slug: "resin",
+    hideHeroLede: true,   // kept for the page description; the hero reads cleaner without it
     order: 1,
     name: "Resin bound",
     navLabel: "Resin bound",
@@ -21,6 +22,7 @@ module.exports = [
     h1Lead: "Norfolk's resin",
     h1Em: "specialists.",
     h1Html: "Norfolk's<br>resin<br><em>specialists.</em>",
+    heroLede: "Resin bound driveways laid in-house across Norfolk — permeable, seamless and available in over fifty colours, on a base built to take them.",
     workHead: "Recent work",
     work: [
       { img: "/assets/images/resin/projects/wells-silver-grey/wells-silver-grey-resin-driveway-closeup.webp", title: "Silver Grey driveway", place: "Wells", images: [
@@ -116,6 +118,7 @@ module.exports = [
 
   {
     slug: "tarmac",
+    hideHeroLede: true,   // kept for the page description; the hero reads cleaner without it
     order: 3,
     name: "Tarmac",
     navLabel: "Tarmac",
@@ -123,7 +126,7 @@ module.exports = [
     eyebrow: "Tarmacadam surfacing",
     h1Lead: "Norfolk's tarmac",
     h1Em: "specialists.",
-    h1Html: "Norfolk's<br>tarmac<br><em>specialists.</em>",
+    h1Html: "Norfolk's<br>tarmac<br><em>experts.</em>",
     heroLede: "Driveways, car parks, farm yards and access roads — laid hot, rolled hard and engineered to carry real weight for years.",
     workHead: "Recent work",
     work: [
@@ -246,13 +249,14 @@ module.exports = [
 
   {
     slug: "tar-and-chip",
+    hideHeroLede: true,   // kept for the page description; the hero reads cleaner without it
     hideFinishes: true,
     order: 2,
     name: "Tar & chip",
     navLabel: "Tar & chip",
     title: "Tar & chip surfacing — Precision Surfacing, Norfolk",
     eyebrow: "Tar & chip surfacing",
-    h1Html: "Rustic by<br><em>nature.</em>",
+    h1Html: "<em>Tar &amp; chip</em><br>across<br>Norfolk.",
     heroLede: "Decorative stone chippings rolled hard into hot binder — a rugged, grippy, natural finish that's right at home on driveways, courtyards and country lanes.",
     workHead: "Recent work",
     work: [

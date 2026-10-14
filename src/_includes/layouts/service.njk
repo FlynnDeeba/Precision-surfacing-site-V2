@@ -23,7 +23,7 @@ extraJs: service.js
     <div class="hero-text">
       <span class="eyebrow">{{ s.eyebrow }}</span>
       <h1>{% if s.h1Html %}{{ s.h1Html | safe }}{% else %}{{ s.h1Lead }} <em>{{ s.h1Em }}</em>{% endif %}</h1>
-      {% if s.heroLede %}<p class="lede">{{ s.heroLede }}</p>{% endif %}
+      {% if s.heroLede and not s.hideHeroLede %}<p class="lede">{{ s.heroLede }}</p>{% endif %}
     </div>
     {% if s.work and s.workLayout != "stack" %}
     <div class="hero-strip">

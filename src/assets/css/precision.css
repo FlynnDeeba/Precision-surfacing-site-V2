@@ -176,7 +176,14 @@
   .about-copy span{color:var(--mist)}
   /* run-in lead: sits on the same line as the sentence, just set larger so the
      paragraph opens on something with a bit of weight to it */
-  .about-copy strong{color:var(--graphite);font-weight:600;font-size:1.3em;line-height:1;letter-spacing:-.3px}
+  /* On a phone the lead-in is bold but the same size as the sentence; it steps up
+     from 720px, where there is room for it to be larger without crowding. */
+  .about-copy strong{color:var(--graphite);font-weight:700}
+  @media (min-width:720px){
+    .about-copy strong{font-weight:600;font-size:1.3em;line-height:1;letter-spacing:-.3px}
+  }
+  /* homepage kickers: slightly larger and a shade darker than elsewhere */
+  .home #about .kicker,.home #services .kicker,.home #guides .kicker{font-size:11.8px;color:#5a5d5c}
   /* Four facts as a single column — the figure does the talking, so it's set large in
      the serif with the label beside it, divided by hairlines rather than boxed in. */
   .facts{list-style:none;margin-top:34px;display:grid;grid-template-columns:1fr;gap:30px}

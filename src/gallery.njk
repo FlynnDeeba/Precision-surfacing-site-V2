@@ -6,68 +6,21 @@ description: "Recent driveway and surfacing projects across Norfolk — resin, t
 <main class="gallery">
   <header class="gal-head" data-theme="dark">
     <div class="gal-head-in">
-      <span class="kicker">Gallery</span>
-      <h1>Recent work across <em>Norfolk.</em></h1>
-      <p>A selection of driveways and surfaces we've laid — tap any photo to see it full-size.</p>
+      <h1 class="gal-kick">Our work</h1>
+      <p>A selection of driveways and surfaces we've laid across Norfolk — tap any photo to see it full-size.</p>
     </div>
   </header>
 
-  <div class="gal-body" data-theme="light">
+  <div class="gal-body" data-theme="dark">
+    {# One tile per project — click it to page through that project's photos.
+       Built from galleryProjects.js, which reads the same data as the service pages. #}
     <div class="gal-grid" id="galGrid">
-      <button class="gal" type="button" data-cat="tarchip" data-cap="Tar &amp; chip driveway · The Old Hall"><img src="/assets/images/tar-and-chip/projects/the-old-hall/the-old-hall-tar-and-chip-driveway-finished.webp" alt="Tar and chip driveway sweeping up to The Old Hall" loading="lazy" decoding="async"><span class="gal-cap"><b>The Old Hall</b><i>Tar &amp; chip</i></span></button>
-      <button class="gal" type="button" data-cat="tarchip" data-cap="Tar &amp; chip driveway · North Walsham"><img src="/assets/images/tar-and-chip/projects/north-walsham/north-walsham-tar-and-chip-driveway-closeup-hero.webp" alt="Tar and chip driveway at a modern house in North Walsham" loading="lazy" decoding="async"><span class="gal-cap"><b>North Walsham</b><i>Tar &amp; chip</i></span></button>
-      <button class="gal" type="button" data-cat="tarchip" data-cap="Tar &amp; chip driveway, the curve · The Old Hall"><img src="/assets/images/tar-and-chip/projects/the-old-hall/the-old-hall-tar-and-chip-driveway-driveway-curve.webp" alt="Curving tar and chip driveway at The Old Hall" loading="lazy" decoding="async"><span class="gal-cap"><b>The Old Hall</b><i>Tar &amp; chip</i></span></button>
-      <button class="gal" type="button" data-cat="tarchip" data-cap="Tar &amp; chip driveway, wide view · North Walsham"><img src="/assets/images/tar-and-chip/projects/north-walsham/north-walsham-tar-and-chip-driveway-wide-view.webp" alt="Wide view of a tar and chip driveway in North Walsham" loading="lazy" decoding="async"><span class="gal-cap"><b>North Walsham</b><i>Tar &amp; chip</i></span></button>
-      <button class="gal" type="button" data-cat="resin" data-cap="Silver Grey resin bound · Wells"><img src="/assets/images/resin/projects/wells-silver-grey/wells-silver-grey-resin-driveway-finished.webp" alt="Silver Grey resin bound driveway in Wells" loading="lazy" decoding="async"><span class="gal-cap"><b>Wells</b><i>Resin bound</i></span></button>
-      <button class="gal" type="button" data-cat="tarmac" data-cap="Grey tarmac driveway · Sheringham"><img src="/assets/images/tarmac/projects/sheringham-grey/sheringham-grey-tarmac-driveway-finished.webp" alt="Grey tarmac driveway in Sheringham" loading="lazy" decoding="async"><span class="gal-cap"><b>Sheringham</b><i>Tarmac</i></span></button>
-      <button class="gal" type="button" data-cat="tarchip" data-cap="Tar &amp; chip driveway · Broadland"><img src="/assets/images/tar-and-chip/projects/broadland/broadland-tar-and-chip-driveway-photo-01.webp" alt="Tar and chip driveway in Broadland" loading="lazy" decoding="async"><span class="gal-cap"><b>Broadland</b><i>Tar &amp; chip</i></span></button>
-      <button class="gal" type="button" data-cat="resin" data-cap="Golden Harvest resin bound · Sheringham"><img src="/assets/images/resin/projects/sheringham-golden-path/sheringham-golden-path-resin-driveway-finished.webp" alt="Golden Harvest resin bound path in Sheringham" loading="lazy" decoding="async"><span class="gal-cap"><b>Sheringham</b><i>Resin bound</i></span></button>
-      <button class="gal" type="button" data-cat="tarmac" data-cap="Shingle-dressed tarmac · Colkirk"><img src="/assets/images/tarmac/projects/colkirk-shingle-chippings/colkirk-shingle-chippings-tarmac-driveway-finished.webp" alt="Shingle-dressed tarmac driveway in Colkirk" loading="lazy" decoding="async"><span class="gal-cap"><b>Colkirk</b><i>Tarmac</i></span></button>
-      <button class="gal" type="button" data-cat="block" data-cap="Block paving · St Faiths"><img src="/assets/images/block-paving/projects/st-faiths/st-faiths-block-paving-driveway-finished.webp" alt="Block paving driveway in St Faiths" loading="lazy" decoding="async"><span class="gal-cap"><b>St Faiths</b><i>Block paving</i></span></button>
-      <button class="gal" type="button" data-cat="resin" data-cap="Resin bound · Buxton"><img src="/assets/images/resin/projects/buxton-resin-driveway/buxton-resin-driveway-finished.webp" alt="Large resin bound driveway in Buxton" loading="lazy" decoding="async"><span class="gal-cap"><b>Buxton</b><i>Resin bound</i></span></button>
-      <button class="gal" type="button" data-cat="tarmac" data-cap="Tarmac driveway · North Walsham"><img src="/assets/images/tarmac/projects/north-walsham/north-walsham-tarmac-driveway-finished.webp" alt="Tarmac driveway in North Walsham" loading="lazy" decoding="async"><span class="gal-cap"><b>North Walsham</b><i>Tarmac</i></span></button>
-      <button class="gal" type="button" data-cat="tarchip" data-cap="Tar &amp; chip driveway · Foulsham"><img src="/assets/images/tar-and-chip/projects/foulsham/foulsham-tar-and-chip-driveway-photo-01.webp" alt="Tar and chip driveway in Foulsham" loading="lazy" decoding="async"><span class="gal-cap"><b>Foulsham</b><i>Tar &amp; chip</i></span></button>
-      <button class="gal" type="button" data-cat="tarmac" data-cap="Tarmac driveway · Easton"><img src="/assets/images/tarmac/projects/tarmac%20driveway%20easton/easton-tarmac-driveway-finished-1.webp" alt="Tarmac driveway in Easton" loading="lazy" decoding="async"><span class="gal-cap"><b>Easton</b><i>Tarmac</i></span></button>
-      <button class="gal" type="button" data-cat="gravel" data-cap="Golden gravel driveway · Norfolk"><img src="/assets/images/gravel/projects/bungalow-golden/bungalow-golden-gravel-driveway-finished.webp" alt="Golden gravel driveway to a bungalow" loading="lazy" decoding="async"><span class="gal-cap"><b>Norfolk</b><i>Gravel</i></span></button>
-      <button class="gal" type="button" data-cat="resin" data-cap="Resin bound, full view · Thorpe Marriott"><img src="/assets/images/resin/projects/thorpe-marriott/thorpe-marriott-resin-driveway-full-view.webp" alt="Resin bound driveway in Thorpe Marriott" loading="lazy" decoding="async"><span class="gal-cap"><b>Thorpe Marriott</b><i>Resin bound</i></span></button>
-      <button class="gal" type="button" data-cat="tarmac" data-cap="Tarmac with buff chippings · Norfolk"><img src="/assets/images/general-gallery/norfolk-tarmac-driveway-buff-chippings-front-view.webp" alt="Tarmac driveway with buff chippings, front view" loading="lazy" decoding="async"><span class="gal-cap"><b>Norfolk</b><i>Tarmac</i></span></button>
-      <button class="gal" type="button" data-cat="tarchip" data-cap="Tar &amp; chip driveway · Easton"><img src="/assets/images/tar-and-chip/projects/easton/easton-tar-and-chip-driveway-1.webp" alt="Tar and chip driveway in Easton" loading="lazy" decoding="async"><span class="gal-cap"><b>Easton</b><i>Tar &amp; chip</i></span></button>
-      <button class="gal" type="button" data-cat="resin" data-cap="Silver Grey resin bound, close-up · Wells"><img src="/assets/images/resin/projects/wells-silver-grey/wells-silver-grey-resin-driveway-closeup.webp" alt="Close-up of Silver Grey resin bound driveway in Wells" loading="lazy" decoding="async"><span class="gal-cap"><b>Wells</b><i>Resin bound</i></span></button>
-      <button class="gal" type="button" data-cat="tarmac" data-cap="Shingle-dressed tarmac, detail · Colkirk"><img src="/assets/images/tarmac/projects/colkirk-shingle-chippings/colkirk-shingle-chippings-tarmac-driveway-detail.webp" alt="Detail of shingle-dressed tarmac driveway in Colkirk" loading="lazy" decoding="async"><span class="gal-cap"><b>Colkirk</b><i>Tarmac</i></span></button>
-      <button class="gal" type="button" data-cat="gravel" data-cap="Modern gravel driveway · Norwich"><img src="/assets/images/gravel/projects/norwich-modern/norwich-modern-gravel-driveway.webp" alt="Modern gravel driveway in Norwich" loading="lazy" decoding="async"><span class="gal-cap"><b>Norwich</b><i>Gravel</i></span></button>
-      <button class="gal" type="button" data-cat="resin" data-cap="Golden Harvest resin bound · Burnham"><img src="/assets/images/resin/projects/burnham-golden-harvest/burnham-golden-harvest-resin-driveway-finished.webp" alt="Golden Harvest resin bound driveway in Burnham" loading="lazy" decoding="async"><span class="gal-cap"><b>Burnham</b><i>Resin bound</i></span></button>
-      <button class="gal" type="button" data-cat="tarmac" data-cap="Tarmac driveway, twin garage · Norfolk"><img src="/assets/images/general-gallery/norfolk-tarmac-driveway-twin-garage.webp" alt="Tarmac driveway to a twin garage" loading="lazy" decoding="async"><span class="gal-cap"><b>Norfolk</b><i>Tarmac</i></span></button>
-      <button class="gal" type="button" data-cat="tarchip" data-cap="Tar &amp; chip driveway · Broadland"><img src="/assets/images/tar-and-chip/projects/broadland/broadland-tar-and-chip-driveway-photo-02.webp" alt="Tar and chip driveway in Broadland, second view" loading="lazy" decoding="async"><span class="gal-cap"><b>Broadland</b><i>Tar &amp; chip</i></span></button>
-      <button class="gal" type="button" data-cat="resin" data-cap="Golden Harvest resin bound, angle · Sheringham"><img src="/assets/images/resin/projects/sheringham-golden-path/sheringham-golden-path-resin-driveway-angle.webp" alt="Golden Harvest resin bound path in Sheringham, angle" loading="lazy" decoding="async"><span class="gal-cap"><b>Sheringham</b><i>Resin bound</i></span></button>
-      <button class="gal" type="button" data-cat="tarmac" data-cap="Tarmac with red border · Norfolk"><img src="/assets/images/tarmac/projects/red-border/red-border-tarmac-driveway-finished.webp" alt="Tarmac driveway with a red border" loading="lazy" decoding="async"><span class="gal-cap"><b>Norfolk</b><i>Tarmac</i></span></button>
-      <button class="gal" type="button" data-cat="tarchip" data-cap="Tar &amp; chip driveway · Foulsham"><img src="/assets/images/tar-and-chip/projects/foulsham/foulsham-tar-and-chip-driveway-photo-02.webp" alt="Tar and chip driveway in Foulsham, second view" loading="lazy" decoding="async"><span class="gal-cap"><b>Foulsham</b><i>Tar &amp; chip</i></span></button>
-      <button class="gal" type="button" data-cat="resin" data-cap="Charcoal resin bound · Fakenham"><img src="/assets/images/resin/projects/fakenham-charcoal/fakenham-charcoal-resin-driveway-finished.webp" alt="Charcoal resin bound driveway in Fakenham" loading="lazy" decoding="async"><span class="gal-cap"><b>Fakenham</b><i>Resin bound</i></span></button>
-      <button class="gal" type="button" data-cat="tarmac" data-cap="Tarmac driveway, side view · North Walsham"><img src="/assets/images/tarmac/projects/north-walsham/north-walsham-tarmac-driveway-side-view.webp" alt="Tarmac driveway in North Walsham, side view" loading="lazy" decoding="async"><span class="gal-cap"><b>North Walsham</b><i>Tarmac</i></span></button>
-      <button class="gal" type="button" data-cat="gravel" data-cap="Gravel driveway · Norfolk"><img src="/assets/images/gravel/projects/gravel-driveway/gravel-driveway-finished.webp" alt="Gravel driveway in Norfolk" loading="lazy" decoding="async"><span class="gal-cap"><b>Norfolk</b><i>Gravel</i></span></button>
-      <button class="gal" type="button" data-cat="resin" data-cap="Resin bound, close-up · Buxton"><img src="/assets/images/resin/projects/buxton-resin-driveway/buxton-resin-driveway-closeup.webp" alt="Close-up of resin bound driveway in Buxton" loading="lazy" decoding="async"><span class="gal-cap"><b>Buxton</b><i>Resin bound</i></span></button>
-      <button class="gal" type="button" data-cat="tarmac" data-cap="Tarmac with red chippings &amp; border · Norfolk"><img src="/assets/images/general-gallery/norfolk-tarmac-driveway-red-chippings-with-red-border.webp" alt="Tarmac driveway with red chippings and a red border" loading="lazy" decoding="async"><span class="gal-cap"><b>Norfolk</b><i>Tarmac</i></span></button>
-      <button class="gal" type="button" data-cat="tarchip" data-cap="Tar &amp; chip driveway · Easton"><img src="/assets/images/tar-and-chip/projects/easton/easton-tar-and-chip-driveway-2.webp" alt="Tar and chip driveway in Easton, second view" loading="lazy" decoding="async"><span class="gal-cap"><b>Easton</b><i>Tar &amp; chip</i></span></button>
-      <button class="gal" type="button" data-cat="tarmac" data-cap="Tarmac driveway, close-up · Easton"><img src="/assets/images/tarmac/projects/tarmac%20driveway%20easton/easton-tarmac-driveway-closeup-front.webp" alt="Close-up of tarmac driveway in Easton" loading="lazy" decoding="async"><span class="gal-cap"><b>Easton</b><i>Tarmac</i></span></button>
-      <button class="gal" type="button" data-cat="resin" data-cap="Resin bound · Sandringham"><img src="/assets/images/resin/projects/sandringham-case-study/sandringham-resin-driveway-closeup-finished.webp" alt="Resin bound driveway near Sandringham" loading="lazy" decoding="async"><span class="gal-cap"><b>Sandringham</b><i>Resin bound</i></span></button>
-      <button class="gal" type="button" data-cat="tarchip" data-cap="Tar &amp; chip front path · Norfolk"><img src="/assets/images/general-gallery/norfolk-tar-and-chip-driveway-front-path.webp" alt="Tar and chip driveway and front path" loading="lazy" decoding="async"><span class="gal-cap"><b>Norfolk</b><i>Tar &amp; chip</i></span></button>
-      <button class="gal" type="button" data-cat="resin" data-cap="Resin being laid · Burnham"><img src="/assets/images/resin/projects/burnham-golden-harvest/burnham-golden-harvest-resin-driveway-resin-being-laid.webp" alt="Resin bound driveway being laid in Burnham" loading="lazy" decoding="async"><span class="gal-cap"><b>Burnham</b><i>Resin bound</i></span></button>
-      <button class="gal" type="button" data-cat="tarmac" data-cap="Tarmac driveway, bungalow · Norfolk"><img src="/assets/images/general-gallery/norfolk-tarmac-driveway-bungalow-side-view.webp" alt="Tarmac driveway to a bungalow, side view" loading="lazy" decoding="async"><span class="gal-cap"><b>Norfolk</b><i>Tarmac</i></span></button>
-      <button class="gal" type="button" data-cat="resin" data-cap="Resin bound, close-up · Thorpe Marriott"><img src="/assets/images/resin/projects/thorpe-marriott/thorpe-marriott-resin-driveway-closeup-front.webp" alt="Close-up of resin bound driveway in Thorpe Marriott" loading="lazy" decoding="async"><span class="gal-cap"><b>Thorpe Marriott</b><i>Resin bound</i></span></button>
-      <button class="gal" type="button" data-cat="tarmac" data-cap="Tarmac, red chippings — close-up · Norfolk"><img src="/assets/images/general-gallery/norfolk-tarmac-driveway-red-chippings-closeup.webp" alt="Close-up of tarmac driveway with red chippings" loading="lazy" decoding="async"><span class="gal-cap"><b>Norfolk</b><i>Tarmac</i></span></button>
-      <button class="gal" type="button" data-cat="tarmac" data-cap="Tarmac, grey chippings — close-up · Norfolk"><img src="/assets/images/general-gallery/norfolk-tarmac-driveway-grey-chippings-closeup.webp" alt="Close-up of tarmac driveway with grey chippings" loading="lazy" decoding="async"><span class="gal-cap"><b>Norfolk</b><i>Tarmac</i></span></button>
-      <button class="gal" type="button" data-cat="tarmac" data-cap="Grey tarmac driveway, angle · Sheringham"><img src="/assets/images/tarmac/projects/sheringham-grey/sheringham-grey-tarmac-driveway-angle.webp" alt="Grey tarmac driveway in Sheringham, angle" loading="lazy" decoding="async"><span class="gal-cap"><b>Sheringham</b><i>Tarmac</i></span></button>
-      <button class="gal" type="button" data-cat="resin" data-cap="Resin bound driveway · Reedham"><img src="/assets/images/resin/projects/reedham/reedham-finished.webp" alt="Resin bound driveway in Reedham" loading="lazy" decoding="async"><span class="gal-cap"><b>Reedham</b><i>Resin bound</i></span></button>
-      <button class="gal" type="button" data-cat="block" data-cap="Block paving driveway · Norfolk"><img src="/assets/images/general-gallery/block-paving-wide.webp" alt="Block paving driveway, wide view" loading="lazy" decoding="async"><span class="gal-cap"><b>Norfolk</b><i>Block paving</i></span></button>
-      <button class="gal" type="button" data-cat="gravel" data-cap="Gravel driveway · Norfolk"><img src="/assets/images/general-gallery/gravel-drive.webp" alt="Gravel driveway in Norfolk" loading="lazy" decoding="async"><span class="gal-cap"><b>Norfolk</b><i>Gravel</i></span></button>
-      <button class="gal" type="button" data-cat="resin" data-cap="Twin resin bound driveways · Norfolk"><img src="/assets/images/general-gallery/resin-twin-driveways.webp" alt="Twin resin bound driveways" loading="lazy" decoding="async"><span class="gal-cap"><b>Norfolk</b><i>Resin bound</i></span></button>
-      <button class="gal" type="button" data-cat="tarmac" data-cap="Grey-fleck tarmac driveway · Norfolk"><img src="/assets/images/general-gallery/tarmac-grey-fleck.webp" alt="Grey-fleck tarmac driveway" loading="lazy" decoding="async"><span class="gal-cap"><b>Norfolk</b><i>Tarmac</i></span></button>
-      <button class="gal" type="button" data-cat="block" data-cap="Block paving, front view · Norfolk"><img src="/assets/images/general-gallery/block-paving-front-view.webp" alt="Block paving driveway, front view" loading="lazy" decoding="async"><span class="gal-cap"><b>Norfolk</b><i>Block paving</i></span></button>
-      <button class="gal" type="button" data-cat="resin" data-cap="Resin bound patio · Norfolk"><img src="/assets/images/general-gallery/resin-patio-closeup.webp" alt="Resin bound patio close-up" loading="lazy" decoding="async"><span class="gal-cap"><b>Norfolk</b><i>Resin bound</i></span></button>
-      <button class="gal" type="button" data-cat="gravel" data-cap="Gravel driveway &amp; pathway · Norfolk"><img src="/assets/images/general-gallery/gravel-pathway.webp" alt="Gravel driveway and pathway" loading="lazy" decoding="async"><span class="gal-cap"><b>Norfolk</b><i>Gravel</i></span></button>
-      <button class="gal" type="button" data-cat="resin" data-cap="Resin being laid · Reedham"><img src="/assets/images/resin/projects/reedham/reedham-resin-two-thirds.webp" alt="Resin bound driveway being laid in Reedham" loading="lazy" decoding="async"><span class="gal-cap"><b>Reedham</b><i>Resin bound</i></span></button>
-      <button class="gal" type="button" data-cat="tarmac" data-cap="Tarmac driveway · Easton"><img src="/assets/images/general-gallery/tarmac-easton-extra.webp" alt="Tarmac driveway in Easton" loading="lazy" decoding="async"><span class="gal-cap"><b>Easton</b><i>Tarmac</i></span></button>
-      <button class="gal" type="button" data-cat="resin" data-cap="Twin resin bound driveway · Norfolk"><img src="/assets/images/general-gallery/resin-twin-finished.webp" alt="Twin resin bound driveway, finished" loading="lazy" decoding="async"><span class="gal-cap"><b>Norfolk</b><i>Resin bound</i></span></button>
+      {%- for proj in galleryProjects %}
+      <button class="gal" type="button" data-cat="{{ proj.cat }}" data-proj="{{ loop.index0 }}" aria-label="View {{ proj.images | length }} photos from {{ proj.title }}, {{ proj.place }}"><img src="{{ proj.images[0] }}" alt="{{ proj.surface }} {{ proj.title | lower }} in {{ proj.place }}" loading="lazy" decoding="async"><span class="gal-cap"><b>{{ proj.place }}</b><i>{{ proj.surface }}</i></span><span class="gal-count">{{ proj.images | length }} photos</span></button>
+      {%- endfor %}
     </div>
+
+    <script type="application/json" id="galData">{{ galleryProjects | dump | safe }}</script>
 
     <div class="gal-cta">
       <h2>Like what you <em>see?</em></h2>
@@ -83,37 +36,35 @@ description: "Recent driveway and surfacing projects across Norfolk — resin, t
       <button class="glb-arrow prev" id="glbPrev" type="button" aria-label="Previous"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
       <figure class="glb-fig"><img id="glbImg" src="" alt=""></figure>
       <button class="glb-arrow next" id="glbNext" type="button" aria-label="Next"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
-      <button class="gal" type="button" data-cat="tarchip" data-cap="Tar &amp; chip at the house entrance · The Old Hall"><img src="/assets/images/tar-and-chip/projects/the-old-hall/the-old-hall-tar-and-chip-driveway-house-entrance.webp" alt="Tar and chip driveway at the entrance to The Old Hall" loading="lazy" decoding="async"><span class="gal-cap"><b>The Old Hall</b><i>Tar &amp; chip</i></span></button>
-      <button class="gal" type="button" data-cat="tarchip" data-cap="Tar &amp; chip driveway, other side · North Walsham"><img src="/assets/images/tar-and-chip/projects/north-walsham/north-walsham-tar-and-chip-driveway-wide-view-other-side.webp" alt="Tar and chip driveway in North Walsham, viewed from the other side" loading="lazy" decoding="async"><span class="gal-cap"><b>North Walsham</b><i>Tar &amp; chip</i></span></button>
-      <button class="gal" type="button" data-cat="tarchip" data-cap="Tar &amp; chip driveway, junction · The Old Hall"><img src="/assets/images/tar-and-chip/projects/the-old-hall/the-old-hall-tar-and-chip-driveway-junction.webp" alt="Tar and chip driveway junction at The Old Hall" loading="lazy" decoding="async"><span class="gal-cap"><b>The Old Hall</b><i>Tar &amp; chip</i></span></button>
-      <button class="gal" type="button" data-cat="tarchip" data-cap="Chip spread and rolled · The Old Hall"><img src="/assets/images/tar-and-chip/projects/the-old-hall/the-old-hall-tar-and-chip-driveway-chip-spread-and-rolled.webp" alt="Stone chippings being spread and rolled into hot binder at The Old Hall" loading="lazy" decoding="async"><span class="gal-cap"><b>The Old Hall</b><i>Tar &amp; chip</i></span></button>
     </div>
     <figcaption class="glb-cap" id="glbCap"></figcaption>
+    <div class="glb-count" id="glbCount"></div>
   </div>
 </main>
 
 <style>
-  .gallery{background:var(--paper,#EAEDEE)}
+  .gallery{background:var(--ink,#0E0F10)}
   /* ---- header ---- */
-  .gal-head{background:var(--ink,#0E0F10);color:#fff;padding:84px 0 60px}
-  .gal-head-in{max-width:1240px;margin:0 auto;padding:0 16px}
+  .gal-head{background:transparent;color:#fff;padding:74px 0 30px}
+  .gal-head-in{padding-inline:var(--pad,26px)}
   .gal-head .kicker{color:var(--gold)}
-  .gal-head h1{font-family:var(--serif,"Instrument Serif",serif);font-weight:400;font-size:clamp(38px,9vw,72px);line-height:1.02;margin:14px 0 16px}
-  .gal-head h1 em{font-style:italic;color:var(--gold-hl)}
+  .gal-kick{display:flex;align-items:center;gap:14px;font-family:var(--font-logo,"Raleway",sans-serif);
+    font-weight:600;font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:#fff;margin:0 0 16px}
+  .gal-kick::after{content:"";flex:1;height:1px;background:rgba(255,255,255,.18)}
   .gal-head p{color:rgba(255,255,255,.62);max-width:52ch;font-size:16px}
   /* ---- body ---- */
-  .gal-body{max-width:1240px;margin:0 auto;padding:26px 16px 90px}
+  .gal-body{padding:26px var(--pad,26px) 90px}
   /* filter chips */
   .gal-filter{display:flex;flex-wrap:wrap;gap:9px;padding:8px 6px 22px}
   .fbtn{font-family:var(--mono,"Raleway",sans-serif);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
-    color:var(--graphite,#1B1D1E);background:transparent;border:1px solid rgba(14,15,16,.2);border-radius:30px;
+    color:rgba(255,255,255,.72);background:transparent;border:1px solid rgba(255,255,255,.22);border-radius:30px;
     padding:9px 15px;cursor:pointer;transition:background .18s ease,color .18s ease,border-color .18s ease}
-  .fbtn:hover{border-color:rgba(14,15,16,.5)}
-  .fbtn.is-on{background:var(--ink,#0E0F10);border-color:var(--ink,#0E0F10);color:var(--gold-hl,#F0CC3A)}
+  .fbtn:hover{border-color:rgba(255,255,255,.5);color:#fff}
+  .fbtn.is-on{background:var(--gold-hl,#F0CC3A);border-color:var(--gold-hl,#F0CC3A);color:var(--ink,#0E0F10);font-weight:600}
   /* masonry grid */
-  .gal-grid{columns:2;column-gap:14px}
+  .gal-grid{columns:1;column-gap:14px}
   .gal{break-inside:avoid;display:block;width:100%;margin:0 0 14px;padding:0;border:0;background:#1c1c1d;
-    border-radius:14px;overflow:hidden;position:relative;cursor:pointer;line-height:0;
+    border-radius:6px;overflow:hidden;position:relative;cursor:pointer;line-height:0;
     box-shadow:0 1px 2px rgba(14,15,16,.05);transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s ease}
   .gal.hide{display:none}
   .gal img{width:100%;height:auto;display:block;transition:transform .5s cubic-bezier(.22,1,.36,1)}
@@ -121,6 +72,10 @@ description: "Recent driveway and surfacing projects across Norfolk — resin, t
     padding:34px 14px 12px;text-align:left;line-height:1.3;
     background:linear-gradient(to top,rgba(8,9,10,.82),rgba(8,9,10,0));
     opacity:0;transform:translateY(6px);transition:opacity .3s ease,transform .3s ease}
+  .gal-count{position:absolute;top:10px;right:10px;font-family:var(--font-logo,"Raleway",sans-serif);
+    font-weight:600;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#fff;
+    background:rgba(8,9,10,.6);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);
+    padding:5px 9px;border-radius:3px;line-height:1;pointer-events:none}
   .gal-cap b{font-family:var(--font-logo,"Raleway",sans-serif);font-weight:600;font-size:13px;letter-spacing:.06em;color:#fff}
   .gal-cap i{font-family:var(--mono,"Raleway",sans-serif);font-style:normal;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-hl,#F0CC3A)}
   .gal:hover{transform:translateY(-3px);box-shadow:0 16px 34px -14px rgba(14,15,16,.45)}
@@ -129,10 +84,12 @@ description: "Recent driveway and surfacing projects across Norfolk — resin, t
   .gal-empty{padding:30px 6px;color:var(--mist,#7E817A);font-size:15px}
   .gal-empty a{color:var(--gold-deep)}
   /* ---- closing cta ---- */
-  .gal-cta{text-align:center;padding:64px 20px 8px;margin-top:20px;border-top:1px solid rgba(14,15,16,.1)}
-  .gal-cta h2{font-family:var(--serif,"Instrument Serif",serif);font-weight:400;font-size:clamp(30px,7vw,42px);color:var(--ink,#0E0F10);margin-bottom:10px}
-  .gal-cta h2 em{font-style:italic;color:var(--gold-deep)}
-  .gal-cta p{color:#55585a;font-size:15.5px;line-height:1.6;max-width:42ch;margin:0 auto 26px}
+  .glb-count{position:absolute;left:0;right:0;bottom:16px;text-align:center;font-family:var(--font-logo,"Raleway",sans-serif);
+    font-weight:600;font-size:11px;letter-spacing:.2em;color:rgba(255,255,255,.5)}
+  .gal-cta{text-align:center;padding:64px 20px 8px;margin-top:20px;border-top:1px solid rgba(255,255,255,.12)}
+  .gal-cta h2{font-family:var(--serif,"Instrument Serif",serif);font-weight:400;font-size:clamp(30px,7vw,42px);color:#fff;margin-bottom:10px}
+  .gal-cta h2 em{font-style:italic;color:var(--gold-hl)}
+  .gal-cta p{color:rgba(255,255,255,.66);font-size:15.5px;line-height:1.6;max-width:42ch;margin:0 auto 26px}
   .gal-cta .start-go{display:inline-flex;align-items:center;gap:10px;background:var(--gold-hl);color:var(--ink);text-decoration:none;font-family:var(--mono,"Raleway",sans-serif);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:16px 26px;border-radius:8px;transition:background .2s ease,transform .12s ease}
   .gal-cta .start-go svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.9}
   .gal-cta .start-go:hover{background:#F4D44A}
@@ -145,7 +102,7 @@ description: "Recent driveway and surfacing projects across Norfolk — resin, t
   .glb-x:hover{color:var(--gold-hl)}
   .glb-stage{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;min-height:0;padding:6px 8px}
   .glb-fig{margin:0;max-width:92vw;max-height:78vh;display:flex}
-  .glb-fig img{max-width:92vw;max-height:78vh;width:auto;height:auto;object-fit:contain;border-radius:6px;display:block}
+  .glb-fig img{max-width:92vw;max-height:78vh;width:auto;height:auto;object-fit:contain;border-radius:4px;display:block}
   .glb-arrow{flex:0 0 auto;background:none;border:0;padding:6px;cursor:pointer}
   .glb-arrow svg{width:30px;height:30px;stroke:#fff;fill:none;stroke-width:2;filter:drop-shadow(0 1px 4px rgba(0,0,0,.7));display:block;transition:stroke .2s ease}
   .glb-arrow:hover svg{stroke:var(--gold-hl)}
@@ -154,9 +111,9 @@ description: "Recent driveway and surfacing projects across Norfolk — resin, t
   @media (min-width:680px){ .gal-grid{columns:2;column-gap:18px} .gal{margin-bottom:18px} }
   @media (min-width:1040px){ .gal-grid{columns:3;column-gap:20px} }
   @media (min-width:760px){
-    .gal-head{padding:118px 0 74px}
-    .gal-head-in{padding:0 40px}
-    .gal-body{padding:30px 40px 110px}
+    .gal-head{padding:108px 0 44px}
+    .gal-head-in{padding-inline:max(50px,calc((100% - 1120px) / 2))}
+    .gal-body{padding:30px max(50px,calc((100% - 1120px) / 2)) 110px}
     .glb-x{margin:22px clamp(28px,4vw,56px) 0}
   }
 </style>
@@ -167,6 +124,9 @@ description: "Recent driveway and surfacing projects across Norfolk — resin, t
     var tiles=[].slice.call(grid.querySelectorAll('.gal'));
     var fbtns=[].slice.call(document.querySelectorAll('.fbtn'));
     var empty=document.getElementById('galEmpty');
+    var projects=[];
+    try { projects=JSON.parse(document.getElementById('galData').textContent); } catch(e){}
+
     function apply(f){
       fbtns.forEach(function(b){b.classList.toggle('is-on', b.dataset.filter===f);});
       var shown=0;
@@ -175,15 +135,36 @@ description: "Recent driveway and surfacing projects across Norfolk — resin, t
     }
     fbtns.forEach(function(b){ b.addEventListener('click',function(){ apply(b.dataset.filter); }); });
 
-    var glb=document.getElementById('glb'), gimg=document.getElementById('glbImg'), gcap=document.getElementById('glbCap');
+    /* Lightbox pages through ONE project's photos, not the whole gallery. */
+    var glb=document.getElementById('glb'), gimg=document.getElementById('glbImg');
+    var gcap=document.getElementById('glbCap'), gcount=document.getElementById('glbCount');
     var prev=document.getElementById('glbPrev'), next=document.getElementById('glbNext');
-    var cur=-1;
-    function visible(){ return tiles.filter(function(t){ return !t.classList.contains('hide'); }); }
-    function paint(vis){ var t=vis[cur]; if(!t) return; var im=t.querySelector('img'); gimg.src=im.currentSrc||im.src; gimg.alt=im.alt; gcap.textContent=t.dataset.cap; }
-    function open(t){ var vis=visible(); cur=vis.indexOf(t); paint(vis); glb.classList.add('on'); glb.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
+    var proj=null, i=0;
+    var cache={};
+    function preload(src){ if(!cache[src]){ var im=new Image(); im.decoding='async'; im.src=src; cache[src]=im; } }
+    function pad(n){ return (n<10?'0':'')+n; }
+    function paint(){
+      if(!proj) return;
+      gimg.src=proj.images[i];
+      gimg.alt=proj.surface+' '+(proj.title||'').toLowerCase()+' in '+proj.place;
+      gcap.textContent=proj.surface+' · '+proj.place;
+      gcount.textContent=proj.images.length>1 ? pad(i+1)+' / '+pad(proj.images.length) : '';
+      var multi=proj.images.length>1;
+      prev.style.display=multi?'':'none';
+      next.style.display=multi?'':'none';
+      preload(proj.images[(i+1)%proj.images.length]);
+      preload(proj.images[(i-1+proj.images.length)%proj.images.length]);
+    }
+    function open(n){
+      proj=projects[n]; if(!proj||!proj.images.length) return;
+      i=0; paint();
+      proj.images.forEach(preload);                      // the rest arrive while you look at the first
+      glb.classList.add('on'); glb.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden';
+    }
     function close(){ glb.classList.remove('on'); glb.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
-    function step(d){ var vis=visible(); if(!vis.length) return; cur=(cur+d+vis.length)%vis.length; paint(vis); }
-    tiles.forEach(function(t){ t.addEventListener('click',function(){ open(t); }); });
+    function step(d){ if(!proj) return; i=(i+d+proj.images.length)%proj.images.length; paint(); }
+
+    tiles.forEach(function(t){ t.addEventListener('click',function(){ open(+t.dataset.proj); }); });
     document.getElementById('glbX').addEventListener('click',close);
     prev.addEventListener('click',function(e){ e.stopPropagation(); step(-1); });
     next.addEventListener('click',function(e){ e.stopPropagation(); step(1); });

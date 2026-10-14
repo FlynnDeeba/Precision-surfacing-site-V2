@@ -152,7 +152,7 @@
   .sec .grid{z-index:0;position:absolute;inset:0}
   .sec>*{position:relative;z-index:2}
   .num{font-family:var(--mono);font-size:11px;letter-spacing:.3em;color:var(--gold-deep)}
-  .kicker{display:flex;align-items:center;gap:12px;margin-bottom:20px;font-family:var(--font-logo);font-weight:500;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--mist)}
+  .kicker{display:flex;align-items:center;gap:12px;margin:0 0 20px;font-weight:500;font-family:var(--font-logo);font-weight:500;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--mist)}
   .kicker::after{content:"";flex:1;height:1px;background:var(--line-l)}
   h2.dh{font-family:var(--serif);font-weight:400;color:var(--graphite);font-size:clamp(34px,9.5vw,42px);line-height:1.02;letter-spacing:0}
   h2.dh em{font-style:italic;color:#6B6E6B;font-weight:400}
@@ -197,10 +197,14 @@
     #about .kicker .num{color:var(--gold-deep)}
     #about .about-copy{margin-top:18px;color:#484b4a;font-size:18px;line-height:1.72;max-width:none}
     #about .about-copy span{color:#484b4a}
-    #about .facts{margin-top:0}
-    .facts{grid-template-columns:1fr 1fr;gap:46px 26px}
-    .facts .fig{font-size:42px;min-width:152px}
-    .facts .lab{font-size:16px}
+    /* Desktop: two up, label sitting UNDER its figure. Beside it, the label column was
+       too narrow and every label broke over three or four lines. */
+    #about{align-items:start}
+    #about .facts{margin-top:8px}
+    .facts{grid-template-columns:1fr 1fr;gap:40px 34px}
+    .facts li{flex-direction:column;align-items:flex-start;gap:9px}
+    .facts .fig{font-size:42px;min-width:0}
+    .facts .lab{font-size:16px;line-height:1.35;max-width:20ch}
     .fade-desk{display:block}
     .fade-mob{display:none}
   }
@@ -347,7 +351,7 @@
   .menu-panel{position:absolute;top:0;right:0;bottom:0;width:87%;max-width:384px;background:#fff;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .55s cubic-bezier(.22,1,.36,1);box-shadow:-30px 0 80px rgba(0,0,0,.7);padding-top:env(safe-area-inset-top,0px)}
   .menu.open .menu-panel{transform:none}
   /* Dark header that diffuses into the light nav section below */
-  .menu-head{background:linear-gradient(to bottom,var(--ink) 0%,var(--ink) 73%,#fff 100%);padding:26px 22px 56px;display:flex;justify-content:space-between;align-items:flex-start}
+  .menu-head{background:linear-gradient(to bottom,var(--ink) 0%,var(--ink) 84%,#fff 100%);padding:26px 22px 44px;display:flex;justify-content:space-between;align-items:flex-start}
   .mh-lead{display:flex;flex-direction:column}
   .mh-title-wrap{text-decoration:none;cursor:pointer;display:block}
   .mh-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.55);display:block}
@@ -358,12 +362,11 @@
   .mh-close:hover{transform:rotate(90deg);border-color:var(--gold-hl)}
   .mh-close:hover svg{stroke:var(--gold-hl)}
   .menu-nav{flex:1;overflow-y:auto;padding:4px 22px 12px;background:#fff}
-  .nav-group{font-family:var(--mono);font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 2px}
+  .nav-group{font-family:var(--font-logo);font-weight:600;font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 2px}
   .nav-group.mt{margin-top:22px}
   .nav-item{display:flex;align-items:center;gap:16px;padding:16px 2px;text-decoration:none;border-bottom:1px solid rgba(14,15,16,.1);cursor:pointer}
   .ni-num{font-family:var(--mono);font-size:12px;color:var(--gold-deep);width:16px;flex:0 0 auto}
   .ni-label{font-family:var(--font-logo);font-weight:600;font-size:14px;letter-spacing:.13em;text-transform:uppercase;color:var(--graphite);flex:1;transition:transform .28s ease,color .2s ease}
-  .nav-group.mt ~ .nav-item .ni-label{color:rgba(14,15,16,.42)}
   .ni-arrow{flex:0 0 auto;opacity:0;transform:translateX(-6px);transition:opacity .28s ease,transform .28s ease}
   .ni-arrow svg{width:13px;height:13px;stroke:var(--gold-deep);stroke-width:1.7;fill:none;display:block}
   .nav-item:hover .ni-label{transform:translateX(5px);color:var(--gold-deep)}
@@ -541,12 +544,14 @@
     .hero-lede{font-size:16px;max-width:42ch;margin-top:18px}
     .hero-actions{gap:22px;margin-top:30px}
     .hero-meta{padding-block:28px 32px}
-    /* Three scrims from 720px up: the dark band under the nav, one across the copy side
-       (the headline sits left of centre here), and the long one down the page. */
+    /* Three scrims from 720px up: a short band under the nav, one across the copy side
+       only (the headline sits left of centre here), and the long one down the page.
+       Each is kept as light as the text will allow so the photo isn't dimmed overall —
+       the side scrim is clear by 54% across, leaving the right half of the photo untouched. */
     .hero-media::after{background:
-      linear-gradient(to bottom,rgba(8,8,9,.7) 0,rgba(8,8,9,.3) 110px,rgba(8,8,9,0) 220px),
-      linear-gradient(to right,rgba(10,10,11,.78) 0%,rgba(10,10,11,.42) 38%,rgba(10,10,11,0) 66%),
-      linear-gradient(to bottom,rgba(10,10,11,.25) 0%,rgba(10,10,11,.12) 22%,rgba(10,10,11,.45) 58%,rgba(10,10,11,.88) 86%,var(--ink) 100%)}
+      linear-gradient(to bottom,rgba(8,8,9,.6) 0,rgba(8,8,9,.22) 100px,rgba(8,8,9,0) 190px),
+      linear-gradient(to right,rgba(10,10,11,.62) 0%,rgba(10,10,11,.26) 30%,rgba(10,10,11,0) 54%),
+      linear-gradient(to bottom,rgba(10,10,11,.12) 0%,rgba(10,10,11,.05) 24%,rgba(10,10,11,.28) 58%,rgba(10,10,11,.8) 88%,var(--ink) 100%)}
   }
   @media (min-width:1024px){
     .hero--full h1{font-size:clamp(58px,5.8vw,80px);max-width:12ch}
@@ -561,10 +566,6 @@
     .hero--full h1{font-size:clamp(46px,4.4vw,60px)}
     .hero-lede{font-size:15.5px;max-width:40ch;margin-top:16px}
     .hero-actions{margin-top:26px}
-    .hero-media::after{background:
-      linear-gradient(to bottom,rgba(8,8,9,.62) 0,rgba(8,8,9,.24) 100px,rgba(8,8,9,0) 190px),
-      linear-gradient(to right,rgba(10,10,11,.62) 0%,rgba(10,10,11,.26) 30%,rgba(10,10,11,0) 54%),
-      linear-gradient(to bottom,rgba(10,10,11,.14) 0%,rgba(10,10,11,.06) 24%,rgba(10,10,11,.3) 58%,rgba(10,10,11,.82) 88%,var(--ink) 100%)}
   }
 
   /* ============================================================
@@ -582,6 +583,10 @@
   .sitebar-logo .l1{font-family:var(--font-logo,"Raleway",sans-serif);font-weight:600;font-size:22px;letter-spacing:5px;text-transform:uppercase;color:#fafafa}
   .sitebar-logo .l2{font-family:var(--font-logo,"Raleway",sans-serif);font-weight:600;font-size:13px;letter-spacing:10px;text-transform:uppercase;color:var(--gold-hl);margin-top:3px}
   .sitebar-logo{transition:opacity .3s ease,transform .3s ease}
+  /* over a light section (article pages, the gallery body) the white logo vanishes —
+     flip it dark until the bar goes solid on scroll */
+  .sitebar.on-light:not(.scrolled) .sitebar-logo .l1{color:var(--graphite)}
+  .sitebar.on-light:not(.scrolled) .sitebar-logo .l2{color:var(--gold-deep)}
   .sitebar-links{display:none}
   .sitebar-burger{width:32px;height:20px;background:none;border:0;cursor:pointer;display:flex;flex-direction:column;justify-content:flex-start;gap:7px;padding:0}
   .sitebar-burger span{display:block;height:2px;width:100%;background:#fff;border-radius:2px;transition:background .25s ease}

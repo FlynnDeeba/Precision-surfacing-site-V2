@@ -46,6 +46,7 @@
       if (r.top <= navY && r.bottom > navY) { light = themed[i].getAttribute('data-theme') === 'light'; break; }
     }
     burgerBtn.classList.toggle('on-light', light);
+    if (topnav) topnav.classList.toggle('on-light', light);   // logo follows the section behind it
   }
   if (topnav) {
     if (hasHero) topnav.classList.add('has-hero'); // enables the transparent mobile bar

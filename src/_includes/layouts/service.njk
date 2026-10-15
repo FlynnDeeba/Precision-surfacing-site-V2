@@ -25,9 +25,9 @@ extraJs: service.js
       <h1>{% if s.h1Html %}{{ s.h1Html | safe }}{% else %}{{ s.h1Lead }} <em>{{ s.h1Em }}</em>{% endif %}</h1>
       {% if s.heroLede and not s.hideHeroLede %}<p class="lede">{{ s.heroLede }}</p>{% endif %}
     </div>
-    {% if s.work and s.workLayout != "stack" %}
+    {% if s.workVisible and s.workLayout != "stack" %}
     <div class="hero-strip">
-      {% for w in s.work %}<button type="button" class="hs-tile" data-lb="{{ loop.index0 }}" onclick="openLB({{ loop.index0 }})" aria-label="View {{ w.title }}, {{ w.place }}">{% if w.img %}<img src="{{ w.img }}" alt="{{ w.title }}, {{ w.place }}">{% else %}<span class="ph resin {{ w.blend }}"></span>{% endif %}</button>{% endfor %}
+      {% for w in s.workVisible %}<button type="button" class="hs-tile" data-lb="{{ loop.index0 }}" onclick="openLB({{ loop.index0 }})" aria-label="View {{ w.title }}, {{ w.place }}">{% if w.img %}<img src="{{ w.img }}" alt="{{ w.title }}, {{ w.place }}"{% if w.pos %} style="object-position:{{ w.pos }}"{% endif %}>{% else %}<span class="ph resin {{ w.blend }}"></span>{% endif %}</button>{% endfor %}
     </div>
     {% endif %}
   </div>
@@ -44,7 +44,7 @@ extraJs: service.js
     {# Single centred column, images slightly narrower than the column so they can
        stagger left/right. All sizing is inline on the image, so nothing can shrink it. #}
     <div class="mosaic stack" style="display:block;width:100%;max-width:620px;margin:0 auto">
-      {% for w in s.work %}{% set tmargin = "margin-left:auto;" if (loop.index0 % 2 == 1) else "margin-right:auto;" %}<button type="button" class="tile" data-lb="{{ loop.index0 }}" style="display:block;width:88%;{{ tmargin }}margin-bottom:26px;border:0;padding:0;overflow:hidden;border-radius:12px;cursor:pointer;line-height:0;background:#1c1c1d" onclick="openLB({{ loop.index0 }})" aria-label="View {{ w.title }}, {{ w.place }}">{% if w.img %}<img src="{{ w.img }}" alt="{{ w.title }}, {{ w.place }}" style="display:block;width:100%;height:300px;object-fit:cover">{% else %}<span class="ph resin {{ w.blend }}" style="display:block;width:100%;height:300px"></span>{% endif %}</button>{% endfor %}
+      {% for w in s.workVisible %}{% set tmargin = "margin-left:auto;" if (loop.index0 % 2 == 1) else "margin-right:auto;" %}<button type="button" class="tile" data-lb="{{ loop.index0 }}" style="display:block;width:88%;{{ tmargin }}margin-bottom:26px;border:0;padding:0;overflow:hidden;border-radius:12px;cursor:pointer;line-height:0;background:#1c1c1d" onclick="openLB({{ loop.index0 }})" aria-label="View {{ w.title }}, {{ w.place }}">{% if w.img %}<img src="{{ w.img }}" alt="{{ w.title }}, {{ w.place }}" style="display:block;width:100%;height:300px;object-fit:cover">{% else %}<span class="ph resin {{ w.blend }}" style="display:block;width:100%;height:300px"></span>{% endif %}</button>{% endfor %}
     </div>
     {% else %}
     <div class="mosaic" id="mosaic"></div>
@@ -194,7 +194,7 @@ extraJs: service.js
 </div>
 
 <script>
-  window.WORK = {{ s.work | dump | safe }};
+  window.WORK = {{ s.workVisible | dump | safe }};
   window.WORK_LAYOUT = {{ (s.workLayout or "mosaic") | dump | safe }};
   window.FINISHES = {{ s.finishes.items | dump | safe }};
 </script>

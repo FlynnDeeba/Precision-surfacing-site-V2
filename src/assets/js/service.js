@@ -6,7 +6,7 @@
   var finishes = window.FINISHES || [];
 
   function fill(el, item) {
-    if (item.img) { var im = document.createElement('img'); im.src = item.img; im.alt = item.title + ', ' + item.place; el.appendChild(im); }
+    if (item.img) { var im = document.createElement('img'); im.src = item.img; im.alt = item.title + ', ' + item.place; if (item.pos) im.style.objectPosition = item.pos; el.appendChild(im); }
     else { var d = document.createElement('div'); d.className = 'ph resin ' + item.blend; el.appendChild(d); }
   }
 
@@ -64,6 +64,9 @@
       var src = gal[sub], p = preload(src);
       var show = function () {
         if (id !== renderId) return;          // user already moved on to another image
+        /* a project can mix orientations (a path shot among driveway shots), so judge
+           each photo on its own rather than flagging the whole project portrait */
+        if (p.naturalWidth) lb.classList.toggle('is-portrait', p.naturalHeight > p.naturalWidth);
         var im = document.createElement('img');
         im.src = src; im.alt = item.title + ', ' + item.place;
         frame.innerHTML = ''; frame.appendChild(im);
@@ -87,8 +90,10 @@
   window.openLB = function (i) {
     if (!lb) return;
     cur = i; gal = galleryOf(work[i]);
-    sub = gal ? Math.max(0, gal.indexOf(work[i].img)) : 0;   // open on the cover image
-    lb.classList.toggle('is-portrait', !!work[i].portrait);  // show tall images uncropped
+    /* a tile can use a cropped copy of a photo (imgFull names the original), so the
+       lightbox still opens on the shot you clicked rather than the first in the set */
+    sub = gal ? Math.max(0, gal.indexOf(work[i].imgFull || work[i].img)) : 0;
+    lb.classList.toggle('is-portrait', !!work[i].portrait);  // starting guess; each photo corrects it as it loads
     if (frame && gal) frame.innerHTML = '';                  // don't flash the previously opened project
     render();
     warm(work[i]);                                           // fetch the rest of this project's images now

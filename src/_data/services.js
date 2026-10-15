@@ -41,6 +41,18 @@ module.exports = [
         "/assets/images/resin/projects/buxton-resin-driveway/buxton-resin-driveway-progress-2.webp",
         "/assets/images/resin/projects/buxton-resin-driveway/buxton-resin-driveway-full-view.webp"
       ] },
+      { img: "/assets/images/resin/projects/wymondham-shadow-blue/wymondham-shadow-blue-resin-driveway-closeup-tile.webp", imgFull: "/assets/images/resin/projects/wymondham-shadow-blue/wymondham-shadow-blue-resin-driveway-closeup.webp", title: "Shadow Blue driveway & path", place: "Wymondham", pos: "38% 50%", images: [
+        "/assets/images/resin/projects/wymondham-shadow-blue/wymondham-shadow-blue-resin-driveway-excavation.webp",
+        "/assets/images/resin/projects/wymondham-shadow-blue/wymondham-shadow-blue-resin-driveway-type1-subbase.webp",
+        "/assets/images/resin/projects/wymondham-shadow-blue/wymondham-shadow-blue-resin-driveway-tarmac-base-laid.webp",
+        "/assets/images/resin/projects/wymondham-shadow-blue/wymondham-shadow-blue-resin-driveway-path-being-laid.webp",
+        "/assets/images/resin/projects/wymondham-shadow-blue/wymondham-shadow-blue-resin-driveway-resin-being-laid.webp",
+        "/assets/images/resin/projects/wymondham-shadow-blue/wymondham-shadow-blue-resin-driveway-resin-being-laid-2.webp",
+        "/assets/images/resin/projects/wymondham-shadow-blue/wymondham-shadow-blue-resin-driveway-path-finished.webp",
+        "/assets/images/resin/projects/wymondham-shadow-blue/wymondham-shadow-blue-resin-driveway-finished-front-on.webp",
+        "/assets/images/resin/projects/wymondham-shadow-blue/wymondham-shadow-blue-resin-driveway-finished.webp",
+        "/assets/images/resin/projects/wymondham-shadow-blue/wymondham-shadow-blue-resin-driveway-closeup.webp"
+      ] },
       { img: "/assets/images/resin/projects/thorpe-marriott/thorpe-marriott-resin-driveway-closeup-front.webp", title: "Resin driveway", place: "Thorpe Marriott", images: [
         "/assets/images/resin/projects/thorpe-marriott/thorpe-marriott-resin-driveway-closeup-front.webp",
         "/assets/images/resin/projects/thorpe-marriott/thorpe-marriott-resin-driveway-edging-blocks-laid.webp",
@@ -49,7 +61,7 @@ module.exports = [
         "/assets/images/resin/projects/thorpe-marriott/thorpe-marriott-resin-driveway-full-view.webp",
         "/assets/images/resin/projects/thorpe-marriott/thorpe-marriott-resin-driveway-closeup-full-view.webp"
       ] },
-      { img: "/assets/images/resin/projects/sandringham-case-study/sandringham-resin-driveway-closeup-finished.webp", title: "Resin driveway", place: "Sandringham", images: [
+      { galleryOnly: true, img: "/assets/images/resin/projects/sandringham-case-study/sandringham-resin-driveway-closeup-finished.webp", title: "Resin driveway", place: "Sandringham", images: [
         "/assets/images/resin/projects/sandringham-case-study/sandringham-resin-driveway-type1-subbase-delivery.webp",
         "/assets/images/resin/projects/sandringham-case-study/sandringham-resin-driveway-before-start.webp",
         "/assets/images/resin/projects/sandringham-case-study/sandringham-resin-driveway-tarmac-base-laid.webp",
@@ -385,3 +397,9 @@ module.exports = [
     ]
   }
 ];
+
+/* Some projects earn a place in the gallery but not on the service page — flagged
+   galleryOnly. The service page reads `workVisible`; the gallery reads `work`. */
+module.exports.forEach(svc => {
+  svc.workVisible = (svc.work || []).filter(w => !w.galleryOnly);
+});

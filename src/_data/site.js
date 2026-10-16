@@ -7,6 +7,12 @@ module.exports = {
   email: "info@psurfacing.co.uk",
   url: "https://precisionsurfacingnorfolk.co.uk",
   telephone: "+447946525674",
+  // Google tag — paste the IDs here and the tag goes on every page.
+  // Google Ads conversion ID from Ads > Goals > Conversions (looks like "AW-123456789").
+  // Google Analytics 4 measurement ID (looks like "G-ABC1234567"), optional.
+  // Leave either empty and nothing is output for it.
+  googleAdsId: "AW-18121484201",
+  gaId: "",
   ogImage: "/assets/images/resin/projects/wells-silver-grey/wells-silver-grey-resin-driveway-finished.webp",
   description: "Norfolk's driveway & surfacing specialists — resin bound, tarmac, tar & chip, block paving and gravel. Four generations of expertise, laid in-house.",
   // Site-wide LocalBusiness structured data (JSON-LD) — output in base.njk

@@ -343,25 +343,42 @@ module.exports = [
 
   {
     slug: "gravel",
-    comingSoon: true,
+    buildImage: "/assets/images/gravel/projects/norwich-block-edged/norwich-block-edged-gravel-driveway-base-prepared.webp",
+    buildImageAlt: "Compacted Type 1 blinded with granite dust, ready for stone",
+    hideFinishes: true,   // no colour picker on this page yet
+    hideHeroLede: true,
     order: 5,
     name: "Gravel",
     navLabel: "Gravel",
     title: "Gravel & shingle driveways — Precision Surfacing, Norfolk",
     eyebrow: "Gravel & shingle",
-    h1Lead: "Simple, classic",
-    h1Em: "gravel.",
+    h1Html: "Norfolk's<br>gravel<br><em>driveways.</em>",
+    heroLede: "Gravel and shingle driveways laid across Norfolk — excavated, membraned, built on compacted Type 1 and blinded with granite dust before the stone goes down.",
     workHead: "Recent work",
     work: [
-      { blend: "gravel",  title: "Gravel driveway", place: "Wroxham", wide: true },
-      { blend: "oyster",  title: "Courtyard",       place: "Aylsham" },
-      { blend: "bracken", title: "Country drive",   place: "Dereham" }
+      { img: "/assets/images/gravel/projects/easton/easton-tar-and-chip-driveway-1.webp", title: "Cottage driveway", place: "Easton", images: [
+        "/assets/images/gravel/projects/easton/easton-tar-and-chip-driveway-1.webp",
+        "/assets/images/gravel/projects/easton/easton-tar-and-chip-driveway-2.webp",
+        "/assets/images/gravel/projects/easton/easton-tar-and-chip-driveway-3.webp"
+      ] },
+      { img: "/assets/images/gravel/projects/norwich-block-edged/norwich-block-edged-gravel-driveway-other-side.webp", title: "Block-edged gravel driveway", place: "Norwich", images: [
+        "/assets/images/gravel/projects/norwich-block-edged/norwich-block-edged-gravel-driveway-base-prepared.webp",
+        "/assets/images/gravel/projects/norwich-block-edged/norwich-block-edged-gravel-driveway-front-view.webp",
+        "/assets/images/gravel/projects/norwich-block-edged/norwich-block-edged-gravel-driveway-other-side.webp",
+        "/assets/images/gravel/projects/norwich-block-edged/norwich-block-edged-gravel-driveway-finished.webp"
+      ] },
+      { img: "/assets/images/gravel/projects/bungalow-golden/bungalow-golden-gravel-driveway-finished.webp", title: "Golden gravel driveway", place: "Norfolk", images: [
+        "/assets/images/gravel/projects/bungalow-golden/bungalow-golden-gravel-driveway-before.webp",
+        "/assets/images/gravel/projects/bungalow-golden/bungalow-golden-gravel-driveway-subbase.webp",
+        "/assets/images/gravel/projects/bungalow-golden/bungalow-golden-gravel-driveway-subbase-detail.webp",
+        "/assets/images/gravel/projects/bungalow-golden/bungalow-golden-gravel-driveway-finished.webp"
+      ] }
     ],
     why: {
       heading: "Affordable.", em: "Adaptable.",
-      lede: "Done properly — over a bound base with stabilising grids — gravel stays put, drains freely and looks the part for years.",
+      lede: "Done properly — membrane, compacted Type 1 and a granite dust blinding beneath — gravel stays put, drains freely and looks the part for years.",
       points: [
-        { icon: "grid",    title: "Stabilised — stays put", sub: "Grids stop rutting and migration" },
+        { icon: "grid",    title: "Built on a proper base", sub: "Membrane, Type 1 and granite dust" },
         { icon: "drain",   title: "Free-draining", sub: "Water soaks straight through" },
         { icon: "value",   title: "Cost-effective", sub: "Great value over large areas" },
         { icon: "lock",    title: "Natural security", sub: "The crunch underfoot" },
@@ -369,13 +386,14 @@ module.exports = [
       ]
     },
     build: {
-      heading: "Held in", em: "place.",
-      lede: "Loose gravel rutts and migrates. We build it over a proper base with stabilising grids so it stays where it's laid.",
+      heading: "Built to", em: "stay put.",
+      lede: "Loose gravel tipped onto soil ruts and migrates. Built up in layers over a proper base, it stays where it's laid and drains freely.",
       steps: [
-        { tag: "Excavate", title: "Dig out & set the falls", body: "Strip back to formation and grade for drainage.", layers: ["l-earth"] },
-        { tag: "Sub-base", title: "Compacted MOT Type 1", body: "A compacted stone sub-base for a firm foundation.", layers: ["l-base-sub","l-earth"] },
-        { tag: "Stabilise", title: "Geo-grid & membrane", body: "A membrane and stabilising grids contain the gravel and stop rutting.", layers: ["l-base-tar","l-base-sub","l-earth"] },
-        { tag: "Fill", title: "Gravel laid & levelled", body: "The chosen gravel is filled into the grids and levelled off.", layers: ["l-resin resin gravel","l-primer","l-base-tar","l-base-sub","l-earth"] }
+        { tag: "Excavate", title: "Dig out & set the falls", body: "Strip back to formation and grade so water runs where it should.", layers: ["l-earth"] },
+        { tag: "Membrane", title: "Weed membrane laid", body: "A geotextile membrane separates the ground from the stone above and keeps weeds down.", layers: ["l-primer","l-earth"] },
+        { tag: "Sub-base", title: "Compacted MOT Type 1", body: "A compacted Type 1 sub-base — the layer that actually carries the weight.", layers: ["l-base-sub","l-primer","l-earth"] },
+        { tag: "Blind", title: "Layer of granite dust", body: "Granite dust is spread and compacted over the Type 1 to bind it and leave a true, even surface.", layers: ["l-base-tar","l-base-sub","l-primer","l-earth"] },
+        { tag: "Stone", title: "Your choice of stone on top", body: "The stone you have chosen is spread and levelled off to finish.", layers: ["l-resin resin gravel","l-base-tar","l-base-sub","l-primer","l-earth"] }
       ]
     },
     finishes: {
@@ -388,7 +406,7 @@ module.exports = [
       ]
     },
     faqs: [
-      { q: "Won't the gravel move around or rut?", a: "Not when it's stabilised. We lay the gravel into a membrane and grid system that holds it in place, so it won't rut, scatter or migrate the way loose gravel does." },
+      { q: "Won't the gravel move around or rut?", a: "Not when the base is right. Gravel tipped straight onto soil ruts and spreads; over a membrane, compacted Type 1 and a blinded granite dust layer it beds in and stays where it's laid." },
       { q: "Is gravel good for drainage?", a: "Excellent — water soaks straight through, so there's no standing water, and it's naturally SuDS-friendly." },
       { q: "Is it cheaper than other surfaces?", a: "Generally yes, particularly over large areas — it's one of the most cost-effective ways to surface a driveway or access." },
       { q: "How much maintenance does it need?", a: "Very little — an occasional rake to keep it level and a top-up of stone every few years is all it really takes." },

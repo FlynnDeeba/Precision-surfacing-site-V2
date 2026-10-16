@@ -118,7 +118,13 @@
     fetch('/.netlify/functions/submit-lead',{
       method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data)
     }).then(function(r){return r.ok;}).catch(function(){return false;})
-      .then(function(ok){ next.disabled=false; showDone(ok); });
+      .then(function(ok){
+        next.disabled=false;
+        /* a successful send goes to its own URL, so ad platforms and analytics can
+           count it as a conversion; failures stay put and show the fallback panel */
+        if (ok) { window.location.href = '/thank-you/'; return; }
+        showDone(false);
+      });
   }
   function showDone(ok){
     document.querySelectorAll('.step').forEach(function(s){s.style.display='none';});

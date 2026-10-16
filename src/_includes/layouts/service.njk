@@ -110,7 +110,7 @@ extraJs: service.js
     {% endfor %}
   </div>
   </div>
-  <div class="build-media" aria-hidden="true"></div>
+  <div class="build-media{% if s.buildImage %} has-img{% endif %}"{% if not s.buildImage %} aria-hidden="true"{% endif %}>{% if s.buildImage %}<img src="{{ s.buildImage }}" alt="{{ s.buildImageAlt }}" loading="lazy" decoding="async">{% endif %}</div>
 </section>
 
 {% if s.finishes and not s.hideFinishes %}

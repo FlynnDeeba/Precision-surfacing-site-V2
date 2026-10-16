@@ -99,12 +99,16 @@
   @media (max-width:899px){
     /* pull the gallery up closer to the headline + lede */
     .prevwork[data-service="tarmac"],
+    .prevwork[data-service="gravel"],
     .prevwork[data-service="tar-and-chip"]{margin-top:-30px}
     .prevwork[data-service="tarmac"] .mosaic,
+    .prevwork[data-service="gravel"] .mosaic,
     .prevwork[data-service="tar-and-chip"] .mosaic{flex-direction:column;align-items:stretch;gap:14px}
     .prevwork[data-service="tarmac"] .mcol,
+    .prevwork[data-service="gravel"] .mcol,
     .prevwork[data-service="tar-and-chip"] .mcol{display:contents}
     .prevwork[data-service="tarmac"] .tile,
+    .prevwork[data-service="gravel"] .tile,
     .prevwork[data-service="tar-and-chip"] .tile{width:100%;aspect-ratio:4/3!important}
   }
   /* single full-width column of wide cover images (e.g. tarmac). Block layout
@@ -318,14 +322,19 @@
        photos are landscape, so they get a wide-over-two arrangement rather than the
        three portrait columns resin uses. */
     .hero[data-service="tarmac"] .hero-copy,
+    .hero[data-service="gravel"] .hero-copy,
     .hero[data-service="tar-and-chip"] .hero-copy{display:grid;grid-template-columns:minmax(0,0.86fr) minmax(0,1.18fr);column-gap:56px;align-items:center}
     .hero[data-service="tarmac"] .hero-text,
+    .hero[data-service="gravel"] .hero-text,
     .hero[data-service="tar-and-chip"] .hero-text{grid-column:1;min-width:0;transform:translateY(-18px)}
     .hero[data-service="tarmac"] .hero-strip,
+    .hero[data-service="gravel"] .hero-strip,
     .hero[data-service="tar-and-chip"] .hero-strip{grid-column:2;display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:0;padding-bottom:44px;align-items:start}
     .hero[data-service="tarmac"] .hs-tile,
+    .hero[data-service="gravel"] .hs-tile,
     .hero[data-service="tar-and-chip"] .hs-tile{flex:none;height:auto;aspect-ratio:4/3}
     .hero[data-service="tarmac"] .hs-tile:nth-child(1),
+    .hero[data-service="gravel"] .hs-tile:nth-child(1),
     .hero[data-service="tar-and-chip"] .hs-tile:nth-child(1){grid-column:1 / -1;aspect-ratio:16/9}
     /* Resin only: larger portrait gallery to the RIGHT of the text, cascading left→right */
     .hero[data-service="resin"] .hero-copy{display:grid;grid-template-columns:minmax(0,0.82fr) minmax(0,1.3fr);column-gap:56px;align-items:center}
@@ -355,6 +364,9 @@
     .build .build-text{grid-column:1;min-width:0}
     .build .build-media{grid-column:2;display:block;position:relative;border-radius:16px;
       background:#dfe2e3;box-shadow:inset 0 0 0 1px rgba(0,0,0,.07);overflow:hidden;min-height:100%}
+    .build .build-media.has-img{background:#1c1c1d}
+    .build .build-media.has-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+    .build .build-media.has-img::after{content:none}
     .build .build-media::after{content:"Project image";position:absolute;inset:0;display:flex;
       align-items:center;justify-content:center;font-family:var(--mono);font-size:11px;
       letter-spacing:.22em;text-transform:uppercase;color:var(--mist-d)}

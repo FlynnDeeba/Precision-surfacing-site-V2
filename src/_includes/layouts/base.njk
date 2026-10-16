@@ -6,7 +6,7 @@
   <title>{{ title or site.name }}</title>
   <meta name="description" content="{{ description or site.description }}">
   <link rel="canonical" href="{{ site.url }}{{ page.url }}">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="{{ robots or 'index, follow' }}">
   <meta name="theme-color" content="#0E0F10">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="{{ site.name }}">

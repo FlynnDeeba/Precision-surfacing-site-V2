@@ -1,0 +1,41 @@
+---
+layout: layouts/base.njk
+title: "Thank you — Precision Surfacing"
+description: "Thanks — your quote request has reached us and we'll be in touch within one working day."
+permalink: "/thank-you/"
+hideChrome: true
+extraCss: get-started.css
+eleventyExcludeFromCollections: true
+robots: "noindex, follow"
+---
+{# Where the quote form lands after a successful send. Same confirmation screen as
+   before, now on its own URL so ad platforms and analytics can count it. #}
+{% include "partials/quote-nav.njk" %}
+  <div class="shell">
+    <main class="app">
+      <header class="top">
+        <a class="logo" href="/" aria-label="Precision Surfacing — home"><span class="l1">Precision</span><span class="l2">Surfacing</span></a>
+      </header>
+
+      <!-- dark bar → light body (mobile only) -->
+      <div class="section-fade section-fade--grain fade-top" aria-hidden="true"></div>
+
+      <div class="body">
+        <section class="done show" aria-live="polite">
+          <div class="seal"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>
+          <h1>Request <em>received.</em></h1>
+          <p>Thanks — we've got your details and we'll be in touch within one working day.</p>
+          <div class="next-steps">
+            <div class="ns-h">What happens next</div>
+            <div class="ns"><span class="n">01</span><span class="t">We call to confirm<span>A quick chat to understand the job and book a time.</span></span></div>
+            <div class="ns"><span class="n">02</span><span class="t">Free site visit<span>We come out, measure up and check the ground.</span></span></div>
+            <div class="ns"><span class="n">03</span><span class="t">Written quote<span>A clear, itemised price — no pressure, no chasing.</span></span></div>
+          </div>
+          <a class="done-home" href="/"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg> Back to site</a>
+        </section>
+      </div>
+
+      <!-- light body → dark bar (mobile only) -->
+      <div class="section-fade section-fade--grain fade-bot" aria-hidden="true"></div>
+    </main>
+  </div>

@@ -1,50 +1,108 @@
 ---
 layout: layouts/base.njk
 title: "Contact — Precision Surfacing"
-description: "Get in touch with Precision Surfacing — driveways and surfacing across Norfolk."
+description: "Speak to Precision Surfacing about a driveway in Norfolk — call, email or request a free quote. Quotation within 24 hours of first contact."
 ---
 <main class="simple">
   <header class="simple-head" data-theme="dark">
     <div class="simple-head-in">
       <span class="kicker">Contact</span>
       <h1>Let's talk about your <em>project.</em></h1>
-      <p>Call, email, or request a quote — we cover Norwich and the surrounding Norfolk villages.</p>
+      <p>Tell us what you're thinking and we'll come out, measure up and price it properly. No deposit, no pressure.</p>
     </div>
   </header>
 
   <section class="simple-body" data-theme="light">
-    <div class="contact-grid">
-      <a class="contact-card" href="{{ site.phoneHref }}">
-        <span class="cc-k">Call</span>
-        <span class="cc-v">{{ site.phone }}</span>
-      </a>
-      <a class="contact-card" href="mailto:{{ site.email }}">
-        <span class="cc-k">Email</span>
-        <span class="cc-v">{{ site.email }}</span>
-      </a>
-      <a class="contact-card" href="/get-a-quote/">
-        <span class="cc-k">Quote</span>
-        <span class="cc-v">Request a free quote →</span>
-      </a>
+    <div class="ct-grid">
+
+      {# the two direct routes, set as a list rather than boxes — the number is the thing #}
+      <div class="ct-reach">
+        <h2 class="ct-kick">Speak to us</h2>
+        <a class="ct-line" href="{{ site.phoneHref }}">
+          <span class="ct-lab">Call</span>
+          <span class="ct-val">{{ site.phone }}</span>
+          <span class="ct-note">Mon–Sat, and we answer out of hours where we can</span>
+        </a>
+        <a class="ct-line" href="mailto:{{ site.email }}">
+          <span class="ct-lab">Email</span>
+          <span class="ct-val ct-val--sm">{{ site.email }}</span>
+          <span class="ct-note">Photos of the area are always welcome</span>
+        </a>
+        <a class="ct-cta" href="/get-a-quote/">Request a free quote
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+
+      {# what they can expect, so the page answers the question before it's asked #}
+      <aside class="ct-next">
+        <h2 class="ct-kick">What happens next</h2>
+        <ol class="ct-steps">
+          <li><span class="n">01</span><span class="t">We call you back<span>A short chat about the job, the access and roughly when you want it done.</span></span></li>
+          <li><span class="n">02</span><span class="t">Free site visit<span>We come out, measure up and check the ground. No charge, no obligation.</span></span></li>
+          <li><span class="n">03</span><span class="t">Written quotation<span>An itemised price, in writing, within 24 hours of first contact.</span></span></li>
+        </ol>
+        <div class="ct-facts">
+          <div><b>£0</b><span>Deposit required</span></div>
+          <div><b>24hr</b><span>To your quotation</span></div>
+          <div><b>£5m</b><span>Public liability</span></div>
+        </div>
+      </aside>
+
     </div>
-    <p class="areas"><strong>Areas covered:</strong> {{ site.locations }}</p>
   </section>
+
+  {% include "partials/areas.njk" %}
 </main>
 
 <style>
-  .simple{background:var(--paper,#EAEDEE);min-height:70vh}
-  .simple-head{background:var(--ink,#0E0F10);color:#fff;padding:84px 0 64px}
-  .simple-head-in{max-width:900px;margin:0 auto;padding:0 22px}
-  .simple-head .kicker{color:var(--gold)}
-  .simple-head h1{font-family:var(--serif,"Instrument Serif",serif);font-size:clamp(38px,9vw,72px);line-height:1.02;margin:14px 0 16px;font-weight:400}
+  .simple{background:var(--paper,#EAEDEE)}
+  .simple-head{background:var(--ink,#0E0F10);color:#fff;padding:84px 0 60px}
+  .simple-head-in{padding-inline:var(--pad,26px)}
+  .simple-head .kicker{color:rgba(255,255,255,.55)}
+  .simple-head .kicker::after{background:rgba(255,255,255,.18)}
+  .simple-head h1{font-family:var(--serif,"Instrument Serif",serif);font-size:clamp(38px,9vw,66px);line-height:1.02;margin:12px 0 16px;font-weight:400}
   .simple-head h1 em{font-style:italic;color:var(--gold-hl)}
-  .simple-head p{color:rgba(255,255,255,.62);max-width:46ch;font-size:16px}
-  .simple-body{max-width:900px;margin:0 auto;padding:56px 22px 90px}
-  .contact-grid{display:grid;gap:14px;grid-template-columns:1fr}
-  .contact-card{display:flex;flex-direction:column;gap:8px;padding:26px;border:1px solid rgba(0,0,0,.12);border-radius:16px;background:#fff;text-decoration:none;transition:transform .2s ease,border-color .2s ease}
-  .contact-card:hover{transform:translateY(-3px);border-color:var(--gold-deep)}
-  .cc-k{font-family:var(--mono,"Raleway",sans-serif);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep)}
-  .cc-v{font-size:20px;color:var(--ink,#0E0F10);font-weight:600}
-  .areas{margin-top:34px;font-size:14px;color:#55585a}
-  @media (min-width:720px){.contact-grid{grid-template-columns:repeat(3,1fr)}.simple-head{padding:120px 0 80px}.simple-head-in{padding:0 50px}.simple-body{padding:64px 50px 110px}}
+  .simple-head p{color:rgba(255,255,255,.62);max-width:44ch;font-size:16px}
+  .simple-body{padding:46px var(--pad,26px) 20px}
+
+  .ct-grid{display:grid;gap:44px;grid-template-columns:1fr}
+  .ct-kick{font-family:var(--font-logo,"Raleway",sans-serif);font-weight:600;font-size:11px;letter-spacing:.3em;
+    text-transform:uppercase;color:var(--mist,#7E817A);margin-bottom:6px}
+
+  /* contact routes — hairline rows, the detail doing the work rather than a box */
+  .ct-line{display:block;padding:22px 0;border-bottom:1px solid rgba(14,15,16,.12);text-decoration:none;transition:padding-left .2s ease}
+  .ct-line:hover{padding-left:6px}
+  .ct-lab{display:block;font-family:var(--font-logo,"Raleway",sans-serif);font-weight:600;font-size:10.5px;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep)}
+  .ct-val{display:block;margin-top:7px;font-size:28px;font-weight:700;letter-spacing:-.02em;color:var(--ink,#0E0F10)}
+  .ct-val--sm{font-size:20px;letter-spacing:-.01em;word-break:break-word}
+  .ct-note{display:block;margin-top:6px;font-size:13.5px;color:#6a6d6c}
+  .ct-cta{display:inline-flex;align-items:center;gap:10px;margin-top:28px;background:var(--gold-hl,#F0CC3A);color:var(--ink,#0E0F10);
+    font-family:var(--font-logo,"Raleway",sans-serif);font-weight:600;font-size:13px;letter-spacing:.13em;text-transform:uppercase;
+    text-decoration:none;padding:15px 24px;border-radius:5px;transition:background .2s ease,transform .2s ease}
+  .ct-cta svg{width:17px;height:17px;stroke:currentColor;stroke-width:2;fill:none}
+  .ct-cta:hover{background:#F4D44A;transform:translateX(3px)}
+
+  /* what happens next */
+  .ct-next{background:#fff;border:1px solid rgba(14,15,16,.1);border-radius:5px;padding:28px 26px}
+  .ct-steps{list-style:none;margin:14px 0 0;padding:0}
+  .ct-steps li{display:flex;gap:16px;padding:16px 0;border-top:1px solid rgba(14,15,16,.09)}
+  .ct-steps li:first-child{border-top:0;padding-top:4px}
+  .ct-steps .n{flex:0 0 auto;font-family:var(--font-logo,"Raleway",sans-serif);font-weight:600;font-size:11px;
+    letter-spacing:.1em;color:var(--gold-deep);padding-top:3px}
+  .ct-steps .t{font-size:15.5px;font-weight:600;color:var(--ink,#0E0F10);line-height:1.3}
+  .ct-steps .t span{display:block;margin-top:5px;font-weight:400;font-size:14px;line-height:1.55;color:#5c5f5e}
+  .ct-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px;padding-top:20px;border-top:1px solid rgba(14,15,16,.09)}
+  .ct-facts b{display:block;font-size:22px;font-weight:700;letter-spacing:-.02em;color:var(--ink,#0E0F10)}
+  .ct-facts span{display:block;margin-top:3px;font-size:12px;line-height:1.3;color:#6a6d6c}
+
+  @media (min-width:720px){
+    .simple-head{padding:112px 0 76px}
+    .simple-head-in,.simple-body{padding-inline:max(50px,calc((100% - 1120px) / 2))}
+    .simple-body{padding-block:64px 24px}
+    .ct-grid{grid-template-columns:1.05fr .95fr;gap:clamp(40px,6vw,80px);align-items:start}
+    .ct-val{font-size:34px}
+    .ct-val--sm{font-size:22px}
+    .ct-next{padding:32px 30px}
+  }
 </style>

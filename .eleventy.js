@@ -3,6 +3,7 @@ const fs = require("fs");
 module.exports = function (eleventyConfig) {
   // Pass static assets straight through to the build output
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
+  eleventyConfig.addPassthroughCopy({ "src/favicon.ico": "favicon.ico" });
 
   // Watch CSS/JS so the dev server reloads on change
   eleventyConfig.addWatchTarget("src/assets/");

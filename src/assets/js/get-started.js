@@ -1,6 +1,6 @@
 
 (function(){
-  var data={service:[],application:"",size:"",timeline:"",name:"",postcode:"",phone:"",email:"",notes:""};
+  var data={service:[],application:"",timeline:"",name:"",postcode:"",phone:"",email:"",notes:""};
   var step=1, TOTAL=4;
   var steps=document.querySelectorAll('.step');
   var count=document.getElementById('count');
@@ -65,7 +65,6 @@
     });
   }
   wireSelect('appgrid','.appcard','application','g-app');
-  wireSelect('sizebar','.seg','size',null);
   wireSelect('timebar','.seg','timeline','g-time');
   ['name','pc','phone','email'].forEach(function(id){
     var el=document.getElementById(id); if(el) el.addEventListener('input',updateReady);

@@ -11,7 +11,8 @@ const services = require("./services.js");
 const SURFACES = [
   { slug: "tar-and-chip", label: "Tar & chip",  cat: "tarchip" },
   { slug: "resin",        label: "Resin bound", cat: "resin" },
-  { slug: "tarmac",       label: "Tarmac",      cat: "tarmac" }
+  { slug: "tarmac",       label: "Tarmac",      cat: "tarmac" },
+  { slug: "gravel",       label: "Gravel",      cat: "gravel" }
 ];
 
 function projectsFor({ slug, label, cat }) {
@@ -20,7 +21,8 @@ function projectsFor({ slug, label, cat }) {
     .map(w => {
       // the cover shot isn't always inside `images` — keep it, first
       const imgs = (w.images || []).slice();
-      if (w.img && imgs.indexOf(w.img) === -1) imgs.unshift(w.img);
+      const cover = w.imgFull || w.img;          // tiles may use a cropped copy
+      if (cover && imgs.indexOf(cover) === -1) imgs.unshift(cover);
       return { surface: label, cat, place: w.place, title: w.title, images: imgs };
     })
     .filter(p => p.images.length);
@@ -33,18 +35,8 @@ for (let i = 0; i < Math.max(...decks.map(d => d.length)); i++) {
   decks.forEach(deck => { if (deck[i]) ordered.push(deck[i]); });
 }
 
-/* Surfaces without a photographed project yet — these come from the general folders and
-   sit at the end until there are proper project sets to slot into the rotation above. */
-const G = "/assets/images/gravel/projects/";
-ordered.push({
-  surface: "Gravel", cat: "gravel", place: "Norfolk", title: "Gravel driveways",
-  images: [
-    G + "bungalow-golden/bungalow-golden-gravel-driveway-finished.webp",
-    G + "gravel-driveway/gravel-driveway-finished.webp",
-    G + "norwich-modern/norwich-modern-gravel-driveway.webp",
-    "/assets/images/general-gallery/gravel-drive.webp"
-  ]
-});
+/* Block paving has no photographed project set yet, so it comes from the general folder
+   and sits at the end until there is one to slot into the rotation above. */
 ordered.push({
   surface: "Block paving", cat: "block", place: "St Faiths", title: "Block paved driveway",
   images: [

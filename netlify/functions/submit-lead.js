@@ -55,7 +55,6 @@ exports.handler = async (event) => {
   const rows = [
     ["Surface", service],
     ["What it's for", d.application],
-    ["Approx size", d.size],
     ["Timeline", d.timeline],
     ["Name", name],
     ["Postcode", d.postcode],

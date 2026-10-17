@@ -100,11 +100,19 @@ description: "Recent driveway and surfacing projects across Norfolk — resin, t
   .glb.on{opacity:1;visibility:visible}
   .glb-x{align-self:flex-end;margin:18px 20px 0;background:none;border:0;cursor:pointer;color:rgba(255,255,255,.6);font-family:var(--mono,"Raleway",sans-serif);font-size:12px;letter-spacing:.14em}
   .glb-x:hover{color:var(--gold-hl)}
-  .glb-stage{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;min-height:0;padding:6px 8px}
+  /* The arrows sit ON the photo rather than beside it — as flex siblings they were
+     pushed off a phone screen entirely, because the photo already took 92vw. */
+  .glb-stage{position:relative;flex:1;display:flex;align-items:center;justify-content:center;min-height:0;padding:6px 8px}
   .glb-fig{margin:0;max-width:92vw;max-height:78vh;display:flex}
   .glb-fig img{max-width:92vw;max-height:78vh;width:auto;height:auto;object-fit:contain;border-radius:4px;display:block}
-  .glb-arrow{flex:0 0 auto;background:none;border:0;padding:6px;cursor:pointer}
-  .glb-arrow svg{width:30px;height:30px;stroke:#fff;fill:none;stroke-width:2;filter:drop-shadow(0 1px 4px rgba(0,0,0,.7));display:block;transition:stroke .2s ease}
+  .glb-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:2;background:rgba(8,9,10,.5);
+    -webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);border:0;border-radius:50%;
+    width:44px;height:44px;display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;
+    transition:background .2s ease}
+  .glb-arrow.prev{left:10px}
+  .glb-arrow.next{right:10px}
+  .glb-arrow:hover{background:rgba(8,9,10,.78)}
+  .glb-arrow svg{width:26px;height:26px;stroke:#fff;fill:none;stroke-width:2;filter:drop-shadow(0 1px 4px rgba(0,0,0,.7));display:block;transition:stroke .2s ease}
   .glb-arrow:hover svg{stroke:var(--gold-hl)}
   .glb-cap{text-align:center;padding:14px 20px 26px;font-family:var(--mono,"Raleway",sans-serif);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.7)}
 
@@ -115,6 +123,10 @@ description: "Recent driveway and surfacing projects across Norfolk — resin, t
     .gal-head-in{padding-inline:max(50px,calc((100% - 1120px) / 2))}
     .gal-body{padding:30px max(50px,calc((100% - 1120px) / 2)) 110px}
     .glb-x{margin:22px clamp(28px,4vw,56px) 0}
+    .glb-arrow{width:52px;height:52px}
+    .glb-arrow.prev{left:clamp(12px,3vw,40px)}
+    .glb-arrow.next{right:clamp(12px,3vw,40px)}
+    .glb-arrow svg{width:30px;height:30px}
   }
 </style>
 

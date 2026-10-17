@@ -6,6 +6,13 @@
   <title>{{ title or site.name }}</title>
   <meta name="description" content="{{ description or site.description }}">
   <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  {# Favicon — this is what Google shows beside the domain in search results.
+     It needs a stable URL, a square image and a size that is a multiple of 48. #}
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/icon-48.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+
   <meta name="robots" content="{{ robots or 'index, follow' }}">
   <meta name="theme-color" content="#0E0F10">
   <meta property="og:type" content="website">

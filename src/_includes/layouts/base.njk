@@ -41,6 +41,12 @@
     {% if site.googleAdsId %}gtag('config', '{{ site.googleAdsId }}');{% endif %}
     {% if site.gaId %}gtag('config', '{{ site.gaId }}');{% endif %}
   </script>
+  {% if site.googleAdsId and adsConversionLabel %}
+  {# Conversion event — only on a page that sets adsConversionLabel (the thank-you page) #}
+  <script>
+    gtag('event', 'conversion', {'send_to': '{{ site.googleAdsId }}/{{ adsConversionLabel }}'});
+  </script>
+  {% endif %}
 {% endif %}
   <script type="application/ld+json">{{ site.structuredData | dump | safe }}</script>
 </head>

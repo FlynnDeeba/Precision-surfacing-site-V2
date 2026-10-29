@@ -68,6 +68,42 @@
     onScroll();
   }
 
+  /* ---- sticky mobile CTA ----
+     Shown once you're past the hero so it never competes with the hero's own buttons,
+     and hidden again over the footer, which already carries the number and the quote
+     link. Desktop hides it in CSS — the site bar has a permanent CTA there. */
+  var scta = $('#scta');
+  if (scta) {
+    var sHero = $('.hero') || $('.simple-head') || $('.art-hero') || $('.gal-head');
+    /* The dark run at the foot of a page (the "get started" band, the dark areas-covered
+       strip, then the footer) already asks for the enquiry, so the button steps aside
+       for it. Whichever of those starts highest on the page is where it goes. */
+    var sEnd = $$('.start, .coverage--dark, .site-footer, [data-theme="dark"]')
+      .filter(function (el) {
+        return el !== sHero && !el.classList.contains('hero') &&
+               el.getBoundingClientRect().top + (window.pageYOffset || 0) > 600;
+      });
+    var sctaScroll = function () {
+      var y = window.pageYOffset || 0;
+      var past = sHero ? y > sHero.offsetHeight * 0.7 : y > 420;
+      var limit = window.innerHeight - 40, atEnd = false;
+      for (var i = 0; i < sEnd.length; i++) {
+        if (sEnd[i].getBoundingClientRect().top < limit) { atEnd = true; break; }
+      }
+      scta.classList.toggle('show', past && !atEnd);
+    };
+    window.addEventListener('scroll', sctaScroll, { passive: true });
+    window.addEventListener('resize', sctaScroll, { passive: true });
+    sctaScroll();
+    /* so the two routes can be compared, and so phone taps are measurable at all */
+    scta.addEventListener('click', function (e) {
+      var a = e.target.closest('[data-cta]');
+      if (a && typeof window.gtag === 'function') {
+        window.gtag('event', 'sticky_cta_' + a.getAttribute('data-cta'));
+      }
+    });
+  }
+
   /* ---- scroll reveals ---- */
   var io = null;
   if ('IntersectionObserver' in window) {

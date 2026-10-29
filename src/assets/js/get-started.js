@@ -21,8 +21,8 @@
     window.scrollTo({top:0,behavior:'smooth'});
   }
   function isComplete(s){
-    if(s===1) return data.service.length>0;
-    if(s===2) return !!data.application;
+    if(s===1) return !!data.application;
+    if(s===2) return data.service.length>0;
     if(s===3) return !!data.timeline;
     if(s===4){
       var nm=document.getElementById('name').value.trim();
@@ -75,11 +75,11 @@
 
   function validate(){
     if(step===1){
-      if(!data.service.length){flash(next);return false;}
+      if(!data.application){document.getElementById('g-app').classList.add('err');return false;}
       return true;
     }
     if(step===2){
-      if(!data.application){document.getElementById('g-app').classList.add('err');return false;}
+      if(!data.service.length){flash(next);return false;}
       return true;
     }
     if(step===3){

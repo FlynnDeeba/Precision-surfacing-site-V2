@@ -456,8 +456,10 @@
     .topnav-links{display:flex;align-items:center;gap:30px}
     .navlink{font-family:var(--mono);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.82);text-decoration:none;cursor:pointer;background:none;border:0;display:inline-flex;align-items:center;gap:7px;transition:color .2s ease}
     .navlink:hover{color:var(--gold-hl)}
-    .navlink-cta{border:1px solid var(--gold-hl);border-radius:6px;padding:9px 16px;color:var(--gold-hl)}
-    .navlink-cta:hover{background:var(--gold-hl);color:var(--ink);border-color:var(--gold-hl)}
+    .navlink-cta{font-family:var(--font-logo);font-weight:600;
+      background:var(--gold-hl);border:1px solid var(--gold-hl);border-radius:6px;
+      padding:9px 16px;color:var(--ink)}
+    .navlink-cta:hover{background:#F4D44A;border-color:#F4D44A;color:var(--ink)}
     .navdrop{position:relative}
     .navdrop-btn{font-family:var(--mono)}
     .nd-chev{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;transition:transform .25s ease}
@@ -588,12 +590,19 @@
   .sitebar.nav-hidden{transform:translateY(-100%)}
   .sitebar-logo{display:flex;flex-direction:column;text-decoration:none;line-height:1}
   .sitebar-logo .l1{font-family:var(--font-logo,"Raleway",sans-serif);font-weight:600;font-size:22px;letter-spacing:5px;text-transform:uppercase;color:#fafafa}
-  .sitebar-logo .l2{font-family:var(--font-logo,"Raleway",sans-serif);font-weight:600;font-size:13px;letter-spacing:10px;text-transform:uppercase;color:var(--gold-hl);margin-top:3px}
+  /* Lockup: SURFACING in white with a gold rule running out to the width of PRECISION
+     above it. Built in CSS rather than an image so it stays sharp and recolours itself
+     over light sections. Same shape on mobile, scaled down. */
+  .sitebar-logo .l2{font-family:var(--font-logo,"Raleway",sans-serif);font-weight:600;font-size:12px;
+    letter-spacing:3.6px;text-transform:uppercase;color:#fafafa;
+    display:flex;align-items:center;gap:11px;width:100%;margin-top:4px}
+  .sitebar-logo .l2::after{content:"";flex:1 0 30px;height:2px;background:var(--gold-hl);margin-left:-4px}
   .sitebar-logo{transition:opacity .3s ease,transform .3s ease}
   /* over a light section (article pages, the gallery body) the white logo vanishes —
      flip it dark until the bar goes solid on scroll */
   .sitebar.on-light:not(.scrolled) .sitebar-logo .l1{color:var(--graphite)}
-  .sitebar.on-light:not(.scrolled) .sitebar-logo .l2{color:var(--gold-deep)}
+  .sitebar.on-light:not(.scrolled) .sitebar-logo .l2{color:var(--graphite)}
+  .sitebar.on-light:not(.scrolled) .sitebar-logo .l2::after{background:var(--gold-deep)}
   .sitebar-links{display:none}
   .sitebar-burger{width:32px;height:20px;background:none;border:0;cursor:pointer;display:flex;flex-direction:column;justify-content:flex-start;gap:7px;padding:0}
   .sitebar-burger span{display:block;height:2px;width:100%;background:#fff;border-radius:2px;transition:background .25s ease}
@@ -611,14 +620,17 @@
   @media (min-width:900px){
     /* Constrain the nav content to the same 1120px container as the page */
     .sitebar{height:88px;padding:0 max(50px,calc((100% - 1120px) / 2))}
-    .sitebar-logo .l1{font-size:24px;letter-spacing:5.5px}
-    .sitebar-logo .l2{font-size:14px;letter-spacing:11px}
+    .sitebar-logo .l1{font-size:28px;letter-spacing:6.5px}
+    .sitebar-logo .l2{font-size:15px;letter-spacing:4.5px;gap:15px;margin-top:5px}
+    .sitebar-logo .l2::after{flex:1 0 42px;margin-left:-6px}
     .sitebar-burger{display:none}
     .sitebar-links{display:flex;align-items:center;gap:36px}
     .sitebar-links .navlink{font-family:var(--font-logo);font-weight:600;font-size:13px;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.82);text-decoration:none;cursor:pointer;background:none;border:0;display:inline-flex;align-items:center;gap:7px;transition:color .2s ease}
     .sitebar-links .navlink:hover{color:var(--gold-hl)}
-    .sitebar-links .navlink-cta{border:1px solid var(--gold-hl);border-radius:6px;padding:11px 20px;color:var(--gold-hl)}
-    .sitebar-links .navlink-cta:hover{background:var(--gold-hl);color:var(--ink)}
+    .sitebar-links .navlink-cta{font-family:var(--font-logo);font-weight:600;
+      background:var(--gold-hl);border:1px solid var(--gold-hl);border-radius:6px;
+      padding:11px 20px;color:var(--ink);transition:background .2s ease,border-color .2s ease}
+    .sitebar-links .navlink-cta:hover{background:#F4D44A;border-color:#F4D44A;color:var(--ink)}
     .navdrop{position:relative}
     .nd-chev{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;transition:transform .25s ease}
     .navdrop:hover .nd-chev,.navdrop.open .nd-chev{transform:rotate(180deg)}
@@ -642,3 +654,20 @@
   /* page wrapper so fixed bar doesn't overlap non-hero page content */
   .page-pad{padding-top:64px}
   @media (min-width:900px){.page-pad{padding-top:88px}}
+
+  /* ---- floating mobile CTA ----
+     Appears once you're past the hero so it never competes with the hero's own
+     buttons, and gets out of the way over the footer, which carries the same two
+     routes. Desktop hides it — the site bar already has a permanent CTA there. */
+  .scta{position:fixed;right:16px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:60;
+    display:flex;
+    opacity:0;transform:translateY(14px) scale(.92);pointer-events:none;
+    transition:opacity .3s ease,transform .36s cubic-bezier(.22,1,.36,1)}
+  .scta.show{opacity:1;transform:none;pointer-events:auto}
+  .scta-dot{display:flex;align-items:center;justify-content:center;
+    text-decoration:none;box-shadow:0 8px 22px rgba(0,0,0,.34)}
+  .scta-quote{width:116px;height:46px;border-radius:23px;background:var(--gold-hl);color:var(--ink)}
+  .scta-t{font-family:var(--font-logo,"Raleway",sans-serif);font-weight:700;font-size:11px;
+    line-height:1.2;letter-spacing:.06em;text-transform:uppercase;text-align:center;white-space:nowrap}
+  @media (min-width:900px){.scta{display:none}}
+  @media (prefers-reduced-motion:reduce){.scta{transition:none}}

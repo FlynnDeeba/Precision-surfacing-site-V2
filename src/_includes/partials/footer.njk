@@ -29,15 +29,32 @@
      the darker body background above the footer, making it look mismatched. */
   .site-footer{background:var(--ink);color:#fff;padding:104px 22px 40px;margin-top:0;border-top:0}
   .sf-inner{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:40px}
-  .sf-brand .logo{display:flex;flex-direction:column;line-height:1}
-  .sf-brand .logo-main{font-family:var(--font-logo,"Raleway",sans-serif);font-weight:600;font-size:22px;letter-spacing:5px;text-transform:uppercase;color:#fafafa}
-  .sf-brand .logo-sub{font-family:var(--font-logo,"Raleway",sans-serif);font-weight:600;font-size:13px;letter-spacing:10px;text-transform:uppercase;color:var(--gold-hl);margin-top:3px}
-  .sf-tag{margin-top:16px;color:rgba(255,255,255,.5);font-size:13px;line-height:1.6}
+  /* Same lockup as the top bar: SURFACING in white with a gold rule running out to the
+     width of PRECISION above it. width:max-content keeps the rule to the logo rather
+     than letting it stretch across the whole brand column on desktop. */
+  /* The footer carries the brand at full size — it's the last thing on the page, so it
+     gets to be the masthead rather than a repeat of the top bar. width:max-content keeps
+     the gold rule tied to the logo; margin-inline:auto centres it with the rest. */
+  .sf-brand .logo{display:flex;flex-direction:column;line-height:1;width:max-content;margin-inline:auto}
+  .sf-brand .logo-main{font-family:var(--font-logo,"Raleway",sans-serif);font-weight:600;font-size:34px;letter-spacing:7px;text-transform:uppercase;color:#fafafa}
+  .sf-brand .logo-sub{font-family:var(--font-logo,"Raleway",sans-serif);font-weight:600;font-size:18px;
+    letter-spacing:5.4px;text-transform:uppercase;color:#fafafa;
+    display:flex;align-items:center;gap:16px;width:100%;margin-top:6px}
+  .sf-brand .logo-sub::after{content:"";flex:1 0 44px;height:2px;background:var(--gold-hl);margin-left:-6px}
+  .sf-tag{margin-top:22px;color:rgba(255,255,255,.5);font-size:13px;line-height:1.6}
   .sf-col{display:flex;flex-direction:column;gap:11px}
   .sf-h{font-family:var(--mono,"Raleway",sans-serif);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
   .sf-col a{color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:color .2s ease}
   .sf-col a:hover{color:var(--gold-hl)}
   .sf-base{max-width:1120px;margin:48px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);font-size:12px;color:rgba(255,255,255,.4)}
-  @media (min-width:760px){.sf-inner{grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px}}
+  @media (min-width:760px){
+    /* brand across the top so the logo has room to be the size it deserves */
+    .sf-inner{grid-template-columns:repeat(3,1fr);gap:48px}
+    .sf-brand{grid-column:1 / -1;margin-bottom:10px}
+    .sf-brand .logo-main{font-size:46px;letter-spacing:9.5px}
+    .sf-brand .logo-sub{font-size:24px;letter-spacing:7.3px;gap:21px;margin-top:8px}
+    .sf-brand .logo-sub::after{flex:1 0 58px;margin-left:-8px}
+    .sf-tag{margin-top:18px;font-size:14px}
+  }
 </style>
 <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>

@@ -26,9 +26,13 @@
 
   /* ---- header + progress ---- */
   .top{display:flex;align-items:center;justify-content:space-between;padding:13px var(--pad) 24px;background:#08090A}
+  /* Same lockup as the site bar: SURFACING in white with a gold rule running out to the
+     width of PRECISION above it. */
   .logo{display:flex;flex-direction:column;line-height:1;text-decoration:none}
   .logo .l1{font-family:var(--logo);font-weight:600;font-size:21px;letter-spacing:5px;text-transform:uppercase;color:#fafafa}
-  .logo .l2{font-family:var(--logo);font-weight:600;font-size:12.5px;letter-spacing:9.5px;text-transform:uppercase;color:var(--gold-hl);margin-top:3px}
+  .logo .l2{font-family:var(--logo);font-weight:600;font-size:11.5px;letter-spacing:3.4px;text-transform:uppercase;
+    color:#fafafa;display:flex;align-items:center;gap:10px;width:100%;margin-top:4px}
+  .logo .l2::after{content:"";flex:1 0 28px;height:2px;background:var(--gold-hl);margin-left:-4px}
   .count{font-family:var(--mono);font-size:13.5px;letter-spacing:.14em;color:var(--mist)}
   .count b{color:var(--gold-hl);font-weight:500}
 
@@ -73,7 +77,9 @@
   .step[data-step="4"] .fields{gap:17px} /* final step — tighter field spacing */
   .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
   .field{display:flex;flex-direction:column}
-  .field label{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--mist);margin-bottom:9px}
+  /* --mist on paper is ~3.3:1, which is unreadable at 10px — these are the labels
+     someone has to read to fill the form, so they get weight and contrast. */
+  .field label{font-family:var(--mono);font-weight:600;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#4A4D4C;margin-bottom:9px}
   .field input,.field select,.field textarea{width:100%;background:transparent;border:0;border-bottom:1px solid rgba(14,15,16,.22);
     color:var(--ink);font-family:var(--sans);font-size:16px;padding:7px 0 10px;outline:none;transition:border-color .25s ease}
   .field textarea{resize:none;min-height:54px;line-height:1.5}
@@ -97,7 +103,7 @@
   .grouperr .chips~.msg{opacity:1;height:auto}
   .group .msg{font-size:12px;color:var(--err);margin-top:9px;height:0;opacity:0;transition:opacity .2s ease}
   .group.err .msg{height:auto;opacity:1}
-  .grp-label{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--mist);display:block;margin-bottom:12px}
+  .grp-label{font-family:var(--mono);font-weight:600;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#4A4D4C;display:block;margin-bottom:12px}
   .opt{text-transform:none;letter-spacing:0;color:rgba(14,15,16,.4)}
 
   /* what's it for — card grid */
@@ -214,12 +220,14 @@
       background:#08090A;border-bottom:1px solid rgba(255,255,255,.08);position:sticky;top:0;z-index:20}
     .topnav-logo{display:flex;flex-direction:column;text-decoration:none;line-height:1}
     .topnav-logo .logo-main{font-family:var(--logo);font-weight:600;font-size:21px;letter-spacing:5px;text-transform:uppercase;color:#fafafa}
-    .topnav-logo .logo-sub{font-family:var(--logo);font-weight:600;font-size:12.5px;letter-spacing:9.5px;text-transform:uppercase;color:var(--gold-hl);margin-top:3px}
+    .topnav-logo .logo-sub{font-family:var(--logo);font-weight:600;font-size:11.5px;letter-spacing:3.4px;text-transform:uppercase;
+      color:#fafafa;display:flex;align-items:center;gap:10px;width:100%;margin-top:4px}
+    .topnav-logo .logo-sub::after{content:"";flex:1 0 28px;height:2px;background:var(--gold-hl);margin-left:-4px}
     .topnav-links{display:flex;align-items:center;gap:clamp(18px,2.6vw,30px)}
     .navlink{font-family:var(--logo);font-weight:600;font-size:13px;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.82);text-decoration:none;cursor:pointer;background:none;border:0;display:inline-flex;align-items:center;gap:7px;transition:color .2s ease}
     .navlink:hover{color:var(--gold-hl)}
-    .navlink-cta{border:1px solid var(--gold-hl);border-radius:6px;padding:9px 16px;color:var(--gold-hl)}
-    .navlink-cta:hover{background:var(--gold-hl);color:var(--ink);border-color:var(--gold-hl)}
+    .navlink-cta{background:var(--gold-hl);border:1px solid var(--gold-hl);border-radius:6px;padding:9px 16px;color:var(--ink)}
+    .navlink-cta:hover{background:#F4D44A;border-color:#F4D44A;color:var(--ink)}
     .navdrop{position:relative}
     .navdrop-btn{font-family:var(--logo);font-weight:600}
     .nd-chev{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;transition:transform .25s ease}

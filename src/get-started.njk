@@ -10,8 +10,8 @@ extraJs: get-started.js
   <div class="shell">
     <aside class="rail">
       <ol class="rail-steps">
-        <li data-rstep="1"><span class="rs-n">01</span><span class="rs-t">Surface</span></li>
-        <li data-rstep="2"><span class="rs-n">02</span><span class="rs-t">Project</span></li>
+        <li data-rstep="1"><span class="rs-n">01</span><span class="rs-t">Project</span></li>
+        <li data-rstep="2"><span class="rs-n">02</span><span class="rs-t">Surface</span></li>
         <li data-rstep="3"><span class="rs-n">03</span><span class="rs-t">Timing</span></li>
         <li data-rstep="4"><span class="rs-n">04</span><span class="rs-t">Your details</span></li>
       </ol>
@@ -32,22 +32,8 @@ extraJs: get-started.js
     <div class="body">
       <!-- spam honeypot: bots fill this hidden field; real users never see it -->
       <input type="text" id="hp" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
-      <!-- STEP 1 — SURFACE -->
+      <!-- STEP 1 — WHAT'S IT FOR -->
       <section class="step active" data-step="1" aria-label="Step 1 of 4">
-        <h1 class="q">Pick a <em>surface.</em></h1>
-        <p class="hint">The surface you have in mind. Not sure yet? We'll talk it through.</p>
-        <div class="svc" id="svc">
-          <button type="button" class="card" data-val="Resin bound"><span class="num">01</span><span class="name">Resin bound</span></button>
-          <button type="button" class="card" data-val="Tarmac"><span class="num">02</span><span class="name">Tarmac</span></button>
-          <button type="button" class="card" data-val="Block paving"><span class="num">03</span><span class="name">Block paving</span></button>
-          <button type="button" class="card" data-val="Tar &amp; chip"><span class="num">04</span><span class="name">Tar &amp; chip</span></button>
-          <button type="button" class="card" data-val="Gravel"><span class="num">05</span><span class="name">Gravel</span></button>
-          <button type="button" class="card any" data-val="Not sure yet"><span class="num">06</span><span class="name">Not sure yet</span></button>
-        </div>
-      </section>
-
-      <!-- STEP 2 — WHAT'S IT FOR -->
-      <section class="step" data-step="2" aria-label="Step 2 of 4">
         <h1 class="q">What's it <em>for?</em></h1>
         <p class="hint">Pick the closest fit — we firm it all up at the site visit.</p>
         <div class="fields">
@@ -62,6 +48,20 @@ extraJs: get-started.js
             </div>
             <span class="msg">Pick the closest option</span>
           </div>
+        </div>
+      </section>
+
+      <!-- STEP 2 — SURFACE -->
+      <section class="step" data-step="2" aria-label="Step 2 of 4">
+        <h1 class="q">Got a surface in <em>mind?</em></h1>
+        <p class="hint">No wrong answer &mdash; if you're not sure, say so and we'll talk it through.</p>
+        <div class="svc" id="svc">
+          <button type="button" class="card" data-val="Resin bound"><span class="num">01</span><span class="name">Resin bound</span></button>
+          <button type="button" class="card" data-val="Tarmac"><span class="num">02</span><span class="name">Tarmac</span></button>
+          <button type="button" class="card" data-val="Block paving"><span class="num">03</span><span class="name">Block paving</span></button>
+          <button type="button" class="card" data-val="Tar &amp; chip"><span class="num">04</span><span class="name">Tar &amp; chip</span></button>
+          <button type="button" class="card" data-val="Gravel"><span class="num">05</span><span class="name">Gravel</span></button>
+          <button type="button" class="card any" data-val="Not sure yet"><span class="num">06</span><span class="name">Not sure yet</span></button>
         </div>
       </section>
 

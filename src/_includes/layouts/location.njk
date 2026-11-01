@@ -1,8 +1,14 @@
 ---
 layout: layouts/base.njk
 extraCss: location.css
+bodyClass: "loc"
 ---
 {% set resin = (locKind == "resin") %}
+{# Real projects in this town, if we have any. Drives the "our work" section and
+   shifts the section numbers below it. See _data/locationWork.js. #}
+{% set work = locationWork.resin[loc.slug] if resin else locationWork.all[loc.slug] %}
+{% set nNear = 3 if work else 2 %}
+{% set nStart = (nNear + 1) if loc.nearby.length else nNear %}
 
 <section class="hero" data-theme="dark">
   <div class="hero-copy">
@@ -43,9 +49,26 @@ extraCss: location.css
   {% endif %}
 </section>
 
+{% if work %}
+<section class="sec loc-work" data-theme="light">
+  <span class="kicker">02 — Our work in {{ loc.name }}</span>
+  <h2 class="dh">Laid by us, <em>in {{ loc.name }}.</em></h2>
+  <p class="sec-lede">Photographs from {{ loc.name }} itself — {{ work.surfaces | join(" and ") | lower }}, dug out, built up and finished by our own team.</p>
+  <div class="locw-grid">
+    {% for ph in work.photos %}
+    <figure class="locw-ph"><img src="{{ ph.src }}" alt="{{ ph.alt }}" loading="lazy" decoding="async"></figure>
+    {% endfor %}
+  </div>
+  <div class="locw-links">
+    {% for pr in work.projects %}<a href="/services/{{ pr.slug }}/">{{ pr.surface }} in {{ loc.name }}<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>{% endfor %}
+    <a href="/gallery/">The full gallery<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</section>
+{% endif %}
+
 {% if loc.nearby.length %}
 <section class="sec loc-near" data-theme="light">
-  <span class="kicker">02 — Nearby</span>
+  <span class="kicker">0{{ nNear }} — Nearby</span>
   <h2 class="dh">We also cover <em>nearby.</em></h2>
   <ul class="loc-nearby">
     {% for n in loc.nearby %}<li><a href="/locations/driveways-{{ n.slug }}/">Driveways in {{ n.name }}</a></li>{% endfor %}
@@ -54,13 +77,12 @@ extraCss: location.css
 {% endif %}
 
 
-<!-- light → dark transition -->
-<div class="section-fade section-fade--up section-fade--grain" aria-hidden="true"></div>
-
+{# No fade element here: .start carries its own paper->ink gradient, same as the
+   homepage. A fade as well as the gradient double-transitions and bands. #}
 <section class="start" data-theme="dark">
   <div class="start-grid">
     <div class="start-intro">
-      <div class="kicker rv"><span class="num" style="color:var(--gold)">03</span> Get started</div>
+      <div class="kicker rv"><span class="num" style="color:var(--gold)">0{{ nStart }}</span> Get started</div>
       <h2 class="dh rv">{% if resin %}Resin driveways in {{ loc.name }}{% else %}Driveways in {{ loc.name }}{% endif %}, <em>done right.</em></h2>
       <p class="sec-lede rv">Tell us about your project and we'll come out, measure up and price it properly — no obligation.</p>
     </div>

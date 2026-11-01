@@ -35,6 +35,17 @@ module.exports = [
         "/assets/images/resin/projects/sheringham-golden-path/sheringham-golden-path-resin-driveway-finished.webp",
         "/assets/images/resin/projects/sheringham-golden-path/sheringham-golden-path-resin-driveway-angle.webp"
       ] },
+      { galleryOnly: true, img: "/assets/images/resin/projects/blofield/blofield-resin-driveway-closeup.webp", title: "Resin driveway", place: "Blofield", images: [
+        "/assets/images/resin/projects/blofield/blofield-resin-driveway-before.webp",
+        "/assets/images/resin/projects/blofield/blofield-resin-driveway-excavated.webp",
+        "/assets/images/resin/projects/blofield/blofield-resin-driveway-type1-subbase.webp",
+        "/assets/images/resin/projects/blofield/blofield-resin-driveway-edging-laid.webp",
+        "/assets/images/resin/projects/blofield/blofield-resin-driveway-geotextile-grid.webp",
+        "/assets/images/resin/projects/blofield/blofield-resin-driveway-base-laid.webp",
+        "/assets/images/resin/projects/blofield/blofield-resin-driveway-top-layer-starting.webp",
+        "/assets/images/resin/projects/blofield/blofield-resin-driveway-resin-being-laid.webp",
+        "/assets/images/resin/projects/blofield/blofield-resin-driveway-full-view.webp"
+      ] },
       { img: "/assets/images/resin/projects/buxton-resin-driveway/buxton-resin-driveway-closeup.webp", title: "Large resin driveway", place: "Buxton", images: [
         "/assets/images/resin/projects/buxton-resin-driveway/buxton-resin-driveway-progress-1.webp",
         "/assets/images/resin/projects/buxton-resin-driveway/buxton-resin-driveway-detail-1.webp",

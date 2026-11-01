@@ -1,7 +1,22 @@
 /* Location landing pages — most layout reuses global classes from precision.css.
    These are the location-specific bits only. */
 
-.loc-hero-cta{margin-top:32px}
+/* The homepage's light sections take their paper background from ID selectors
+   (#about, #services, #guides). These sections have no IDs, so they painted nothing
+   and sat transparent over the dark body — with near-black ink text on top of it.
+   Theme the section from the attribute it already carries instead. */
+.loc .sec[data-theme="light"]{background:var(--paper);color:var(--graphite)}
+
+/* Flat dark hero, like the homepage. The shared .hero gradients to paper at its
+   foot, which fights the .section-fade directly below it and leaves a pale band
+   across the middle of the page. */
+.loc .hero{background:var(--ink)}
+
+/* Hero CTA. The shared .start-go is a full-width form button in --gold (#E6B23E,
+   amber) — in a hero that stretched to 1120px and clashed with the nav's --gold-hl. */
+.loc-hero-cta{margin-top:32px;width:auto;display:inline-flex;
+  background:var(--gold-hl);border-color:var(--gold-hl);padding:17px 30px}
+.loc-hero-cta:hover{background:#F4D44A;border-color:#F4D44A}
 
 /* "We also cover nearby" internal-link chips */
 .loc-near{padding-top:0}
@@ -23,4 +38,23 @@
 @media (max-width:600px){
   .loc-linkcard img{width:92px;height:76px}
   .loc-linkcard-t b{font-size:1rem}
+}
+
+
+/* Real photographs from the town itself — the one part of a location page that
+   isn't templated copy. Two up on a phone, four across from tablet up. */
+.loc-work{padding-top:0}
+.locw-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:28px 0 0}
+.locw-ph{margin:0;overflow:hidden;border-radius:4px;background:rgba(20,22,20,.06)}
+.locw-ph img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.locw-links{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:24px}
+.locw-links a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:inherit;
+  font-family:var(--font-logo,"Raleway",sans-serif);font-weight:600;font-size:11.5px;
+  letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid rgba(20,22,20,.22);
+  padding-bottom:4px;transition:border-color .2s ease,color .2s ease}
+.locw-links a:hover{color:var(--gold-deep);border-color:var(--gold-deep)}
+.locw-links svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;
+  stroke-linecap:round;stroke-linejoin:round}
+@media (min-width:760px){
+  .locw-grid{grid-template-columns:repeat(4,1fr);gap:14px}
 }

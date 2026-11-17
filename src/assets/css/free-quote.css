@@ -254,7 +254,7 @@ body.lp{background:var(--ink);color:var(--paper);font-family:var(--sans);font-si
 @media (min-width:1100px){
   .lp-plain-grid{grid-template-areas:"copy facts" "cta facts";row-gap:0}
   .lp-plain-copy{grid-area:copy}
-  .lp-facts{grid-area:facts}
+  .lp-facts{grid-area:facts;align-self:center}
   .lp-plain-cta{grid-area:cta}
   .lp-home .lp-plain{padding-bottom:24px}
 }

@@ -1,0 +1,33 @@
+---
+layout: layouts/base.njk
+title: "Free driveway quote — Precision Surfacing, Norfolk"
+description: "Norfolk's driveway specialists. Resin, block paving, tarmac, tar & chip and gravel, laid by our own team. Book your free site visit and written quote."
+permalink: "/free-quote/"
+hideChrome: true
+bodyClass: "lp"
+extraCss: free-quote.css
+extraJs: free-quote.js
+robots: "noindex, follow"
+eleventyExcludeFromCollections: true
+---
+{# Facebook ad landing page, version A: full-bleed photo hero #}
+{% include "partials/lp-top.njk" %}
+
+  <section class="lp-hero lp-hero-a">
+    <img class="lp-hero-img" src="/assets/images/resin/projects/wells-silver-grey/wells-silver-grey-resin-driveway-finished.webp" alt="" fetchpriority="high" decoding="async">
+    <div class="lp-wrap lp-hero-inner">
+      <span class="lp-eyebrow">Setting the standard</span>
+      <h1 class="lp-h1">Norfolk's<br>driveway<br><em>specialists.</em></h1>
+      <p class="lp-hero-lede">Resin, block paving, tarmac, tar &amp; chip and gravel. Laid by our own team, with a free site visit and written quote.</p>
+      <div class="lp-ctas">
+        <a class="lp-btn lp-btn-gold lp-btn-lg" href="#quote">Get a free quote <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="lp-btn lp-btn-ghost lp-btn-lg" href="{{ site.phoneHref }}" data-call>Call {{ site.phone }}</a>
+      </div>
+      <ul class="lp-ticks">
+        <li>Free site visit</li><li>Fixed written quote</li><li>Since the 1960s</li>
+      </ul>
+    </div>
+    <span class="lp-hero-cap">Resin bound · Wells-next-the-Sea</span>
+  </section>
+
+{% include "partials/lp-body.njk" %}

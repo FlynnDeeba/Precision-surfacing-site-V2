@@ -13,6 +13,8 @@ module.exports = {
   // Leave either empty and nothing is output for it.
   googleAdsId: "AW-18121484201",
   gaId: "",
+  // Meta (Facebook) Pixel ID from Events Manager. Leave empty and no pixel is output.
+  metaPixelId: "1739721334243153",
   ogImage: "/assets/images/resin/projects/wells-silver-grey/wells-silver-grey-resin-driveway-finished.webp",
   description: "Norfolk's driveway & surfacing specialists — resin bound, tarmac, tar & chip, block paving and gravel. Four generations of expertise, laid in-house.",
   // Site-wide LocalBusiness structured data (JSON-LD) — output in base.njk

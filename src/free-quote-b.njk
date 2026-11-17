@@ -1,0 +1,40 @@
+---
+layout: layouts/base.njk
+title: "Free driveway quote — Precision Surfacing, Norfolk"
+description: "Norfolk's driveway specialists. Resin, block paving, tarmac, tar & chip and gravel, laid by our own team. Book your free site visit and written quote."
+permalink: "/free-quote-b/"
+hideChrome: true
+bodyClass: "lp"
+extraCss: free-quote.css
+extraJs: free-quote.js
+robots: "noindex, follow"
+eleventyExcludeFromCollections: true
+---
+{# Facebook ad landing page, version B: split hero that mirrors the ad creative #}
+{% include "partials/lp-top.njk" %}
+
+  <section class="lp-hero lp-hero-b">
+    <div class="lp-wrap lp-hero-split">
+      <div class="lp-hero-copy">
+        <span class="lp-eyebrow">Setting the standard</span>
+        <h1 class="lp-h1">Norfolk's<br>driveway<br><em>specialists.</em></h1>
+        <p class="lp-hero-lede">Top-quality work at competitive prices. Every driveway laid by our own team, with a free site visit and written quote.</p>
+        <div class="lp-ctas">
+          <a class="lp-btn lp-btn-gold lp-btn-lg" href="#quote">Get a free quote <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="lp-btn lp-btn-ghost lp-btn-lg" href="{{ site.phoneHref }}" data-call>Call {{ site.phone }}</a>
+        </div>
+      </div>
+      <div class="lp-stack">
+        {% for s in [
+          ["Resin bound", "resin/projects/wells-silver-grey/wells-silver-grey-resin-driveway-finished.webp"],
+          ["Block paving", "block-paving/projects/st-faiths/st-faiths-block-paving-driveway-finished.webp"],
+          ["Tarmac", "tarmac/projects/sheringham-grey/sheringham-grey-tarmac-driveway-finished.webp"],
+          ["Tar & chip", "tar-and-chip/projects/the-old-hall/the-old-hall-tar-and-chip-driveway-finished.webp"]
+        ] %}
+        <a class="lp-stack-item" href="#quote" data-pick="{{ s[0] }}"><img src="/assets/images/{{ s[1] }}" alt="{{ s[0] }} driveway" {% if loop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %} decoding="async"><span>{{ s[0] }}</span></a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+{% include "partials/lp-body.njk" %}

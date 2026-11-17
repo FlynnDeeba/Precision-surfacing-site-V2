@@ -62,6 +62,7 @@ exports.handler = async (event) => {
     ["Email", email],
     ["Notes", d.notes],
     ["Photos", attachments.length ? `${attachments.length} attached` : ""],
+    ["Source", d.source],
   ];
   const tableRows = rows
     .map(([k, v]) => `<tr><td style="padding:6px 16px 6px 0;color:#777;white-space:nowrap;vertical-align:top">${esc(k)}</td><td style="padding:6px 0;color:#111"><strong>${esc(v) || "&mdash;"}</strong></td></tr>`)
